@@ -1,159 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auli Travel Guide | AdventureHub</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Auli — India’s Ski Paradise | AdventureHub</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-        }
+  <style>
+    :root {
+      --bg: #021d2f;           /* deep cold blue */
+      --card: #062b45;         /* icy navy */
+      --accent: #77d9ff;       /* glacier blue */
+      --muted: #b3c9d9;        /* soft ice gray */
+      --text: #e8f9ff;         /* snow white */
+      --glass: rgba(255,255,255,0.05);
+      --radius: 14px;
+      --maxw: 1100px;
+      --gap: 20px;
+    }
 
-        header {
-            background: url('https://images.unsplash.com/photo-1542718610-a1d656d1884b?auto=format&fit=crop&w=1400&q=80')
-            no-repeat center/cover;
-            height: 55vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-shadow: 2px 2px 12px black;
-            font-size: 34px;
-            text-align: center;
-            padding: 10px;
-        }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #011622, #032236, #021d2f);
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-        .section {
-            max-width: 850px;
-            background: white;
-            margin: 20px auto;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 0 12px #ccc;
-        }
+    .wrap {
+      max-width: var(--maxw);
+      margin: 25px auto;
+      padding: 18px;
+    }
 
-        ul {
-            line-height: 1.7;
-        }
+    nav.top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
 
-        a {
-            text-decoration: none;
-            color: #0275d8;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
+    .brand { color: var(--accent); font-size: 20px; font-weight: 700; text-decoration: none; }
+    .links a { margin-left: 12px; color: var(--muted); text-decoration: none; }
 
-        nav {
-            background: black;
-            padding: 12px;
-            text-align: center;
-        }
+    header.hero {
+      border-radius: var(--radius);
+      background: url('https://images.unsplash.com/photo-1611599538733-b7a59dd5862f?auto=format&fit=crop&w=1600&q=80')
+      center/cover no-repeat;
+      min-height: 55vh;
+      display: flex;
+      align-items: flex-end;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.6);
+    }
 
-        nav a {
-            margin: 0 15px;
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
+    .overlay {
+      width: 100%;
+      padding: 35px;
+      background: linear-gradient(0deg, rgba(2,9,16,0.85), rgba(2,9,16,0.25));
+      border-radius: var(--radius);
+    }
 
-        nav a:hover {
-            color: #ffcc00;
-        }
+    h1 { margin: 0; font-size: clamp(28px, 4vw, 46px); }
+    .meta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+    .pill { background: var(--glass); padding: 8px 12px; border-radius: 999px; font-size: 13px; color: var(--muted); }
 
-        .footer {
-            background: black;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            margin-top: 30px;
-        }
-    </style>
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 24px;
+      margin-top: 20px;
+    }
+    @media(max-width:920px){ .grid{ grid-template-columns:1fr; } }
+
+    .card {
+      background: var(--card);
+      padding: 18px;
+      border-radius: var(--radius);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      margin-bottom: var(--gap);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 12px;
+    }
+    @media(max-width:720px){ .gallery{ grid-template-columns:repeat(2,1fr); } }
+
+    .gallery img {
+      width: 100%;
+      height: 150px;
+      border-radius: 10px;
+      object-fit: cover;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    }
+
+    ul.info { padding-left: 18px; margin: 0; }
+    ul.info li { margin: 10px 0; color: var(--muted); }
+
+    .itinerary { display: flex; flex-direction: column; gap: 14px; }
+    .it-day { padding: 14px; background: #08385a; border-radius: 10px; border: 1px solid rgba(255,255,255,0.04); }
+    .it-day h4 { margin: 0 0 8px; color: var(--accent); }
+
+    .hotel { display: flex; gap: 12px; align-items: center; }
+    .hotel img { width: 110px; height: 70px; object-fit: cover; border-radius: 8px; }
+
+    .map { height: 220px; border-radius: 10px; overflow: hidden; }
+
+    footer {
+      margin-top: 25px;
+      padding: 15px;
+      text-align: center;
+      background: #01131f;
+      color: var(--muted);
+      border-radius: 10px;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.85);
+      align-items: center; justify-content: center;
+      z-index: 9999; padding: 25px;
+    }
+    .lightbox img {
+      max-width: 90%; max-height: 85%; border-radius: 12px;
+    }
+    .close-x {
+      position: absolute; top: 20px; right: 30px;
+      font-size: 30px; color: #fff; cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    ⛷️ Auli – Snow Adventure Capital
-</header>
+<div class="wrap">
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="manali.html">Manali</a>
-    <a href="kashmir.html">Kashmir</a>
-    <a href="shimla.html">Shimla</a>
-    <a href="auli.html">Auli</a>
-</nav>
+  <nav class="top">
+    <a class="brand" href="index.html">AdventureHub</a>
+    <div class="links">
+      <a href="manali.html">Manali</a>
+      <a href="kashmir.html">Kashmir</a>
+      <a href="shimla.html">Shimla</a>
+      <a href="auli.html" style="color:var(--accent);">Auli</a>
+    </div>
+  </nav>
 
-<div class="section">
-    <h2>📍 About Auli</h2>
-    <p>
-        Auli is one of India’s top winter destinations famous for skiing, snow adventures,  
-        breathtaking Himalayan views, and the longest cable car ride in Asia.  
-        Perfect for adventure lovers and winter tourists.
-    </p>
+  <header class="hero">
+    <div class="overlay">
+      <h1>Auli — India’s Ski Paradise</h1>
+      <p>Snow-capped views, Asia’s longest ropeway, world-class skiing, and silent Himalayan beauty. Auli is winter heaven.</p>
+
+      <div class="meta">
+        <span class="pill">Uttarakhand</span>
+        <span class="pill">Best time: Dec–Feb (snow)</span>
+        <span class="pill">Famous for: Skiing, Ropeway, Snow Views</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="grid">
+
+    <!-- LEFT SIDE -->
+    <section>
+
+      <article class="card">
+        <h2>Quick Overview</h2>
+        <p style="color:var(--muted);">
+          Auli is India’s skiing capital, known for clean powdered slopes,
+          panoramic views of Nanda Devi and a massive ropeway ride from Joshimath.
+          Whether you want skiing, snowboarding, trekking, or peaceful snow views — Auli is perfect.
+        </p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px;">
+          <div>
+            <h3>Top Attractions</h3>
+            <ul class="info">
+              <li>Auli Ski Slopes</li>
+              <li>Joshimath–Auli Ropeway</li>
+              <li>Gorson Bugyal Trek</li>
+              <li>Artificial Snow Lake</li>
+              <li>View of Nanda Devi Peak</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Travel Tips</h3>
+            <ul class="info">
+              <li>Snowfall is heavy — wear proper winter shoes.</li>
+              <li>Ropeway tickets fill fast — book early.</li>
+              <li>Travel via 4×4 vehicle in peak winter.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" id="gallery">
+        <h2>Photo Gallery</h2>
+        <div class="gallery">
+
+          <img src="https://images.unsplash.com/photo-1611599538733-b7a59dd5862f?auto=format&fit=crop&w=900&q=60"
+            data-large="https://images.unsplash.com/photo-1611599538733-b7a59dd5862f?auto=format&fit=crop&w=1600&q=80">
+
+          <img src="https://images.unsplash.com/photo-1611599036158-7f94589f5cb1?auto=format&fit=crop&w=900&q=60"
+            data-large="https://images.unsplash.com/photo-1611599036158-7f94589f5cb1?auto=format&fit=crop&w=1600&q=80">
+
+          <img src="https://images.unsplash.com/photo-1611599037383-f553d83a25d1?auto=format&fit=crop&w=900&q=60"
+            data-large="https://images.unsplash.com/photo-1611599037383-f553d83a25d1?auto=format&fit=crop&w=1600&q=80">
+
+          <img src="https://images.unsplash.com/photo-1611599537994-e6e9eb06bb6f?auto=format&fit=crop&w=900&q=60"
+            data-large="https://images.unsplash.com/photo-1611599537994-e6e9eb06bb6f?auto=format&fit=crop&w=1600&q=80">
+
+          <img src="https://images.unsplash.com/photo-1612619754073-3a5f3386a7b1?auto=format&fit=crop&w=900&q=60"
+            data-large="https://images.unsplash.com/photo-1612619754073-3a5f3386a7b1?auto=format&fit=crop&w=1600&q=80">
+
+          <img src="https://images.unsplash.com/photo-1611599035591-cc3cde43a8b2?auto=format&fit=crop&w=900&q=60"
+            data-large="https://images.unsplash.com/photo-1611599035591-cc3cde43a8b2?auto=format&fit=crop&w=1600&q=80">
+
+        </div>
+      </article>
+
+      <article class="card" id="itinerary">
+        <h2>3-Day Auli Itinerary</h2>
+
+        <div class="itinerary">
+
+          <div class="it-day">
+            <h4>Day 1 — Arrive & Ropeway Ride</h4>
+            <p>Reach Joshimath → take the iconic ropeway to Auli → explore snow lake & viewpoints.</p>
+          </div>
+
+          <div class="it-day">
+            <h4>Day 2 — Skiing & Snow Adventure</h4>
+            <p>Full day skiing/snowboarding training. Capture the stunning Himalayas.</p>
+          </div>
+
+          <div class="it-day">
+            <h4>Day 3 — Gorson Bugyal Trek</h4>
+            <p>Short easy trek to Gorson Bugyal meadows for surreal views.</p>
+          </div>
+
+        </div>
+      </article>
+
+    </section>
+
+    <!-- RIGHT SIDE -->
+    <aside>
+
+      <div class="card">
+        <h3>Top Hotels</h3>
+
+        <div class="hotel">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=400&q=60">
+          <div>
+            <h4>Clifftop Club</h4>
+            <p style="color:var(--muted);font-size:13px;">Ski-in/ski-out resort with Himalayan views.</p>
+          </div>
+        </div>
+
+        <div class="hotel" style="margin-top:12px;">
+          <img src="https://images.unsplash.com/photo-1522706604294-54c03a65be8e?auto=format&fit=crop&w=400&q=60">
+          <div>
+            <h4>Auli Resort</h4>
+            <p style="color:var(--muted);font-size:13px;">Comfortable stay near slopes.</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top:15px;">How to Reach</h3>
+        <ul class="info">
+          <li>Nearest Airport: Dehradun (Jolly Grant)</li>
+          <li>Nearest Rail: Rishikesh / Haridwar</li>
+          <li>Road: Rishikesh → Joshimath → Ropeway to Auli</li>
+        </ul>
+
+        <h3 style="margin-top:15px;">Map</h3>
+        <div class="map">
+          <iframe src="https://www.google.com/maps?q=Auli+Uttarakhand&output=embed"
+                  width="100%" height="100%" style="border:0;"></iframe>
+        </div>
+
+      </div>
+
+    </aside>
+
+  </main>
+
+  <footer>
+    © 2025 AdventureHub — Created by Kaunain Fathima • Follow @kaunainfathima19
+  </footer>
+
 </div>
 
-<div class="section">
-    <h2>✨ Best Places to Visit</h2>
-    <ul>
-        <li>Auli Ropeway – Longest cable car in India</li>
-        <li>Gorson Bugyal – Snow meadows</li>
-        <li>Joshimath – Scenic town</li>
-        <li>Artificial Lake – Beautiful evening view</li>
-        <li>Nanda Devi Peak – Himalayan viewpoint</li>
-    </ul>
+<!-- Lightbox -->
+<div class="lightbox" id="lb">
+  <span class="close-x" id="lbclose">✕</span>
+  <img id="lbimg" src="">
 </div>
 
-<div class="section">
-    <h2>❄️ Best Time to Visit</h2>
-    <ul>
-        <li><b>December to February:</b> Best for snow & skiing</li>
-        <li><b>March to April:</b> Pleasant weather for trekking</li>
-    </ul>
-</div>
+<script>
+  const imgs = document.querySelectorAll('.gallery img');
+  const lb = document.getElementById('lb');
+  const lbimg = document.getElementById('lbimg');
+  const lbclose = document.getElementById('lbclose');
 
-<div class="section">
-    <h2>🚗 How to Reach</h2>
-    <ul>
-        <li><b>By Air:</b> Dehradun Airport (286 km)</li>
-        <li><b>By Train:</b> Haridwar & Rishikesh</li>
-        <li><b>By Road:</b> Rishikesh → Joshimath → Auli</li>
-    </ul>
-</div>
+  imgs.forEach(img => {
+    img.addEventListener('click', () => {
+      lbimg.src = img.dataset.large;
+      lb.style.display = 'flex';
+    });
+  });
 
-<div class="section">
-    <h2>🏨 Best Places to Stay</h2>
-    <ul>
-        <li>Blue Poppy Resort</li>
-        <li>Himalayan Abode</li>
-        <li>Cliff Top Club</li>
-        <li>GMVN Auli Camp</li>
-    </ul>
-</div>
-
-<div class="section">
-    <h2>🍲 Food to Try</h2>
-    <ul>
-        <li>Garhwali Thali</li>
-        <li>Kachmauli</li>
-        <li>Chainsoo</li>
-        <li>Phaanu</li>
-    </ul>
-</div>
-
-<div class="section">
-    <h2>🔗 Back to Home</h2>
-    <p><a href="index.html">← Go to AdventureHub Homepage</a></p>
-</div>
-
-<div class="footer">
-    © 2025 AdventureHub – Explore Fearlessly
-</div>
+  lbclose.onclick = () => lb.style.display = 'none';
+  lb.onclick = (e) => { if (e.target === lb) lb.style.display = 'none'; };
+</script>
 
 </body>
 </html>
