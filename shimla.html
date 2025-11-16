@@ -1,159 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shimla Travel Guide | AdventureHub</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shimla — Snowy Hills & Winter Charm | AdventureHub</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-        }
+  <style>
+    :root {
+      --bg: #1b1530;         /* deep night purple */
+      --card: #241d3f;       /* soft purple card */
+      --accent: #c7a6ff;     /* lavender highlight */
+      --muted: #b9b4c9;      /* light muted text */
+      --text: #f3ecff;       /* white-purple */
+      --glass: rgba(255,255,255,0.05);
+      --radius: 14px;
+      --maxw: 1100px;
+      --gap: 20px;
+    }
 
-        header {
-            background: url('https://images.unsplash.com/photo-1577097694837-965baf3fb9c0?auto=format&fit=crop&w=1400&q=80')
-            no-repeat center/cover;
-            height: 55vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-shadow: 2px 2px 12px black;
-            font-size: 34px;
-            text-align: center;
-            padding: 10px;
-        }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #0d0a1a, #1b1530 60%, #100c22);
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-        .section {
-            max-width: 850px;
-            background: white;
-            margin: 20px auto;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 0 12px #ccc;
-        }
+    .wrap {
+      max-width: var(--maxw);
+      margin: 25px auto;
+      padding: 18px;
+    }
 
-        ul {
-            line-height: 1.7;
-        }
+    nav.top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
 
-        a {
-            text-decoration: none;
-            color: #0275d8;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
+    .brand {
+      color: var(--accent);
+      font-size: 20px;
+      font-weight: 700;
+      text-decoration: none;
+    }
 
-        nav {
-            background: black;
-            padding: 12px;
-            text-align: center;
-        }
+    .links a {
+      margin-left: 12px;
+      color: var(--muted);
+      text-decoration: none;
+    }
 
-        nav a {
-            margin: 0 15px;
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
+    header.hero {
+      border-radius: var(--radius);
+      background: url('https://images.unsplash.com/photo-1542372147193-a7aca54189cd?auto=format&fit=crop&w=1600&q=80')
+                  center/cover no-repeat;
+      min-height: 55vh;
+      display: flex;
+      align-items: flex-end;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.6);
+    }
 
-        nav a:hover {
-            color: #ffcc00;
-        }
+    .overlay {
+      width: 100%;
+      padding: 35px;
+      background: linear-gradient(0deg, rgba(10,8,18,0.85), rgba(10,8,18,0.25));
+      border-radius: var(--radius);
+    }
 
-        .footer {
-            background: black;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            margin-top: 30px;
-        }
-    </style>
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 46px);
+      letter-spacing: 0.5px;
+    }
+
+    .meta {
+      margin-top: 12px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      background: var(--glass);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 920px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--card);
+      padding: 18px;
+      border-radius: var(--radius);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      margin-bottom: var(--gap);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 12px;
+    }
+
+    @media (max-width: 720px) {
+      .gallery {
+        grid-template-columns: repeat(2,1fr);
+      }
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    }
+
+    ul.info {
+      padding-left: 18px;
+      margin: 0;
+    }
+
+    ul.info li {
+      margin: 10px 0;
+      color: var(--muted);
+    }
+
+    .itinerary {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .it-day {
+      background: #2a2350;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .it-day h4 {
+      margin: 0 0 8px;
+      color: var(--accent);
+    }
+
+    .hotel {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .hotel img {
+      width: 110px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .map {
+      height: 220px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    footer {
+      margin-top: 25px;
+      padding: 15px;
+      text-align: center;
+      background: #0e0a1d;
+      color: var(--muted);
+      border-radius: 10px;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 25px;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 85%;
+      border-radius: 12px;
+    }
+    .close-x {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    ❄️ Shimla Travel Guide
-</header>
+  <div class="wrap">
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="manali.html">Manali</a>
-    <a href="kashmir.html">Kashmir</a>
-    <a href="shimla.html">Shimla</a>
-</nav>
+    <nav class="top">
+      <a class="brand" href="index.html">AdventureHub</a>
+      <div class="links">
+        <a href="manali.html">Manali</a>
+        <a href="kashmir.html">Kashmir</a>
+        <a href="shimla.html" style="color:var(--accent)">Shimla</a>
+      </div>
+    </nav>
 
-<div class="section">
-    <h2>📍 About Shimla</h2>
-    <p>
-        Shimla, the Queen of Hills, is one of India's most popular winter destinations.  
-        Covered in snow during winters, this place offers breathtaking views, colonial architecture,  
-        peaceful hills, and a perfect romantic or family getaway.
-    </p>
-</div>
+    <header class="hero">
+      <div class="overlay">
+        <h1>Shimla — The Queen of Hills</h1>
+        <p>Colonial charm, snowfall views, Mall Road walks, Jakhu Temple sunsets & Kufri adventure. A beautiful premium guide with photos, itinerary & tips.</p>
 
-<div class="section">
-    <h2>✨ Best Places to Visit</h2>
-    <ul>
-        <li>Mall Road – shopping, cafés & nightlife</li>
-        <li>Kufri – snowfall, skiing & adventure</li>
-        <li>Jakhoo Temple – mountain views & monkeys</li>
-        <li>Christ Church – iconic heritage site</li>
-        <li>Chail – peaceful nature & wildlife</li>
-        <li>Green Valley – picturesque photography point</li>
-    </ul>
-</div>
+        <div class="meta">
+          <span class="pill">Himachal Pradesh</span>
+          <span class="pill">Best time: Oct–Feb (snow) / Mar–June</span>
+          <span class="pill">Altitude: 2200 m</span>
+        </div>
+      </div>
+    </header>
 
-<div class="section">
-    <h2>❄️ Best Time to Visit</h2>
-    <ul>
-        <li><b>December – February:</b> Snowfall season</li>
-        <li><b>March – June:</b> Best weather for sightseeing</li>
-    </ul>
-</div>
+    <main class="grid">
 
-<div class="section">
-    <h2>🚗 How to Reach</h2>
-    <ul>
-        <li><b>By Air:</b> Shimla Airport (22 km from city)</li>
-        <li><b>By Train:</b> Kalka–Shimla toy train</li>
-        <li><b>By Road:</b> Delhi → Chandigarh → Shimla</li>
-    </ul>
-</div>
+      <!-- LEFT SIDE -->
+      <section>
 
-<div class="section">
-    <h2>🏨 Places to Stay</h2>
-    <ul>
-        <li>Radisson Hotel Shimla</li>
-        <li>Hotel Willow Banks</li>
-        <li>Snow Valley Resorts</li>
-        <li>Woodville Palace</li>
-    </ul>
-</div>
+        <article class="card">
+          <h2>Quick Overview</h2>
+          <p style="color:var(--muted)">
+            Shimla, known as the Queen of Hills, offers beautiful pine forests, snowy mountains, colonial architecture and charming local streets. Whether it's Mall Road walks or Kufri adventure sports, Shimla provides the perfect hill-station vibe.
+          </p>
 
-<div class="section">
-    <h2>🍲 Food to Try</h2>
-    <ul>
-        <li>Siddu</li>
-        <li>Chana Madra</li>
-        <li>Himachali Thali</li>
-        <li>Tibetan Momos</li>
-    </ul>
-</div>
+          <div class="grid-mini" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:10px;">
+            <div>
+              <h3>Top Attractions</h3>
+              <ul class="info">
+                <li>Mall Road & Ridge</li>
+                <li>Jakhu Temple</li>
+                <li>Kufri Snow Viewpoint</li>
+                <li>Christ Church</li>
+                <li>Green Valley & Mashobra</li>
+              </ul>
+            </div>
 
-<div class="section">
-    <h2>🔗 Back to Home</h2>
-    <p><a href="index.html">← Go to AdventureHub Homepage</a></p>
-</div>
+            <div>
+              <h3>Travel Tips</h3>
+              <ul class="info">
+                <li>Wear comfortable shoes for Mall Road walking.</li>
+                <li>Snowfall possible in winter—carry jackets.</li>
+                <li>Jakhu monkeys are naughty—keep things zipped.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
 
-<div class="footer">
-    © 2025 AdventureHub – Explore Fearlessly
-</div>
+        <article class="card" id="gallery">
+          <h2>Photo Gallery</h2>
+          <div class="gallery">
+
+            <img src="https://images.unsplash.com/photo-1542372147193-a7aca54189cd?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1542372147193-a7aca54189cd?auto=format&fit=crop&w=1600&q=80">
+
+            <img src="https://images.unsplash.com/photo-1579613832125-5f7d76f3da19?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1579613832125-5f7d76f3da19?auto=format&fit=crop&w=1600&q=80">
+
+            <img src="https://images.unsplash.com/photo-1551088133-2a0f23f72f57?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1551088133-2a0f23f72f57?auto=format&fit=crop&w=1600&q=80">
+
+            <img src="https://images.unsplash.com/photo-1498398806694-3cb51cf93a45?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1498398806694-3cb51cf93a45?auto=format&fit=crop&w=1600&q=80">
+
+            <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&w=1600&q=80">
+
+            <img src="https://images.unsplash.com/photo-1580130703345-fbc68d1bb486?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1580130703345-fbc68d1bb486?auto=format&fit=crop&w=1600&q=80">
+
+          </div>
+        </article>
+
+        <article class="card" id="itinerary">
+          <h2>3-Day Shimla Itinerary</h2>
+
+          <div class="itinerary">
+            <div class="it-day">
+              <h4>Day 1 — The Ridge & Mall Road</h4>
+              <p>Walk around The Ridge, Christ Church, and enjoy the colonial architecture. Evening shopping & food at Mall Road.</p>
+            </div>
+
+            <div class="it-day">
+              <h4>Day 2 — Jakhu Temple & Mashobra</h4>
+              <p>Visit Jakhu Temple for panoramic views, then explore Mashobra & Green Valley.</p>
+            </div>
+
+            <div class="it-day">
+              <h4>Day 3 — Kufri Snow Adventure</h4>
+              <p>Head to Kufri for snow activities, horse rides, and scenic photography.</p>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- RIGHT SIDE -->
+      <aside>
+        <div class="card">
+          <h3>Top Hotels</h3>
+
+          <div class="hotel">
+            <img src="https://images.unsplash.com/photo-1522706604294-54c03a65be8e?auto=format&fit=crop&w=400&q=60">
+            <div>
+              <h4>Radisson Jass</h4>
+              <p style="color:var(--muted);font-size:13px">Luxury stay with great mountain views.</p>
+            </div>
+          </div>
+
+          <div class="hotel" style="margin-top:12px;">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=400&q=60">
+            <div>
+              <h4>Snow Valley Resorts</h4>
+              <p style="color:var(--muted);font-size:13px">Budget-friendly stay with comfort and views.</p>
+            </div>
+          </div>
+
+          <h3 style="margin-top:15px;">How to Reach</h3>
+          <ul class="info">
+            <li>Nearest Airport: Jubbarhatti (20 km)</li>
+            <li>Nearest Rail: Kalka Railway Station</li>
+            <li>Road: Delhi → Chandigarh → Shimla</li>
+          </ul>
+
+          <h3 style="margin-top:15px;">Map</h3>
+          <div class="map">
+            <iframe src="https://www.google.com/maps?q=Shimla&output=embed"
+                    width="100%" height="100%" style="border:0;"></iframe>
+          </div>
+
+        </div>
+      </aside>
+
+    </main>
+
+    <footer>
+      © 2025 AdventureHub — Created by Kaunain Fathima • Follow @kaunainfathima19
+    </footer>
+
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lb">
+    <span class="close-x" id="lbclose">✕</span>
+    <img id="lbimg" src="">
+  </div>
+
+  <script>
+    // Lightbox logic
+    const imgs = document.querySelectorAll('.gallery img');
+    const lb = document.getElementById('lb');
+    const lbimg = document.getElementById('lbimg');
+    const lbclose = document.getElementById('lbclose');
+
+    imgs.forEach(img => {
+      img.addEventListener('click', () => {
+        lbimg.src = img.dataset.large;
+        lb.style.display = 'flex';
+      });
+    });
+
+    lbclose.onclick = () => lb.style.display = 'none';
+    lb.onclick = (e) => { if (e.target === lb) lb.style.display = 'none'; };
+  </script>
 
 </body>
 </html>
