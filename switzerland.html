@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Switzerland Honeymoon — Alps, Lakes & Scenic Trains | AdventureHub</title>
+  <meta name="description" content="Switzerland honeymoon: Interlaken, Zermatt (Matterhorn), Lucerne, Glacier Express, Lake cruises, romantic stays, 3-day itinerary, photo gallery and travel tips." />
+  <style>
+    :root{
+      --bg:#fbfcfe;
+      --card:#ffffff;
+      --alpine:#7bb7ff;
+      --rose:#e8a8a2;
+      --deep:#003d66;
+      --muted:#6b7380;
+      --text:#071723;
+      --radius:14px;
+      --shadow:0 12px 36px rgba(5,20,30,0.06);
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Inter", "Segoe UI", Roboto, system-ui, -apple-system, Arial, sans-serif;
+      background: linear-gradient(180deg,#fbfdff 0%, #f0f6fb 100%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      line-height:1.55;
+    }
+    .wrap{max-width:var(--maxw);margin:28px auto;padding:18px}
+
+    /* NAV */
+    nav.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+    .brand{font-weight:800;color:var(--deep);font-size:20px;text-decoration:none}
+    .links a{color:var(--muted);text-decoration:none;margin-left:12px;font-size:14px}
+
+    /* HERO */
+    header.hero{
+      border-radius:var(--radius);overflow:hidden;
+      background:
+        linear-gradient(180deg, rgba(0,30,60,0.30), rgba(255,255,255,0.02)),
+        url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      min-height:54vh;display:flex;align-items:flex-end;
+      box-shadow:var(--shadow);
+    }
+    .overlay{padding:36px;color:white;text-shadow:0 6px 20px rgba(2,8,20,0.45)}
+    .overlay h1{margin:0;font-size:clamp(28px,4vw,44px);letter-spacing:0.6px}
+    .overlay p{margin:8px 0 0;color:rgba(255,255,255,0.92)}
+
+    .pill{display:inline-block;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.12);color:#fff;margin-right:8px;font-size:13px}
+
+    /* GRID */
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:20px}
+    @media(max-width:940px){.grid{grid-template-columns:1fr}}
+
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);margin-bottom:18px}
+    h2{margin:6px 0 12px}
+
+    .cols{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    @media(max-width:720px){.cols{grid-template-columns:1fr}}
+
+    /* gallery */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    @media(max-width:720px){.gallery{grid-template-columns:repeat(2,1fr)}}
+    .gallery img{width:100%;height:150px;object-fit:cover;border-radius:10px;cursor:pointer;display:block;box-shadow:0 8px 22px rgba(3,18,34,0.06)}
+
+    /* itinerary */
+    .itinerary{display:flex;flex-direction:column;gap:12px}
+    .it-day{background:linear-gradient(180deg,#ffffff,#f7fbff);border-left:6px solid var(--alpine);padding:12px;border-radius:10px}
+    .it-day h4{margin:0 0 6px;color:var(--deep)}
+    .it-day p{margin:0;color:var(--muted)}
+
+    /* hotels */
+    .hotel{display:flex;gap:12px;align-items:center;margin-top:10px}
+    .hotel img{width:110px;height:70px;object-fit:cover;border-radius:8px}
+    .hinfo h4{margin:0}
+    .hinfo p{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+    /* map */
+    .map{height:220px;border-radius:10px;overflow:hidden}
+
+    footer.sitefoot{margin-top:28px;text-align:center;color:var(--muted);font-size:14px;padding:10px 0}
+
+    /* lightbox */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.8);display:none;align-items:center;justify-content:center;padding:20px;z-index:9999}
+    .lightbox img{max-width:92%;max-height:86%;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,0.7)}
+    .close-x{position:absolute;top:18px;right:18px;color:#fff;font-size:28px;cursor:pointer}
+
+    /* small tags */
+    .label{display:inline-block;padding:6px 10px;background:rgba(3,61,102,0.06);border-radius:8px;color:var(--deep);font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="top">
+      <a class="brand" href="index.html">AdventureHub</a>
+      <div class="links">
+        <a href="mauritius.html">Mauritius</a>
+        <a href="seychelles.html">Seychelles</a>
+        <a href="switzerland.html" style="color:var(--deep);font-weight:700">Switzerland</a>
+      </div>
+    </nav>
+
+    <header class="hero" role="banner">
+      <div class="overlay">
+        <h1>Switzerland — Alpine Romance & Scenic Trains</h1>
+        <p>Snow-capped peaks, turquoise lakes, cozy chalets, Glacier Express and picture-perfect honeymoon moments.</p>
+
+        <div style="margin-top:12px">
+          <span class="pill">Europe • Swiss Alps</span>
+          <span class="pill">Best Time: Apr–Jun • Sep–Oct (avoid extreme winter unless you love snow)</span>
+          <span class="pill">Trains • Lakes • Mountain Villages</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid" role="main">
+      <!-- LEFT -->
+      <section>
+        <article class="card">
+          <h2>Why Switzerland is a Dream Honeymoon</h2>
+          <p style="color:var(--muted)">Switzerland offers cinematic landscapes, cozy mountain lodges, romantic lake cruises and some of the most comfortable scenic trains in the world. Perfect for couples who love nature, luxury and picture-perfect quiet moments.</p>
+
+          <div class="cols" style="margin-top:12px">
+            <div>
+              <h3>Top Romantic Spots</h3>
+              <ul style="color:var(--muted);padding-left:18px">
+                <li>Zermatt & the Matterhorn — iconic views</li>
+                <li>Interlaken — gateway to alpine lakes</li>
+                <li>Lucerne — lake, old town charm & Chapel Bridge</li>
+                <li>Grindelwald & Jungfrau region — snowy fairy-tale</li>
+                <li>Lake Geneva & Montreux — lakeside romance</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Best For</h3>
+              <ul style="color:var(--muted);padding-left:18px">
+                <li>Cozy chalet stays & luxury hotels</li>
+                <li>Scenic train journeys (Glacier Express)</li>
+                <li>Couple photography & honeymoon photoshoot</li>
+                <li>Hiking gentle alpine trails & lake cruises</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" id="gallery">
+          <h2>Photo Gallery</h2>
+          <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80" alt="Swiss Alps">
+            <img src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=1600&q=80" alt="Lake Lucerne">
+            <img src="https://images.unsplash.com/photo-1505765052064-5f6b5d0b7b1d?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1505765052064-5f6b5d0b7b1d?auto=format&fit=crop&w=1600&q=80" alt="Zermatt Matterhorn">
+            <img src="https://images.unsplash.com/photo-1482192505345-5655af888cc4?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1482192505345-5655af888cc4?auto=format&fit=crop&w=1600&q=80" alt="Glacier Express">
+            <img src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?auto=format&fit=crop&w=1600&q=80" alt="Chapel Bridge Lucerne">
+            <img src="https://images.unsplash.com/photo-1527203567071-ec5f7f4f6a8f?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1527203567071-ec5f7f4f6a8f?auto=format&fit=crop&w=1600&q=80" alt="Jungfrau region">
+          </div>
+          <p style="color:var(--muted);margin-top:10px">Tap any image to enlarge. (Unsplash demo images.)</p>
+        </article>
+
+        <article class="card" id="itinerary">
+          <h2>3-Day Romantic Switzerland Itinerary (Sample)</h2>
+          <div class="itinerary">
+            <div class="it-day">
+              <h4>Day 1 — Lucerne: Lakeside & Old Town</h4>
+              <p>Arrive in Lucerne. Walk Chapel Bridge, take a romantic lake cruise, cozy dinner by the water.</p>
+            </div>
+            <div class="it-day">
+              <h4>Day 2 — Interlaken & Jungfrau Views</h4>
+              <p>Train to Interlaken. Optional day trip to Jungfraujoch (Top of Europe) or easy cable car to Harder Kulm for sunset views.</p>
+            </div>
+            <div class="it-day">
+              <h4>Day 3 — Zermatt & Matterhorn Panorama</h4>
+              <p>Travel to Zermatt via scenic rail. Take Gornergrat Railway for epic Matterhorn views. Romantic dinner in a mountain-view restaurant.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Activities for Couples</h2>
+          <ul style="color:var(--muted);padding-left:18px">
+            <li>Glacier Express scenic train (book panoramic seats)</li>
+            <li>Private boat on Lake Geneva or Lake Lucerne</li>
+            <li>Horse-drawn carriage in alpine villages (seasonal)</li>
+            <li>Couples spa & thermal baths in luxury hotels</li>
+            <li>Winter lovers: gentle snowshoeing or sleigh rides</li>
+          </ul>
+        </article>
+
+      </section>
+
+      <!-- RIGHT -->
+      <aside>
+        <div class="card">
+          <h3>Quick Facts</h3>
+          <p class="label">Currency</p>
+          <p style="margin:8px 0 10px;color:var(--muted)">Swiss Franc (CHF)</p>
+
+          <h3 style="margin-top:8px">Top Romantic Hotels</h3>
+          <div class="hotel">
+            <img src="https://images.unsplash.com/photo-1542317854-9c3e3f7b9e37?auto=format&fit=crop&w=400&q=60" alt="hotel">
+            <div class="hinfo"><h4>Luxury Chalet Hotel (Zermatt)</h4><p>Private chalet suites with Matterhorn views.</p></div>
+          </div>
+
+          <div class="hotel" style="margin-top:10px">
+            <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=400&q=60" alt="hotel2">
+            <div class="hinfo"><h4>Lakefront Boutique Hotel (Lucerne)</h4><p>Charming rooms facing the lake & old town.</p></div>
+          </div>
+
+          <h3 style="margin-top:12px">Practical Tips</h3>
+          <ul style="color:var(--muted);padding-left:18px">
+            <li>Buy Swiss Travel Pass for unlimited trains (saves money & easy).</li>
+            <li>Book Glacier Express / Gornergrat seats early (panoramic windows).</li>
+            <li>Dress in layers — mountain weather changes fast.</li>
+            <li>English widely spoken; local German/French helpful in regions.</li>
+          </ul>
+
+          <h3 style="margin-top:12px">Switzerland on Map</h3>
+          <div class="map card">
+            <iframe title="Switzerland map" width="100%" height="100%" style="border:0" loading="lazy"
+              src="https://www.google.com/maps?q=Switzerland&output=embed"></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Packing for Romantic Alps</h3>
+          <ul style="color:var(--muted);padding-left:18px">
+            <li>Warm layers, waterproof jacket & comfy boots</li>
+            <li>Nice dinner outfit for alpine restaurants</li>
+            <li>Camera + tripod for sunrise/sunset photos</li>
+            <li>Travel adaptor & Swiss Francs (cards accepted widely)</li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="sitefoot card">
+      © 2025 AdventureHub — Switzerland Honeymoon Guide • Created by Kaunain Fathima • Follow @kaunainfathima19
+    </footer>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lb" role="dialog" aria-hidden="true">
+    <div class="close-x" id="lbclose" title="Close">✕</div>
+    <img id="lbimg" src="" alt="expanded image">
+  </div>
+
+  <script>
+    // gallery lightbox
+    const imgs = document.querySelectorAll('.gallery img');
+    const lb = document.getElementById('lb');
+    const lbimg = document.getElementById('lbimg');
+    const lbclose = document.getElementById('lbclose');
+
+    imgs.forEach(img=>{
+      img.addEventListener('click',()=>{
+        lbimg.src = img.dataset.large || img.src;
+        lb.style.display = 'flex';
+        lb.setAttribute('aria-hidden','false');
+      });
+    });
+
+    lbclose.addEventListener('click',()=>{
+      lb.style.display='none';
+      lb.setAttribute('aria-hidden','true');
+      lbimg.src='';
+    });
+
+    lb.addEventListener('click',(e)=>{
+      if(e.target===lb){
+        lb.style.display='none';
+        lbimg.src='';
+        lb.setAttribute('aria-hidden','true');
+      }
+    });
+  </script>
+</body>
+</html>
