@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Jaipur — The Pink City | AdventureHub</title>
+
+<style>
+  :root {
+    --bg: #fff4f7;
+    --card: #ffffff;
+    --pink: #ff8fb1;
+    --gold: #f2c16b;
+    --muted: #7a6c77;
+    --text: #2b1c23;
+    --radius: 15px;
+    --shadow: 0 6px 25px rgba(0,0,0,0.1);
+    --maxw: 1100px;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  .wrap { max-width: var(--maxw); margin: 28px auto; padding: 18px; }
+
+  nav.top {
+    display: flex; justify-content: space-between;
+    align-items: center; margin-bottom: 18px;
+  }
+  .brand {
+    font-weight: 700; color: var(--pink);
+    font-size: 22px; text-decoration: none;
+  }
+  .links a {
+    color: var(--muted); margin-left: 12px;
+    text-decoration: none;
+  }
+
+  header.hero {
+    border-radius: var(--radius);
+    overflow: hidden;
+    background:
+      linear-gradient(180deg,rgba(0,0,0,0.45),rgba(0,0,0,0.2)),
+      url('https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1600&q=80')
+      center/cover no-repeat;
+    min-height: 52vh;
+    display: flex; align-items: flex-end;
+    box-shadow: var(--shadow);
+  }
+
+  .overlay { padding: 34px; color: white; }
+  .overlay h1 { margin: 0; font-size: 40px; }
+  .overlay p { margin-top: 8px; }
+
+  .pill {
+    display: inline-block; background: rgba(255,255,255,0.25);
+    padding: 8px 12px; border-radius: 20px;
+    margin-right: 8px; color: white; font-size: 13px;
+  }
+
+  .grid {
+    display: grid; grid-template-columns: 1fr 340px;
+    gap: 24px; margin-top: 20px;
+  }
+  @media(max-width: 900px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+
+  .card {
+    background: var(--card);
+    padding: 20px; border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+
+  .gallery {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+  }
+  @media(max-width: 700px) {
+    .gallery {
+      grid-template-columns: repeat(2,1fr);
+    }
+  }
+
+  .gallery img {
+    width: 100%; height: 150px;
+    object-fit: cover; border-radius: 12px;
+    cursor: pointer; box-shadow: var(--shadow);
+  }
+
+  .itinerary { display: flex; flex-direction: column; gap: 12px; }
+
+  .it-day {
+    background: #ffe8ef;
+    border-left: 6px solid var(--pink);
+    padding: 12px; border-radius: 10px;
+  }
+  .it-day h4 { margin: 0 0 6px; color: var(--pink); }
+  .it-day p { margin: 0; color: var(--muted); }
+
+  .hotel { display: flex; gap: 12px; margin-top: 10px; }
+  .hotel img {
+    width: 110px; height: 70px;
+    border-radius: 10px; object-fit: cover;
+  }
+  .hotel .hinfo h4 { margin: 0; }
+  .hotel .hinfo p {
+    margin: 2px 0; color: var(--muted); font-size: 13px;
+  }
+
+  .map {
+    height: 220px; border-radius: 12px; overflow: hidden;
+  }
+
+  footer {
+    margin-top: 30px; padding: 20px;
+    text-align: center; background: #ffd4e2;
+    border-radius: 12px; color: var(--text);
+    font-weight: 600;
+  }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.8);
+    display: none; justify-content: center;
+    align-items: center; padding: 20px;
+    z-index: 9999;
+  }
+  .lightbox img {
+    max-width: 90%; max-height: 85%;
+    border-radius: 10px;
+  }
+  .close-btn {
+    position: absolute; top: 24px; right: 24px;
+    font-size: 32px; color: white; cursor: pointer;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <nav class="top">
+    <a href="index.html" class="brand">AdventureHub</a>
+    <div class="links">
+      <a href="ooty.html">Ooty</a>
+      <a href="kodaikanal.html">Kodaikanal</a>
+      <a href="munnar.html">Munnar</a>
+      <a href="coorg.html">Coorg</a>
+      <a href="nainital.html">Nainital</a>
+      <a href="mussoorie.html">Mussoorie</a>
+      <a href="jaisalmer.html">Jaisalmer</a>
+      <a href="jodhpur.html">Jodhpur</a>
+      <a href="jaipur.html" style="color:var(--pink)">Jaipur</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="overlay">
+      <h1>Jaipur — The Pink City</h1>
+      <p>Palaces, forts, royal markets and the iconic pink beauty of Rajasthan.</p>
+      <div style="margin-top:12px;">
+        <span class="pill">Rajasthan</span>
+        <span class="pill">Best Time: Oct – Feb</span>
+        <span class="pill">Palaces • Forts • Culture</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="grid">
+
+    <!-- LEFT -->
+    <section>
+
+      <article class="card">
+        <h2>Quick Overview</h2>
+        <p style="color:var(--muted);">
+          Jaipur offers a royal blend of history, palaces, forts, pink buildings,
+          shopping streets, culture and amazing food.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>Photo Gallery</h2>
+        <div class="gallery">
+
+          <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=60"
+            data-large="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1600&q=80">
+
+          <img src="https://images.unsplash.com/photo-1542382257-80dedb725808?auto=format&fit=crop&w=900&q=60"
+            data-large="https://images.unsplash.com/photo-1542382257-80dedb725808?auto=format&fit=crop&w=1600&q=80">
+
+          <img src="https://images.unsplash.com/photo-1548018226-bf8efaf1f9c3?auto=format&fit=crop&w=900&q=60"
+            data-large="https://images.unsplash.com/photo-1548018226-bf8efaf1f9c3?auto=format&fit=crop&w=1600&q=80">
+
+          <img src="https://images.unsplash.com/photo-1581681114181-f5f5c2072ac3?auto=format&fit=crop&w=900&q=60"
+            data-large="https://images.unsplash.com/photo-1581681114181-f5f5c2072ac3?auto=format&fit=crop&w=1600&q=80">
+
+          <img src="https://images.unsplash.com/photo-1563896295079-99e6ccba9ff9?auto=format&fit=crop&w=900&q=60"
+            data-large="https://images.unsplash.com/photo-1563896295079-99e6ccba9ff9?auto=format&fit=crop&w=1600&q=80">
+
+          <img src="https://images.unsplash.com/photo-1518684079-17d0e5f57e90?auto=format&fit=crop&w=900&q=60"
+            data-large="https://images.unsplash.com/photo-1518684079-17d0e5f57e90?auto=format&fit=crop&w=1600&q=80">
+
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>3-Day Itinerary</h2>
+        <div class="itinerary">
+
+          <div class="it-day">
+            <h4>Day 1 — Hawa Mahal & City Palace</h4>
+            <p>Iconic pink palace + royal museum.</p>
+          </div>
+
+          <div class="it-day">
+            <h4>Day 2 — Amber Fort & Jal Mahal</h4>
+            <p>Most famous fort + lake palace in water.</p>
+          </div>
+
+          <div class="it-day">
+            <h4>Day 3 — Pink City Markets</h4>
+            <p>Jewelry, handicrafts, block prints, juttis, food.</p>
+          </div>
+
+        </div>
+      </article>
+
+    </section>
+
+    <!-- RIGHT -->
+    <aside>
+
+      <div class="card">
+        <h3>Top Hotels & Palaces</h3>
+
+        <div class="hotel">
+          <img src="https://images.unsplash.com/photo-1593696140821-010417b9f504?auto=format&fit=crop&w=400&q=60">
+          <div class="hinfo">
+            <h4>Taj Rambagh Palace</h4>
+            <p>India's most luxurious royal stay.</p>
+          </div>
+        </div>
+
+        <div class="hotel">
+          <img src="https://images.unsplash.com/photo-1522706604294-54c03a65be8e?auto=format&fit=crop&w=400&q=60">
+          <div class="hinfo">
+            <h4>Fairmont Jaipur</h4>
+            <p>Modern luxury with heritage style.</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top:14px;">Map</h3>
+        <div class="map">
+          <iframe src="https://www.google.com/maps?q=Jaipur&output=embed"
+           width="100%" height="100%" style="border:0;"></iframe>
+        </div>
+
+      </div>
+
+    </aside>
+
+  </main>
+
+  <footer>
+    © 2025 AdventureHub — Created by Kaunain Fathima
+  </footer>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lb">
+  <span class="close-btn" id="lbclose">✕</span>
+  <img id="lbimg" src="">
+</div>
+
+<script>
+  const imgs = document.querySelectorAll('.gallery img');
+  const lb = document.getElementById('lb');
+  const lbimg = document.getElementById('lbimg');
+  const lbclose = document.getElementById('lbclose');
+
+  imgs.forEach(img => {
+    img.addEventListener('click', () => {
+      lbimg.src = img.dataset.large;
+      lb.style.display = 'flex';
+    });
+  });
+
+  lbclose.onclick = () => lb.style.display = 'none';
+
+  lb.onclick = (e) => {
+    if (e.target === lb) {
+      lb.style.display = 'none';
+    }
+  };
+</script>
+
+</body>
+</html>
