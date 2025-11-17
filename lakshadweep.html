@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Lakshadweep Honeymoon — Lagoon Islands, Coral Reefs & Luxury Resorts | AdventureHub</title>
+  <meta name="description" content="Lakshadweep Honeymoon Guide — Agatti, Bangaram, Minicoy Islands, snorkeling, lagoon resorts, coral reefs and 3-day romantic itinerary." />
+
+  <style>
+    :root{
+      --deep:#0077b6;
+      --lagoon:#48cae4;
+      --gold:#ffd166;
+      --sand:#f7efe5;
+      --text:#1a1a1a;
+      --muted:#6b6b6b;
+      --card:#ffffff;
+      --shadow:0 10px 35px rgba(0,0,0,0.08);
+      --radius:14px;
+      --maxw:1100px;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:"Inter","Segoe UI",Roboto,Arial,sans-serif;
+      background:linear-gradient(180deg,#ffffff,#e6faff);
+      color:var(--text);
+    }
+
+    .wrap{
+      max-width:var(--maxw);
+      margin:26px auto;
+      padding:18px;
+    }
+
+    /* NAV */
+    nav.top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:18px;
+    }
+
+    .brand{
+      font-weight:800;
+      font-size:20px;
+      color:var(--deep);
+      text-decoration:none;
+    }
+
+    .links a{
+      text-decoration:none;
+      color:var(--muted);
+      margin-left:12px;
+      font-size:14px;
+    }
+
+    /* HERO */
+    header.hero{
+      border-radius:var(--radius);
+      overflow:hidden;
+      min-height:52vh;
+      display:flex;
+      align-items:flex-end;
+      background:
+        linear-gradient(180deg,rgba(0,0,0,0.48),rgba(0,0,0,0.15)),
+        url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80')
+        center/cover no-repeat;
+      box-shadow:var(--shadow);
+    }
+
+    .overlay{
+      padding:34px;
+      color:white;
+      text-shadow:0 6px 24px rgba(0,0,0,0.5);
+    }
+
+    .tag{
+      background:var(--gold);
+      padding:6px 12px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:700;
+      color:#5c4600;
+    }
+
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:12px;
+      color:white;
+    }
+
+    .pill{
+      padding:8px 12px;
+      background:rgba(255,255,255,0.1);
+      border-radius:999px;
+      font-size:13px;
+    }
+
+    /* GRID */
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 360px;
+      gap:22px;
+      margin-top:20px;
+    }
+
+    @media(max-width:900px){
+      .grid{grid-template-columns:1fr;}
+    }
+
+    .card{
+      padding:18px;
+      background:var(--card);
+      border-radius:12px;
+      box-shadow:var(--shadow);
+      margin-bottom:18px;
+    }
+
+    h2{margin:6px 0 12px;}
+
+    .cols{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+
+    @media(max-width:700px){
+      .cols{grid-template-columns:1fr;}
+    }
+
+    /* GALLERY */
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+    }
+
+    @media(max-width:700px){
+      .gallery{grid-template-columns:repeat(2,1fr);}
+    }
+
+    .gallery img{
+      width:100%;
+      height:150px;
+      object-fit:cover;
+      border-radius:10px;
+      cursor:pointer;
+      box-shadow:0 8px 20px rgba(0,0,0,0.15);
+      transition:0.2s ease;
+    }
+
+    .gallery img:hover{
+      transform:scale(1.03);
+    }
+
+    /* ITINERARY */
+    .itinerary{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .it-day{
+      background:linear-gradient(180deg,#e8fbff,#d4f6ff);
+      border-left:6px solid var(--lagoon);
+      padding:12px;
+      border-radius:10px;
+    }
+
+    .it-day h4{
+      margin:0 0 4px;
+      color:var(--deep);
+    }
+
+    .hotel{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-top:12px;
+    }
+
+    .hotel img{
+      width:110px;
+      height:70px;
+      object-fit:cover;
+      border-radius:10px;
+    }
+
+    .map{
+      margin-top:12px;
+      height:220px;
+      border-radius:10px;
+      overflow:hidden;
+    }
+
+    footer{
+      margin-top:30px;
+      padding:20px 6px;
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* LIGHTBOX */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.85);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      z-index:9999;
+      padding:20px;
+    }
+
+    .lightbox img{
+      max-width:92%;
+      max-height:85%;
+      border-radius:10px;
+    }
+
+    .close-x{
+      position:absolute;
+      top:22px;
+      right:22px;
+      color:white;
+      font-size:30px;
+      cursor:pointer;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="wrap">
+
+    <!-- NAV -->
+    <nav class="top">
+      <a href="index.html" class="brand">AdventureHub</a>
+
+      <div class="links">
+        <a href="goa.html">Goa</a>
+        <a href="andaman.html">Andaman</a>
+        <a href="lakshadweep.html" style="color:var(--deep);font-weight:700">Lakshadweep</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="overlay">
+        <span class="tag">Honeymoon Exclusive</span>
+        <h1>Lakshadweep — India's Most Beautiful Lagoon Islands</h1>
+        <p>Turquoise lagoons, coral reefs, private beaches & peaceful luxury escapes.</p>
+
+        <div class="meta">
+          <span class="pill">Agatti Island</span>
+          <span class="pill">Bangaram Island</span>
+          <span class="pill">Minicoy</span>
+          <span class="pill">Snorkeling</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid">
+
+      <!-- LEFT -->
+      <section>
+
+        <article class="card">
+          <h2>Why Lakshadweep for Honeymoon?</h2>
+          <p style="color:var(--muted)">
+            Lakshadweep is India's most untouched island paradise —  
+            crystal lagoons, coral reefs, powdery white sand, and peaceful luxury stays.
+          </p>
+
+          <div class="cols">
+            <div>
+              <h3>Romantic Experiences</h3>
+              <ul style="color:var(--muted);padding-left:18px">
+                <li>Private lagoon photoshoot</li>
+                <li>Snorkeling & coral reef diving</li>
+                <li>Island hopping — Bangaram & Thinnakara</li>
+                <li>Romantic sunset cruise</li>
+                <li>Private beach candlelight dinner</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>Best Islands</h3>
+              <ul style="color:var(--muted);padding-left:18px">
+                <li>Agatti — luxury stays & lagoon</li>
+                <li>Bangaram — Maldives feel</li>
+                <li>Minicoy — lighthouse & beaches</li>
+                <li>Kavaratti — coral reefs</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- GALLERY -->
+        <article class="card" id="gallery">
+          <h2>Photo Gallery</h2>
+
+          <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80">
+            <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1600&q=80">
+            <img src="https://images.unsplash.com/photo-1507114845806-0347f6150324?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1507114845806-0347f6150324?auto=format&fit=crop&w=1600&q=80">
+          </div>
+
+        </article>
+
+        <!-- ITINERARY -->
+        <article class="card">
+          <h2>3-Day Romantic Honeymoon Itinerary</h2>
+
+          <div class="itinerary">
+
+            <div class="it-day">
+              <h4>Day 1 — Agatti Island</h4>
+              <p>Arrive at Agatti. Enjoy lagoon beach, relax at your resort, candlelight dinner by the sea.</p>
+            </div>
+
+            <div class="it-day">
+              <h4>Day 2 — Bangaram Island Trip</h4>
+              <p>Visit Bangaram Island: snorkeling, couple photoshoot, sunset cruise, private beach walk.</p>
+            </div>
+
+            <div class="it-day">
+              <h4>Day 3 — Minicoy Lighthouse & Lagoon</h4>
+              <p>Explore Minicoy, climb lighthouse, enjoy blue lagoon kayaking, return to Agatti.</p>
+            </div>
+
+          </div>
+        </article>
+
+      </section>
+
+      <!-- RIGHT -->
+      <aside>
+
+        <div class="card">
+          <h3>Top Honeymoon Resorts</h3>
+
+          <div class="hotel">
+            <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=400&q=60">
+            <div>
+              <h4>Agatti Island Resort</h4>
+              <p style="color:var(--muted)">Beachfront luxury stay for couples.</p>
+            </div>
+          </div>
+
+          <div class="hotel">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=60">
+            <div>
+              <h4>Bangaram Island Retreat</h4>
+              <p style="color:var(--muted)">Crystal lagoon resort experience.</p>
+            </div>
+          </div>
+
+          <h3 style="margin-top:12px">How to Reach</h3>
+          <ul style="color:var(--muted);padding-left:18px">
+            <li>Fly to Agatti Airport (Lakshadweep)</li>
+            <li>Speedboat to Bangaram / Minicoy</li>
+            <li>Permits required (apply online)</li>
+          </ul>
+
+          <div class="map">
+            <iframe src="https://www.google.com/maps?q=Lakshadweep&output=embed" width="100%" height="100%" style="border:0"></iframe>
+          </div>
+        </div>
+
+      </aside>
+
+    </main>
+
+    <footer>
+      © 2025 AdventureHub — Lakshadweep Honeymoon Guide • Created by Kaunain Fathima
+    </footer>
+
+  </div>
+
+  <!-- LIGHTBOX SCRIPT -->
+  <div class="lightbox" id="lb">
+    <div class="close-x" id="lbclose">✕</div>
+    <img id="lbimg" src="">
+  </div>
+
+  <script>
+    const imgs=document.querySelectorAll('.gallery img');
+    const lb=document.getElementById('lb');
+    const lbimg=document.getElementById('lbimg');
+    const close=document.getElementById('lbclose');
+
+    imgs.forEach(img=>{
+      img.addEventListener('click',()=>{
+        lbimg.src=img.getAttribute('data-large')||img.src;
+        lb.style.display='flex';
+      });
+    });
+
+    close.addEventListener('click',()=>lb.style.display='none');
+    lb.addEventListener('click',e=>{ if(e.target===lb) lb.style.display='none'; });
+  </script>
+
+</body>
+</html>
