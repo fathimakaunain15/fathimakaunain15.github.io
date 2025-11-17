@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mauritius Honeymoon – Beaches, Resorts & Romance | AdventureHub</title>
+  <meta name="description" content="Mauritius honeymoon guide: best beaches, private resorts, couple activities, underwater waterfall viewpoint, 3-day romantic itinerary and travel tips." />
+
+  <style>
+    :root{
+      --bg:#f6fdff;
+      --card:#ffffff;
+      --accent:#3ac4d9;    /* lagoon blue */
+      --accent-soft:#e0fbff;
+      --gold:#f7b469;      /* soft sunset gold */
+      --muted:#6c7c82;
+      --text:#05252b;
+      --radius:14px;
+      --shadow:0 10px 30px rgba(0,0,0,0.08);
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+      background:linear-gradient(180deg,#fdfefe 0%,#f1fbff 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+    .wrap{max-width:var(--maxw);margin:28px auto;padding:18px;}
+
+    /* nav */
+    nav.top{
+      display:flex;justify-content:space-between;align-items:center;
+      margin-bottom:18px;
+    }
+    .brand{
+      font-weight:800;font-size:20px;text-decoration:none;
+      color:var(--accent);
+    }
+    .links a{
+      color:var(--muted);text-decoration:none;margin-left:12px;font-size:14px;
+    }
+
+    /* hero */
+    header.hero{
+      border-radius:var(--radius);
+      overflow:hidden;
+      background:
+        linear-gradient(180deg,rgba(0,0,0,0.45),rgba(0,0,0,0.1)),
+        url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=80")
+        center/cover no-repeat;
+      min-height:52vh;
+      display:flex;align-items:flex-end;
+      box-shadow:var(--shadow);
+    }
+    .overlay{
+      padding:32px;color:#fff;text-shadow:0 3px 14px rgba(0,0,0,0.5);
+    }
+    .overlay h1{
+      margin:0;font-size:clamp(26px,4vw,38px);letter-spacing:0.4px;
+    }
+    .overlay p{margin:8px 0 0;color:#e6f8fb}
+
+    .pill{
+      display:inline-block;background:rgba(255,255,255,0.2);
+      padding:7px 11px;border-radius:20px;font-size:13px;
+      margin-right:8px;margin-top:10px;
+    }
+
+    /* layout */
+    .grid{
+      display:grid;grid-template-columns:1fr 340px;gap:24px;margin-top:20px;
+    }
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      padding:18px;
+      margin-bottom:18px;
+      box-shadow:var(--shadow);
+    }
+    h2{margin:4px 0 10px}
+    h3{margin:4px 0 8px}
+
+    .cols{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:10px;
+    }
+    @media(max-width:720px){.cols{grid-template-columns:1fr}}
+
+    /* gallery */
+    .gallery{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+    }
+    @media(max-width:720px){.gallery{grid-template-columns:repeat(2,1fr)}}
+    .gallery img{
+      width:100%;height:150px;object-fit:cover;
+      border-radius:10px;cursor:pointer;display:block;
+      box-shadow:0 6px 18px rgba(0,0,0,0.25);
+    }
+
+    /* itinerary */
+    .itinerary{display:flex;flex-direction:column;gap:12px;margin-top:6px;}
+    .it-day{
+      background:linear-gradient(180deg,#fdfefe,#f3fbff);
+      border-left:5px solid var(--accent);
+      padding:11px;border-radius:10px;
+    }
+    .it-day h4{margin:0 0 5px;color:#0b3b44}
+    .it-day p{margin:0;color:var(--muted);font-size:14px}
+
+    /* hotel / resort */
+    .hotel{
+      display:flex;gap:12px;align-items:center;margin-top:10px;
+    }
+    .hotel img{
+      width:110px;height:70px;object-fit:cover;border-radius:8px;
+    }
+    .hinfo h4{margin:0;font-size:15px}
+    .hinfo p{margin:3px 0 0;color:var(--muted);font-size:13px}
+
+    .map{border-radius:10px;overflow:hidden;height:220px;margin-top:10px;}
+
+    footer.sitefoot{
+      margin-top:26px;text-align:center;color:var(--muted);
+      font-size:13px;padding:10px 0;
+    }
+
+    /* lightbox */
+    .lightbox{
+      position:fixed;inset:0;background:rgba(0,0,0,0.8);
+      display:none;align-items:center;justify-content:center;
+      padding:20px;z-index:9999;
+    }
+    .lightbox img{
+      max-width:96%;max-height:88%;
+      border-radius:10px;
+      box-shadow:0 20px 60px rgba(0,0,0,0.8);
+    }
+    .close-x{
+      position:absolute;top:18px;right:18px;
+      color:#fff;font-size:28px;cursor:pointer;
+    }
+
+    .tagline{
+      display:inline-block;
+      background:var(--accent-soft);
+      color:var(--accent);
+      padding:5px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:600;
+      letter-spacing:0.3px;
+      margin-bottom:6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="top">
+      <a class="brand" href="index.html">AdventureHub</a>
+      <div class="links">
+        <a href="maldives.html">Maldives</a>
+        <a href="bali.html">Bali</a>
+        <a href="mauritius.html" style="color:var(--accent);font-weight:600;">Mauritius</a>
+      </div>
+    </nav>
+
+    <header class="hero" role="banner">
+      <div class="overlay">
+        <span class="tagline">Honeymoon Special</span>
+        <h1>Mauritius – Romantic Lagoon & White Sand Honeymoon</h1>
+        <p>Turquoise lagoons, white sand beaches, private pool villas and dreamy sunsets for the perfect couple escape.</p>
+
+        <div>
+          <span class="pill">Indian Ocean Island</span>
+          <span class="pill">Best Time: May – Oct</span>
+          <span class="pill">Beaches • Water Villas • Luxury</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid" role="main">
+      <!-- LEFT SIDE -->
+      <section>
+        <article class="card">
+          <h2>Why Choose Mauritius for Honeymoon?</h2>
+          <p style="color:var(--muted);margin-top:4px;">
+            Mauritius is a picture-perfect island with calm blue lagoons, luxurious beach resorts,
+            coral reefs and romantic sunsets. It is ideal for couples who want both <b>relaxation</b> and
+            <b>fun water activities</b> like snorkeling, catamaran cruises and underwater walks.
+          </p>
+
+          <div class="cols">
+            <div>
+              <h3>Highlights for Couples</h3>
+              <ul style="color:var(--muted);padding-left:18px;font-size:14px">
+                <li>Private candlelight dinners on the beach</li>
+                <li>Catamaran sunset cruise with dolphins</li>
+                <li>Snorkeling in crystal-clear lagoons</li>
+                <li>Couple spa & massage sessions</li>
+                <li>Romantic walks on white sand beaches</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Best Honeymoon Areas</h3>
+              <ul style="color:var(--muted);padding-left:18px;font-size:14px">
+                <li>Grand Baie — lively & modern</li>
+                <li>Flic-en-Flac — long sunset beaches</li>
+                <li>Belle Mare — calm and peaceful</li>
+                <li>Le Morne — luxury resorts & views</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Photo Gallery</h2>
+          <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=80" alt="Mauritius beach">
+            <img src="https://images.unsplash.com/photo-1500375592099-40eb2168fd21?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1500375592099-40eb2168fd21?auto=format&fit=crop&w=1600&q=80" alt="Resort pool">
+            <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=1600&q=80" alt="Couple by the sea">
+            <img src="https://images.unsplash.com/photo-1526481280691-9217d0159da9?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1526481280691-9217d0159da9?auto=format&fit=crop&w=1600&q=80" alt="Tropical road">
+            <img src="https://images.unsplash.com/photo-1526779259212-939e64788e3c?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1526779259212-939e64788e3c?auto=format&fit=crop&w=1600&q=80" alt="Lagoon blue sea">
+            <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1600&q=80" alt="Overwater vibes">
+          </div>
+          <p style="color:var(--muted);margin-top:10px;font-size:13px;">
+            Tap on any picture to view it in full size. (Photos via Unsplash.)
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>3-Day Romantic Honeymoon Itinerary</h2>
+          <div class="itinerary">
+            <div class="it-day">
+              <h4>Day 1 — Arrival & Relaxing Beach Day</h4>
+              <p>Check into your resort, decorate your room for honeymoon (many hotels do it), relax by the pool, and enjoy a romantic dinner with sea view at night.</p>
+            </div>
+            <div class="it-day">
+              <h4>Day 2 — Catamaran Cruise & Water Activities</h4>
+              <p>Go for a full-day catamaran cruise: snorkeling, spotting dolphins, BBQ lunch on board and swimming in turquoise lagoons. Return for a couple spa session in the evening.</p>
+            </div>
+            <div class="it-day">
+              <h4>Day 3 — South Island & Viewpoints</h4>
+              <p>Visit Chamarel Seven Colored Earth, Black River Gorges viewpoints and Le Morne area. End your trip watching sunset on the beach, capturing honeymoon photos.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Perfect for Honeymoon Couples Who…</h2>
+          <ul style="color:var(--muted);padding-left:18px;font-size:14px">
+            <li>Love peaceful beaches more than crowded cities.</li>
+            <li>Want an international trip but not too hectic.</li>
+            <li>Enjoy water sports like snorkeling, sailing, kayaking.</li>
+            <li>Prefer all-inclusive luxury resorts and privacy.</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- RIGHT SIDE -->
+      <aside>
+        <div class="card">
+          <h3>Top Honeymoon Resorts</h3>
+
+          <div class="hotel">
+            <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=400&q=60" alt="beach resort">
+            <div class="hinfo">
+              <h4>Beachfront Pool Villa</h4>
+              <p>Private pool, beach access & romantic room decor.</p>
+            </div>
+          </div>
+
+          <div class="hotel">
+            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=400&q=60" alt="luxury resort">
+            <div class="hinfo">
+              <h4>All-Inclusive Luxury Resort</h4>
+              <p>All meals, activities & honeymoon surprises included.</p>
+            </div>
+          </div>
+
+          <h3 style="margin-top:14px;">How to Reach</h3>
+          <ul style="color:var(--muted);padding-left:18px;font-size:14px">
+            <li>Fly to <b>Sir Seewoosagur Ramgoolam International Airport</b>.</li>
+            <li>Pre-book an airport transfer with your resort.</li>
+            <li>Visa rules differ by country — check before booking.</li>
+          </ul>
+
+          <h3 style="margin-top:12px;">Mauritius on Map</h3>
+          <div class="map">
+            <iframe title="Mauritius map" width="100%" height="100%" style="border:0" loading="lazy"
+              src="https://www.google.com/maps?q=Mauritius&output=embed"></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Packing Tips for Couples</h3>
+          <ul style="color:var(--muted);padding-left:18px;font-size:14px">
+            <li>Light cotton clothes, swimsuits & flip-flops.</li>
+            <li>Reef-safe sunscreen, sunglasses & hats.</li>
+            <li>One nice outfit for candlelight dinners.</li>
+            <li>Waterproof phone pouch for boat trips.</li>
+            <li>Basic medicines & travel documents in one pouch.</li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="sitefoot">
+      © 2025 AdventureHub — Mauritius Honeymoon Guide • Created by Kaunain Fathima • Follow @kaunainfathima19
+    </footer>
+  </div>
+
+  <!-- lightbox -->
+  <div class="lightbox" id="lb" role="dialog" aria-hidden="true">
+    <div class="close-x" id="lbclose" title="Close">✕</div>
+    <img id="lbimg" src="">
+  </div>
+
+  <script>
+    const imgs = document.querySelectorAll('.gallery img');
+    const lb = document.getElementById('lb');
+    const lbimg = document.getElementById('lbimg');
+    const lbclose = document.getElementById('lbclose');
+
+    imgs.forEach(img=>{
+      img.addEventListener('click',()=>{
+        const large = img.getAttribute('data-large') || img.src;
+        lbimg.src = large;
+        lb.style.display = 'flex';
+        lb.setAttribute('aria-hidden','false');
+      });
+    });
+
+    lbclose.addEventListener('click',()=>{
+      lb.style.display='none';
+      lb.setAttribute('aria-hidden','true');
+      lbimg.src='';
+    });
+
+    lb.addEventListener('click',(e)=>{
+      if(e.target===lb){
+        lb.style.display='none';
+        lbimg.src='';
+        lb.setAttribute('aria-hidden','true');
+      }
+    });
+  </script>
+</body>
+</html>
