@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Singapore — Futuristic Travel Guide | AdventureHub</title>
+
+<style>
+  :root{
+    --bg:#0a0f1a;
+    --card:#111827;
+    --accent:#00e0ff;
+    --pink:#ff4fd8;
+    --muted:#9ca3af;
+    --text:#e6f3ff;
+    --radius:14px;
+    --shadow:0 10px 30px rgba(0,0,0,0.5);
+    --maxw:1100px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+  }
+  .wrap{max-width:var(--maxw);margin:28px auto;padding:18px}
+
+  /* NAV */
+  nav.top{
+    display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;
+  }
+  .brand{color:var(--accent);font-weight:700;font-size:22px;text-decoration:none}
+  nav.top .links a{color:var(--muted);text-decoration:none;margin-left:14px}
+
+  /* HERO */
+  header.hero{
+    border-radius:var(--radius);overflow:hidden;
+    background:
+      linear-gradient(180deg,rgba(0,0,0,0.5),rgba(0,0,0,0.1)),
+      url('https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&fit=crop&w=1600&q=80')
+      center/cover no-repeat;
+    min-height:50vh;display:flex;align-items:flex-end;
+    box-shadow:var(--shadow);
+  }
+  .overlay{padding:34px;}
+  .overlay h1{margin:0;font-size:40px;color:white;text-shadow:0 3px 12px black}
+  .overlay p{color:var(--muted);margin-top:8px}
+
+  .pill{
+    display:inline-block;padding:8px 12px;border-radius:20px;font-size:13px;
+    background:rgba(0,224,255,0.18);color:var(--accent);margin-right:8px;
+  }
+
+  /* GRID */
+  .grid{display:grid;grid-template-columns:1fr 340px;gap:24px;margin-top:20px}
+  @media(max-width:900px){.grid{grid-template-columns:1fr}}
+
+  .card{
+    background:var(--card);padding:18px;border-radius:var(--radius);
+    margin-bottom:20px;box-shadow:var(--shadow);
+  }
+
+  /* GALLERY */
+  .gallery{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+  }
+  @media(max-width:700px){.gallery{grid-template-columns:repeat(2,1fr)}}
+  .gallery img{
+    width:100%;height:150px;object-fit:cover;border-radius:10px;
+    cursor:pointer;box-shadow:var(--shadow);
+  }
+
+  /* ITINERARY */
+  .itinerary{display:flex;flex-direction:column;gap:12px}
+  .it-day{
+    background:#1a2234;border-left:6px solid var(--accent);
+    padding:12px;border-radius:10px;
+  }
+  .it-day h4{margin:0 0 6px;color:var(--accent)}
+  .it-day p{margin:0;color:var(--muted)}
+
+  /* HOTELS */
+  .hotel{display:flex;gap:12px;margin-top:10px}
+  .hotel img{width:110px;height:70px;object-fit:cover;border-radius:10px}
+  .hotel .hinfo h4{margin:0;color:var(--accent)}
+  .hotel .hinfo p{margin:4px 0;color:var(--muted);font-size:13px}
+
+  .map{height:220px;border-radius:12px;overflow:hidden}
+
+  footer{
+    margin-top:30px;text-align:center;color:var(--muted);padding:20px;
+    background:#111827;border-radius:12px;font-size:14px;
+  }
+
+  /* LIGHTBOX */
+  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.8);display:none;
+    justify-content:center;align-items:center;padding:20px;z-index:9999}
+  .lightbox img{max-width:90%;max-height:85%;border-radius:10px}
+  .close-x{position:absolute;top:24px;right:24px;color:white;font-size:32px;cursor:pointer}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <nav class="top">
+    <a class="brand" href="index.html">AdventureHub</a>
+    <div class="links">
+      <a href="dubai.html">Dubai</a>
+      <a href="maldives.html">Maldives</a>
+      <a href="singapore.html" style="color:var(--accent)">Singapore</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="overlay">
+      <h1>Singapore — The Futuristic Island Nation</h1>
+      <p>Skyscrapers, Gardens by the Bay, Marina Bay Sands, Sentosa & nightlife.</p>
+      <div style="margin-top:12px;">
+        <span class="pill">Southeast Asia</span>
+        <span class="pill">Best Time: Dec – Feb</span>
+        <span class="pill">Modern • Clean • Luxury</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="grid">
+
+    <!-- LEFT SIDE -->
+    <section>
+
+      <article class="card">
+        <h2 style="color:var(--accent)">Quick Overview</h2>
+        <p style="color:var(--muted)">
+          Singapore is a futuristic island city known for Marina Bay Sands,
+          Gardens by the Bay, Sentosa Island, Universal Studios and the world's most
+          beautiful airport — Jewel Changi.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2 style="color:var(--accent)">Photo Gallery</h2>
+        <div class="gallery">
+
+          <img src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&fit=crop&w=900&q=60"
+               data-large="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&fit=crop&w=1600&q=80"
+               alt="Marina Bay Skyline">
+
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=60"
+               data-large="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80"
+               alt="Gardens By The Bay">
+
+          <img src="https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=900&q=60"
+               data-large="https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=1600&q=80"
+               alt="Jewel Changi">
+
+          <img src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=900&q=60"
+               data-large="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=1600&q=80"
+               alt="Sentosa Island">
+
+          <img src="https://images.unsplash.com/photo-1494475673543-6a6a27143b16?auto=format&fit=crop&w=900&q=60"
+               data-large="https://images.unsplash.com/photo-1494475673543-6a6a27143b16?auto=format&fit=crop&w=1600&q=80"
+               alt="Singapore streets">
+
+          <img src="https://images.unsplash.com/photo-1529921879218-f6252e79c38a?auto=format&fit=crop&w=900&q=60"
+               data-large="https://images.unsplash.com/photo-1529921879218-f6252e79c38a?auto=format&fit=crop&w=1600&q=80"
+               alt="ArtScience Museum">
+
+        </div>
+      </article>
+
+      <article class="card">
+        <h2 style="color:var(--accent)">3-Day Best Itinerary</h2>
+        <div class="itinerary">
+          <div class="it-day">
+            <h4>Day 1 — Marina Bay & Gardens by the Bay</h4>
+            <p>SkyPark, Merlion Park, Supertree Grove, night light show.</p>
+          </div>
+
+          <div class="it-day">
+            <h4>Day 2 — Sentosa Island & Universal Studios</h4>
+            <p>Adventure rides, beaches, cable car, SEA Aquarium.</p>
+          </div>
+
+          <div class="it-day">
+            <h4>Day 3 — Little India, Chinatown & Jewel Airport</h4>
+            <p>Culture walk + shopping + world's biggest indoor waterfall.</p>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- RIGHT SIDE -->
+    <aside>
+
+      <div class="card">
+        <h3 style="color:var(--accent)">Top Attractions</h3>
+        <ul style="color:var(--muted);padding-left:18px">
+          <li>Marina Bay Sands SkyPark</li>
+          <li>Gardens by the Bay</li>
+          <li>Sentosa Island</li>
+          <li>Universal Studios</li>
+          <li>Jewel Changi Waterfall</li>
+          <li>Merlion Park</li>
+          <li>Night Safari Zoo</li>
+        </ul>
+
+        <h3 style="margin-top:14px;color:var(--accent)">Best Hotels</h3>
+
+        <div class="hotel">
+          <img src="https://images.unsplash.com/photo-1594470119507-67d4de29f39c?auto=format&fit=crop&w=400&q=60">
+          <div class="hinfo">
+            <h4>Marina Bay Sands</h4>
+            <p>Infinity pool + skyline view</p>
+          </div>
+        </div>
+
+        <div class="hotel">
+          <img src="https://images.unsplash.com/photo-1570829460005-c840387bb3e1?auto=format&fit=crop&w=400&q=60">
+          <div class="hinfo">
+            <h4>Raffles Singapore</h4>
+            <p>Royal colonial luxury</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top:14px;color:var(--accent)">Map</h3>
+        <div class="map card">
+          <iframe src="https://www.google.com/maps?q=Singapore&output=embed"
+                  width="100%" height="100%" style="border:0;"></iframe>
+        </div>
+
+      </div>
+
+    </aside>
+
+  </main>
+
+  <footer>
+    © 2025 AdventureHub — Created by Kaunain Fathima
+  </footer>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lb">
+  <div class="close-x" id="lbclose">✕</div>
+  <img id="lbimg" src="">
+</div>
+
+<script>
+  const imgs=document.querySelectorAll('.gallery img');
+  const lb=document.getElementById('lb');
+  const lbimg=document.getElementById('lbimg');
+  const lbclose=document.getElementById('lbclose');
+
+  imgs.forEach(img=>{
+    img.addEventListener('click',()=>{
+      lbimg.src=img.dataset.large;
+      lb.style.display='flex';
+    });
+  });
+
+  lbclose.onclick=()=>lb.style.display='none';
+  lb.onclick=(e)=>{if(e.target===lb)lb.style.display='none';};
+</script>
+
+</body>
+</html>
