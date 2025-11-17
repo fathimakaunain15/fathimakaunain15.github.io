@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Munnar — Tea Gardens & Misty Mountains | AdventureHub</title>
+
+<style>
+  :root{
+    --bg:#f4f9f4;
+    --card:#ffffff;
+    --accent:#4FAF57;     /* tea garden green */
+    --gold:#e7c766;       /* sunrise gold */
+    --muted:#6d7b78;
+    --text:#1f2a24;
+    --radius:15px;
+    --shadow:0 6px 25px rgba(0,0,0,0.08);
+    --maxw:1100px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height:1.6;
+  }
+  .wrap{max-width:var(--maxw);margin:28px auto;padding:18px;}
+
+  nav.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+  .brand{font-weight:700;color:var(--accent);font-size:20px;text-decoration:none}
+  .links a{color:var(--muted);text-decoration:none;margin-left:12px}
+
+  header.hero{
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.15)),
+      url('https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?auto=format&fit=crop&w=1600&q=80')
+      center/cover no-repeat;
+    min-height:52vh;
+    display:flex;align-items:flex-end;
+    box-shadow:var(--shadow);
+  }
+  .overlay{padding:34px;color:white;}
+  .overlay h1{margin:0;font-size:40px;}
+  .overlay p{margin-top:8px;color:#f7f7f7;}
+
+  .pill{
+    display:inline-block;background:rgba(255,255,255,0.25);
+    padding:8px 12px;border-radius:20px;margin-right:8px;color:white;font-size:13px;
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:1fr 340px;
+    gap:24px;
+    margin-top:20px;
+  }
+  @media(max-width:900px){ .grid{grid-template-columns:1fr;} }
+
+  .card{
+    background:var(--card);
+    padding:20px;border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    margin-bottom:20px;
+  }
+
+  /* GALLERY */
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+  @media(max-width:700px){ .gallery{grid-template-columns:repeat(2,1fr);} }
+  .gallery img{
+    width:100%;height:150px;object-fit:cover;border-radius:12px;
+    cursor:pointer;box-shadow:var(--shadow);
+  }
+
+  /* Itinerary */
+  .itinerary{display:flex;flex-direction:column;gap:12px;}
+  .it-day{
+    background:#f8fff8;border-left:6px solid var(--accent);
+    padding:12px;border-radius:10px;
+  }
+  .it-day h4{margin:0 0 6px;color:var(--accent);}
+  .it-day p{margin:0;color:var(--muted);}
+
+  .hotel{display:flex;gap:12px;margin-top:10px;}
+  .hotel img{width:110px;height:70px;border-radius:10px;object-fit:cover;}
+  .hotel .hinfo h4{margin:0;}
+  .hotel .hinfo p{margin:2px 0;color:var(--muted);font-size:13px;}
+
+  .map{height:220px;border-radius:12px;overflow:hidden;}
+
+  footer{
+    margin-top:30px;padding:20px;text-align:center;
+    background:#e9f7ea;border-radius:12px;color:var(--text);
+    font-weight:600;
+  }
+
+  /* Lightbox */
+  .lightbox{
+    position:fixed;inset:0;background:rgba(0,0,0,0.8);
+    display:none;align-items:center;justify-content:center;
+    padding:20px;z-index:9999;
+  }
+  .lightbox img{max-width:90%;max-height:85%;border-radius:10px;}
+  .close-btn{
+    position:absolute;top:24px;right:24px;
+    font-size:32px;color:white;cursor:pointer;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <nav class="top">
+    <a href="index.html" class="brand">AdventureHub</a>
+    <div class="links">
+      <a href="ooty.html">Ooty</a>
+      <a href="kodaikanal.html">Kodaikanal</a>
+      <a href="munnar.html" style="color:var(--accent)">Munnar</a>
+      <a href="manali.html">Manali</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="overlay">
+      <h1>Munnar — Tea Gardens, Mist & Valleys</h1>
+      <p>Rolling tea estates, misty mountains, waterfalls and romantic views.</p>
+
+      <div style="margin-top:12px;">
+        <span class="pill">Kerala</span>
+        <span class="pill">Best Time: October – April</span>
+        <span class="pill">Tea Estates • Waterfalls • Viewpoints</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="grid">
+
+    <!-- LEFT SIDE -->
+    <section>
+
+      <article class="card">
+        <h2>Quick Overview</h2>
+        <p style="color:var(--muted);">
+          Munnar is Kerala’s most famous hill station known for endless green tea plantations,
+          mist-covered valleys, waterfalls and cool weather. Perfect for couples,
+          families and nature lovers.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>Photo Gallery</h2>
+        <div class="gallery">
+          <img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?auto=format&fit=crop&w=1600&q=80">
+          <img src="https://images.unsplash.com/photo-1541658016707-6b664483ab3f?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1541658016707-6b664483ab3f?auto=format&fit=crop&w=1600&q=80">
+          <img src="https://images.unsplash.com/photo-1564922921964-1d5d295df1c1?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1564922921964-1d5d295df1c1?auto=format&fit=crop&w=1600&q=80">
+          <img src="https://images.unsplash.com/photo-1583507180093-c9e6030c3056?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1583507180093-c9e6030c3056?auto=format&fit=crop&w=1600&q=80">
+          <img src="https://images.unsplash.com/photo-1574244937458-d6250cec8313?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1574244937458-d6250cec8313?auto=format&fit=crop&w=1600&q=80">
+          <img src="https://images.unsplash.com/photo-1593940502550-753c7ddc2945?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1593940502550-753c7ddc2945?auto=format&fit=crop&w=1600&q=80">
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>3-Day Itinerary</h2>
+        <div class="itinerary">
+
+          <div class="it-day">
+            <h4>Day 1 — Tea Gardens & Photo Point</h4>
+            <p>Visit sprawling tea estates, Photo Point and Tea Museum.</p>
+          </div>
+
+          <div class="it-day">
+            <h4>Day 2 — Eravikulam National Park</h4>
+            <p>See Nilgiri Tahr, scenic views & visit Rajamalai hills.</p>
+          </div>
+
+          <div class="it-day">
+            <h4>Day 3 — Waterfalls & Dam</h4>
+            <p>Explore Attukal Waterfalls & Mattupetty Dam boating.</p>
+          </div>
+
+        </div>
+      </article>
+
+    </section>
+
+    <!-- RIGHT SIDE -->
+    <aside>
+
+      <div class="card">
+        <h3>Top Hotels</h3>
+
+        <div class="hotel">
+          <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&w=400&q=60">
+          <div class="hinfo">
+            <h4>Tea Valley Resort</h4>
+            <p>Beautiful view of tea plantations.</p>
+          </div>
+        </div>
+
+        <div class="hotel">
+          <img src="https://images.unsplash.com/photo-1522706604294-54c03a65be8e?auto=format&fit=crop&w=400&q=60">
+          <div class="hinfo">
+            <h4>Amber Dale</h4>
+            <p>Premium valley view stay.</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top:14px;">Map</h3>
+        <div class="map">
+          <iframe src="https://www.google.com/maps?q=Munnar&output=embed"
+           width="100%" height="100%" style="border:0;"></iframe>
+        </div>
+
+      </div>
+
+    </aside>
+
+  </main>
+
+  <footer>
+    © 2025 AdventureHub — Created by Kaunain Fathima
+  </footer>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lb">
+  <span class="close-btn" id="lbclose">✕</span>
+  <img id="lbimg" src="">
+</div>
+
+<script>
+  const imgs=document.querySelectorAll('.gallery img');
+  const lb=document.getElementById('lb');
+  const lbimg=document.getElementById('lbimg');
+  const lbclose=document.getElementById('lbclose');
+
+  imgs.forEach(img=>{
+    img.addEventListener('click',()=>{
+      lbimg.src=img.dataset.large;
+      lb.style.display='flex';
+    });
+  });
+  lbclose.onclick=()=> lb.style.display='none';
+  lb.onclick=e=>{ if(e.target===lb) lb.style.display='none'; };
+</script>
+
+</body>
+</html>
