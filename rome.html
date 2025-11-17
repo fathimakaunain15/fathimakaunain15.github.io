@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Rome Adventure — Colosseum, Trevi Fountain, Vatican & City Guide | AdventureHub</title>
+  <meta name="description" content="Rome Adventure Premium Guide — Colosseum, Trevi Fountain, Vatican City, Roman Forum, luxury hotels and 3-day itinerary." />
+
+  <style>
+    :root{
+      --gold:#c59d5f;
+      --red:#b42e2e;
+      --stone:#f7f3ec;
+      --dark:#1a1a1a;
+      --muted:#6b6b6b;
+      --card:#ffffff;
+      --radius:14px;
+      --shadow:0 10px 35px rgba(0,0,0,0.08);
+      --maxw:1100px;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:"Inter","Segoe UI",Roboto,Arial,sans-serif;
+      background:linear-gradient(180deg,#fff,#f1ece3);
+      color:var(--dark);
+    }
+
+    .wrap{
+      max-width:var(--maxw);
+      margin:26px auto;
+      padding:18px;
+    }
+
+    nav.top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:18px;
+    }
+
+    .brand{
+      font-size:20px;
+      font-weight:800;
+      color:var(--red);
+      text-decoration:none;
+    }
+
+    .links a{
+      margin-left:12px;
+      color:var(--muted);
+      text-decoration:none;
+      font-size:14px;
+    }
+
+    header.hero{
+      border-radius:var(--radius);
+      overflow:hidden;
+      min-height:52vh;
+      display:flex;
+      align-items:flex-end;
+      background:
+        linear-gradient(180deg,rgba(0,0,0,0.5),rgba(0,0,0,0.1)),
+        url('https://images.unsplash.com/photo-1549893074-a7a5f37c4629?auto=format&fit=crop&w=1600&q=80')
+        center/cover;
+      box-shadow:var(--shadow);
+    }
+
+    .overlay{
+      padding:34px;
+      color:white;
+    }
+
+    .tag{
+      background:var(--gold);
+      padding:6px 12px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:700;
+      color:#4a3a18;
+    }
+
+    .meta{
+      display:flex;
+      gap:10px;
+      margin-top:12px;
+      flex-wrap:wrap;
+    }
+
+    .pill{
+      background:rgba(255,255,255,0.1);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:13px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 350px;
+      gap:22px;
+      margin-top:20px;
+    }
+
+    @media(max-width:900px){
+      .grid{grid-template-columns:1fr;}
+    }
+
+    .card{
+      background:var(--card);
+      padding:18px;
+      border-radius:12px;
+      box-shadow:var(--shadow);
+      margin-bottom:18px;
+    }
+
+    h2{margin:6px 0 12px;}
+
+    /* GALLERY */
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+    }
+
+    @media(max-width:700px){
+      .gallery{grid-template-columns:repeat(2,1fr);}
+    }
+
+    .gallery img{
+      width:100%;
+      height:150px;
+      border-radius:10px;
+      object-fit:cover;
+      cursor:pointer;
+    }
+
+    .itinerary{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .it-day{
+      background:var(--stone);
+      border-left:6px solid var(--red);
+      padding:12px;
+      border-radius:10px;
+    }
+
+    .it-day h4{
+      margin:0 0 4px;
+      color:var(--red);
+    }
+
+    .hotel{
+      display:flex;
+      gap:12px;
+      margin-top:12px;
+      align-items:center;
+    }
+
+    .hotel img{
+      width:110px;
+      height:70px;
+      border-radius:10px;
+      object-fit:cover;
+    }
+
+    .map{
+      height:220px;
+      border-radius:10px;
+      overflow:hidden;
+      margin-top:12px;
+    }
+
+    footer{
+      margin-top:30px;
+      padding:20px 6px;
+      color:var(--muted);
+      text-align:center;
+    }
+
+    /* LIGHTBOX */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.85);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      z-index:9999;
+      padding:20px;
+    }
+
+    .lightbox img{
+      max-width:90%;
+      max-height:85%;
+      border-radius:10px;
+    }
+
+    .close-x{
+      position:absolute;
+      top:22px;
+      right:22px;
+      font-size:30px;
+      color:white;
+      cursor:pointer;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <nav class="top">
+    <a href="index.html" class="brand">AdventureHub</a>
+    <div class="links">
+      <a href="rome.html" style="color:var(--red);font-weight:700">Rome</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="overlay">
+      <span class="tag">International Adventure Premium</span>
+      <h1>Rome — The Eternal City of Empires, Art & History</h1>
+      <p>Walk through ancient wonders, Roman architecture, vibrant streets and world-famous monuments.</p>
+
+      <div class="meta">
+        <span class="pill">Colosseum</span>
+        <span class="pill">Trevi Fountain</span>
+        <span class="pill">Vatican City</span>
+        <span class="pill">Roman Forum</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="grid">
+
+    <!-- LEFT -->
+    <section>
+      <article class="card">
+        <h2>Why Rome?</h2>
+        <p style="color:var(--muted)">
+          Rome is a living museum — packed with ancient ruins, Renaissance art, marble streets, 
+          fountains, legendary food and warm Italian culture.
+        </p>
+
+        <div class="cols">
+          <div>
+            <h3>Top Attractions</h3>
+            <ul style="padding-left:18px;color:var(--muted)">
+              <li>Colosseum & Roman Forum</li>
+              <li>Trevi Fountain</li>
+              <li>Pantheon</li>
+              <li>Vatican Museums</li>
+              <li>Spanish Steps</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Iconic Experiences</h3>
+            <ul style="padding-left:18px;color:var(--muted)">
+              <li>Make a wish at Trevi Fountain</li>
+              <li>Sunset at Colosseum</li>
+              <li>Eat gelato at Piazza Navona</li>
+              <li>Walk Trastevere streets</li>
+              <li>Enjoy Roman pizza & pasta</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- GALLERY -->
+      <article class="card">
+        <h2>Photo Gallery</h2>
+
+        <div class="gallery">
+
+          <img src="https://images.unsplash.com/photo-1549893074-a7a5f37c4629?auto=format&fit=crop&w=800&q=60"
+               data-large="https://images.unsplash.com/photo-1549893074-a7a5f37c4629?auto=format&fit=crop&w=1600&q=80">
+
+          <img src="https://images.unsplash.com/photo-1535905748047-14b2415c77c5?auto=format&fit=crop&w=800&q=60"
+               data-large="https://images.unsplash.com/photo-1535905748047-14b2415c77c5?auto=format&fit=crop&w=1600&q=80">
+
+          <img src="https://images.unsplash.com/photo-1471879832106-c7ab9e0cee23?auto=format&fit=crop&w=800&q=60"
+               data-large="https://images.unsplash.com/photo-1471879832106-c7ab9e0cee23?auto=format&fit=crop&w=1600&q=80">
+
+        </div>
+
+      </article>
+
+      <!-- ITINERARY -->
+      <article class="card">
+        <h2>3-Day Best Itinerary</h2>
+
+        <div class="itinerary">
+
+          <div class="it-day">
+            <h4>Day 1 — Colosseum, Roman Forum & Pantheon</h4>
+            <p>Explore ancient Rome’s most iconic structures and walk through marble ruins.</p>
+          </div>
+
+          <div class="it-day">
+            <h4>Day 2 — Vatican City & Museums</h4>
+            <p>Visit St. Peter’s Basilica, Sistine Chapel and Vatican Museums.</p>
+          </div>
+
+          <div class="it-day">
+            <h4>Day 3 — Trevi Fountain, Spanish Steps & Local Streets</h4>
+            <p>Enjoy central Rome, throw a coin in Trevi Fountain and explore Trastevere.</p>
+          </div>
+
+        </div>
+      </article>
+
+    </section>
+
+    <!-- RIGHT -->
+    <aside>
+
+      <div class="card">
+        <h3>Top Hotels</h3>
+
+        <div class="hotel">
+          <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=400&q=60">
+          <div>
+            <h4>Hotel Eden Rome</h4>
+            <p style="color:var(--muted)">5-star luxury • Central Rome</p>
+          </div>
+        </div>
+
+        <div class="hotel">
+          <img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=400&q=60">
+          <div>
+            <h4>Roma Luxus Hotel</h4>
+            <p style="color:var(--muted)">Modern & premium stay</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top:12px">How to Reach</h3>
+        <ul style="padding-left:18px;color:var(--muted)">
+          <li>Rome Fiumicino Airport</li>
+          <li>Metro lines A & B</li>
+          <li>Bus + taxi services everywhere</li>
+        </ul>
+
+        <div class="map">
+          <iframe src="https://www.google.com/maps?q=Rome&output=embed"
+                  width="100%" height="100%" style="border:0"></iframe>
+        </div>
+      </div>
+
+    </aside>
+
+  </main>
+
+  <footer>
+    © 2025 AdventureHub — Rome Guide • Created by Kaunain Fathima
+  </footer>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lb">
+  <div class="close-x" id="lbclose">✕</div>
+  <img id="lbimg" src="">
+</div>
+
+<script>
+  const imgs=document.querySelectorAll('.gallery img');
+  const lb=document.getElementById('lb');
+  const lbimg=document.getElementById('lbimg');
+  const close=document.getElementById('lbclose');
+
+  imgs.forEach(img=>{
+    img.addEventListener('click',()=>{
+      lbimg.src=img.getAttribute('data-large')||img.src;
+      lb.style.display='flex';
+    });
+  });
+
+  close.addEventListener('click',()=>lb.style.display='none');
+  lb.addEventListener('click',e=>{ if(e.target===lb) lb.style.display='none'; });
+</script>
+
+</body>
+</html>
