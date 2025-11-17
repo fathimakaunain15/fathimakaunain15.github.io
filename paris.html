@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Paris Honeymoon — Eiffel, Seine & Romantic Nights | AdventureHub</title>
+  <meta name="description" content="Paris honeymoon guide: Eiffel Tower, Seine river cruise, Montmartre, Romantic restaurants, 3-day honeymoon itinerary, luxury hotels and travel tips." />
+
+  <style>
+    :root{
+      --bg:#fff9f7;
+      --card:#ffffff;
+      --pink:#ffb3c6;
+      --champagne:#f5d887;
+      --midnight:#2a2940;
+      --muted:#6f737a;
+      --text:#14141a;
+      --radius:14px;
+      --shadow:0 12px 36px rgba(10,12,20,0.06);
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Segoe UI", Inter, system-ui, -apple-system, Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg,#fffaf8 0%, #fff3f6 100%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      line-height:1.6;
+    }
+    .wrap{max-width:var(--maxw);margin:26px auto;padding:18px;}
+
+    nav.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+    .brand{font-weight:800;color:var(--midnight);font-size:20px;text-decoration:none}
+    .links a{color:var(--muted);text-decoration:none;margin-left:12px;font-size:14px}
+
+    header.hero{
+      border-radius:var(--radius);
+      overflow:hidden;
+      background:
+        linear-gradient(180deg, rgba(16,18,24,0.45), rgba(16,18,24,0.05)),
+        url('https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      min-height:52vh;
+      display:flex;align-items:flex-end;
+      box-shadow:var(--shadow);
+    }
+    .overlay{padding:34px;color:#fff;text-shadow:0 6px 20px rgba(0,0,0,0.45)}
+    .overlay h1{margin:0;font-size:clamp(28px,4vw,40px);letter-spacing:0.4px}
+    .overlay p{margin:8px 0 0;color:rgba(255,255,255,0.92)}
+
+    .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .pill{background:rgba(255,255,255,0.08);padding:8px 12px;border-radius:999px;color:rgba(255,255,255,0.92);font-size:13px}
+
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:20px}
+    @media(max-width:920px){.grid{grid-template-columns:1fr}}
+
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);margin-bottom:18px}
+    h2{margin:6px 0 12px}
+
+    .cols{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    @media(max-width:700px){.cols{grid-template-columns:1fr}}
+
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    @media(max-width:700px){.gallery{grid-template-columns:repeat(2,1fr)}}
+    .gallery img{width:100%;height:150px;object-fit:cover;border-radius:10px;cursor:pointer;display:block;box-shadow:0 8px 22px rgba(0,0,0,0.06)}
+
+    .itinerary{display:flex;flex-direction:column;gap:12px}
+    .it-day{background:linear-gradient(180deg,#fff7f8,#fffaf9);border-left:6px solid var(--pink);padding:12px;border-radius:10px}
+    .it-day h4{margin:0 0 6px;color:var(--midnight)}
+    .it-day p{margin:0;color:var(--muted)}
+
+    .hotel{display:flex;gap:12px;align-items:center}
+    .hotel img{width:110px;height:70px;object-fit:cover;border-radius:8px}
+    .hotel .hinfo h4{margin:0}
+    .hotel .hinfo p{margin:4px 0 0;color:var(--muted);font-size:13px}
+
+    .map{border-radius:10px;overflow:hidden;height:220px}
+
+    footer.sitefoot{margin-top:24px;text-align:center;color:var(--muted);font-size:13px;padding:10px 0}
+
+    /* lightbox */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.82);display:none;align-items:center;justify-content:center;padding:20px;z-index:9999}
+    .lightbox img{max-width:94%;max-height:86%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,0.85)}
+    .close-x{position:absolute;top:18px;right:18px;color:#fff;font-size:28px;cursor:pointer}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="top">
+      <a class="brand" href="index.html">AdventureHub</a>
+      <div class="links">
+        <a href="switzerland.html">Switzerland</a>
+        <a href="paris.html" style="color:var(--pink);font-weight:700">Paris</a>
+        <a href="mauritius.html">Mauritius</a>
+      </div>
+    </nav>
+
+    <header class="hero" role="banner">
+      <div class="overlay">
+        <h1>Paris — The City of Love & Timeless Romance</h1>
+        <p>Eiffel Tower evenings, Seine river cruises, Montmartre cafés and candlelit dinners — Paris is honeymoon poetry.</p>
+
+        <div class="meta">
+          <span class="pill">France • Europe</span>
+          <span class="pill">Best Time: Apr–Jun • Sep–Oct (mild weather & fewer crowds)</span>
+          <span class="pill">Romance • Art • Cuisine</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid" role="main">
+      <!-- LEFT -->
+      <section>
+        <article class="card">
+          <h2>Why Paris for a Honeymoon?</h2>
+          <p style="color:var(--muted)">Paris combines iconic landmarks, world-class cuisine and intimate streets perfect for couples. From watching the Eiffel Tower sparkle at night to quiet morning croissants in Montmartre, it's a timeless honeymoon choice.</p>
+
+          <div class="cols" style="margin-top:12px">
+            <div>
+              <h3>Romantic Experiences</h3>
+              <ul style="color:var(--muted);padding-left:18px">
+                <li>Seine evening cruise with wine & views</li>
+                <li>Picnic under Eiffel Tower (Champ de Mars)</li>
+                <li>Sunrise at Sacré-Cœur, Montmartre</li>
+                <li>Private museum tours & evening jazz clubs</li>
+                <li>Candlelit dinners in classic French bistros</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Top Neighborhoods</h3>
+              <ul style="color:var(--muted);padding-left:18px">
+                <li>Saint-Germain — cafés & bookshops</li>
+                <li>Le Marais — cobbled streets & boutiques</li>
+                <li>Montmartre — artists & views</li>
+                <li>7th arrondissement — Eiffel access</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" id="gallery">
+          <h2>Photo Gallery</h2>
+          <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=80" alt="Eiffel Tower">
+            <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1600&q=80" alt="Seine cruise">
+            <img src="https://images.unsplash.com/photo-1505678261036-a3fcc5e884ee?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1505678261036-a3fcc5e884ee?auto=format&fit=crop&w=1600&q=80" alt="Montmartre">
+            <img src="https://images.unsplash.com/photo-1520975910846-8c7d5b2b03d9?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1520975910846-8c7d5b2b03d9?auto=format&fit=crop&w=1600&q=80" alt="Rooftop view">
+            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80" alt="Louvre at night">
+            <img src="https://images.unsplash.com/photo-1523473827532-6dfc8b3f8f77?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1523473827532-6dfc8b3f8f77?auto=format&fit=crop&w=1600&q=80" alt="Paris cafe">
+          </div>
+          <p style="color:var(--muted);margin-top:10px">Tap images to enlarge. (Unsplash demo photos.)</p>
+        </article>
+
+        <article id="itinerary" class="card">
+          <h2>3-Day Romantic Paris Itinerary</h2>
+          <div class="itinerary">
+            <div class="it-day">
+              <h4>Day 1 — Eiffel Tower & Seine Evening</h4>
+              <p>Walk the Champ de Mars, visit the Eiffel Tower viewpoint, then take an evening Seine river cruise with dinner or wine.</p>
+            </div>
+            <div class="it-day">
+              <h4>Day 2 — Montmartre & Museums</h4>
+              <p>Explore Montmartre and Sacré-Cœur at sunrise, wander Le Marais, afternoon at the Louvre or Musée d'Orsay; evening at a jazz club.</p>
+            </div>
+            <div class="it-day">
+              <h4>Day 3 — Saint-Germain & Shopping</h4>
+              <p>Relax at Saint-Germain cafés, take a romantic walk along the Seine, pick up pastries & souvenirs; finish with a rooftop sunset view.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Dining & Romantic Spots</h2>
+          <ul style="color:var(--muted);padding-left:18px">
+            <li>Book a candlelit bistro for one night (reserve in advance).</li>
+            <li>Try a picnic with wine and baguette under the Eiffel Tower.</li>
+            <li>Catch sunset from Trocadéro viewpoint for classic photos.</li>
+            <li>Enjoy pastries at a local patisserie each morning.</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- RIGHT -->
+      <aside>
+        <div class="card">
+          <h3>Top Luxury Hotels</h3>
+          <div class="hotel" style="margin-top:6px">
+            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=400&q=60" alt="hotel">
+            <div class="hinfo"><h4>Riverside Boutique Hotel</h4><p>Rooms with Seine views & romantic packages.</p></div>
+          </div>
+          <div class="hotel" style="margin-top:12px">
+            <img src="https://images.unsplash.com/photo-1501117716987-c8e36f0f1f3e?auto=format&fit=crop&w=400&q=60" alt="hotel2">
+            <div class="hinfo"><h4>Luxury Parisienne Hotel</h4><p>Chic suites, rooftop terrace and in-house spa.</p></div>
+          </div>
+
+          <h3 style="margin-top:12px">How to Get Around</h3>
+          <ul style="color:var(--muted);padding-left:18px">
+            <li>Metro is quick and efficient — buy a multi-day pass.</li>
+            <li>Many sights are walkable in central arrondissements.</li>
+            <li>Book Seine dinner cruises and Eiffel tickets in advance.</li>
+          </ul>
+
+          <h3 style="margin-top:12px">Paris on Map</h3>
+          <div class="map card">
+            <iframe title="Paris map" width="100%" height="100%" style="border:0" loading="lazy"
+              src="https://www.google.com/maps?q=Paris&output=embed"></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Packing & Tips</h3>
+          <ul style="color:var(--muted);padding-left:18px">
+            <li>Smart casual outfits for dinner & photos.</li>
+            <li>Comfortable walking shoes for cobbled streets.</li>
+            <li>Carry a light jacket for evenings (spring/autumn).</li>
+            <li>Learn a few French greetings — locals appreciate effort.</li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="sitefoot card">
+      © 2025 AdventureHub — Paris Honeymoon Guide • Created by Kaunain Fathima • Follow @kaunainfathima19
+    </footer>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lb" role="dialog" aria-hidden="true">
+    <div class="close-x" id="lbclose" title="Close">✕</div>
+    <img id="lbimg" src="">
+  </div>
+
+  <script>
+    // gallery lightbox
+    const imgs = document.querySelectorAll('.gallery img');
+    const lb = document.getElementById('lb');
+    const lbimg = document.getElementById('lbimg');
+    const lbclose = document.getElementById('lbclose');
+
+    imgs.forEach(img=>{
+      img.addEventListener('click',()=>{
+        const large = img.getAttribute('data-large')||img.src;
+        lbimg.src = large;
+        lb.style.display = 'flex';
+        lb.setAttribute('aria-hidden','false');
+      });
+    });
+
+    lbclose.addEventListener('click',()=>{
+      lb.style.display='none';
+      lb.setAttribute('aria-hidden','true');
+      lbimg.src='';
+    });
+
+    lb.addEventListener('click',(e)=>{
+      if(e.target===lb){
+        lb.style.display='none';
+        lbimg.src='';
+        lb.setAttribute('aria-hidden','true');
+      }
+    });
+  </script>
+</body>
+</html>
