@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Thailand — Islands, Temples & Night Markets | AdventureHub</title>
+
+<style>
+  :root{
+    --bg:#fffaf6;
+    --card:#ffffff;
+    --gold:#ffc400;
+    --ocean:#0096ff;
+    --island:#18c29c;
+    --muted:#6b6b6b;
+    --text:#172022;
+    --radius:14px;
+    --shadow:0 10px 30px rgba(7,10,15,0.06);
+    --maxw:1100px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:linear-gradient(180deg,#fffaf6 0%, #f4fbff 100%);
+    color:var(--text);
+    line-height:1.6;
+  }
+  .wrap{max-width:var(--maxw);margin:28px auto;padding:18px}
+  nav.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+  .brand{font-weight:800;color:var(--ocean);font-size:20px;text-decoration:none}
+  .links a{color:var(--muted);text-decoration:none;margin-left:12px}
+
+  header.hero{
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.28), rgba(0,0,0,0.06)),
+      url('https://images.unsplash.com/photo-1505765052064-5f6b5d0b7b1d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    min-height:50vh;
+    display:flex;align-items:flex-end;
+    box-shadow:var(--shadow);
+  }
+  .overlay{padding:34px;color:white;text-shadow:0 3px 12px rgba(0,0,0,0.35)}
+  .overlay h1{margin:0;font-size:36px}
+  .overlay p{margin-top:8px;color:rgba(255,255,255,0.95)}
+
+  .pill{display:inline-block;background:rgba(255,255,255,0.12);padding:8px 12px;border-radius:20px;margin-right:8px;color:white;font-size:13px}
+
+  .grid{display:grid;grid-template-columns:1fr 340px;gap:24px;margin-top:20px}
+  @media(max-width:920px){.grid{grid-template-columns:1fr}}
+
+  .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);margin-bottom:18px}
+
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  @media(max-width:700px){.gallery{grid-template-columns:repeat(2,1fr)}}
+  .gallery img{width:100%;height:140px;object-fit:cover;border-radius:10px;cursor:pointer;display:block}
+
+  .itinerary{display:flex;flex-direction:column;gap:12px}
+  .it-day{background:linear-gradient(180deg,#fffdf7,#ffffff);border-left:6px solid var(--gold);padding:12px;border-radius:10px}
+  .it-day h4{margin:0 0 6px;color:var(--ocean)}
+  .it-day p{margin:0;color:var(--muted)}
+
+  .hotel{display:flex;gap:12px;align-items:center;margin-top:10px}
+  .hotel img{width:110px;height:70px;object-fit:cover;border-radius:8px}
+  .hinfo h4{margin:0}
+  .hinfo p{margin:4px 0 0;color:var(--muted);font-size:13px}
+
+  .map{border-radius:10px;overflow:hidden;height:220px}
+
+  footer.sitefoot{margin-top:28px;text-align:center;color:var(--muted);font-size:14px;padding:12px 0}
+
+  /* lightbox */
+  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.8);display:none;align-items:center;justify-content:center;padding:20px;z-index:9999}
+  .lightbox img{max-width:96%;max-height:88%;border-radius:10px;box-shadow:0 20px 50px rgba(0,0,0,0.6)}
+  .close-x{position:absolute;top:18px;right:18px;color:#fff;font-size:28px;cursor:pointer}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="top">
+      <a class="brand" href="index.html">AdventureHub</a>
+      <div class="links">
+        <a href="bali.html">Bali</a>
+        <a href="singapore.html">Singapore</a>
+        <a href="thailand.html" style="color:var(--ocean)">Thailand</a>
+      </div>
+    </nav>
+
+    <header class="hero card" role="banner">
+      <div class="overlay">
+        <h1>Thailand — Islands, Temples & Night Markets</h1>
+        <p>Bangkok temples, Phuket & Krabi beaches, island hopping, street food and vibrant nightlife.</p>
+
+        <div style="margin-top:12px">
+          <span class="pill">Southeast Asia</span>
+          <span class="pill">Best Time: Nov – Feb</span>
+          <span class="pill">Beaches • Temples • Night Markets</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid" role="main">
+      <!-- left -->
+      <section>
+
+        <article class="card">
+          <h2>Quick Overview</h2>
+          <p style="color:var(--muted)">Thailand blends tropical islands and buzzing cities. From Bangkok’s temples and markets to Phuket/Krabi’s limestone cliffs and Phi Phi’s blue waters — it’s ideal for beach lovers, foodies and culture explorers.</p>
+        </article>
+
+        <article class="card">
+          <h2>Photo Gallery</h2>
+          <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=900&q=60" alt="Phuket beach" data-large="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=1600&q=80">
+            <img src="https://images.unsplash.com/photo-1536649029716-4b9d7d9a6f9b?auto=format&fit=crop&w=900&q=60" alt="Phi Phi islands" data-large="https://images.unsplash.com/photo-1536649029716-4b9d7d9a6f9b?auto=format&fit=crop&w=1600&q=80">
+            <img src="https://images.unsplash.com/photo-1526481280691-9217d0159da9?auto=format&fit=crop&w=900&q=60" alt="Bangkok temple" data-large="https://images.unsplash.com/photo-1526481280691-9217d0159da9?auto=format&fit=crop&w=1600&q=80">
+            <img src="https://images.unsplash.com/photo-1502920917128-1aa500764b3f?auto=format&fit=crop&w=900&q=60" alt="Krabi cliffs" data-large="https://images.unsplash.com/photo-1502920917128-1aa500764b3f?auto=format&fit=crop&w=1600&q=80">
+            <img src="https://images.unsplash.com/photo-1545030372-1b7b7b1b7c6a?auto=format&fit=crop&w=900&q=60" alt="Bangkok street food" data-large="https://images.unsplash.com/photo-1545030372-1b7b7b1b7c6a?auto=format&fit=crop&w=1600&q=80">
+            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=60" alt="Thai market" data-large="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80">
+          </div>
+          <p style="color:var(--muted);margin-top:10px">Tap images to enlarge. (Images from Unsplash.)</p>
+        </article>
+
+        <article class="card">
+          <h2>3-Day Suggested Itinerary (Bangkok + Beach)</h2>
+          <div class="itinerary">
+            <div class="it-day">
+              <h4>Day 1 — Bangkok: Temples & River</h4>
+              <p>Visit Grand Palace, Wat Pho, take a Chao Phraya river cruise; evening at Khao San Road or a rooftop bar.</p>
+            </div>
+            <div class="it-day">
+              <h4>Day 2 — Fly to Phuket / Krabi: Beach Time</h4>
+              <p>Morning flight to Phuket or Krabi. Relax on the beach, try local seafood, sunset view at Promthep Cape (Phuket) or Railay Beach (Krabi).</p>
+            </div>
+            <div class="it-day">
+              <h4>Day 3 — Island Hopping (Phi Phi / James Bond Island)</h4>
+              <p>Boat trip to Phi Phi islands or Phang Nga Bay (James Bond Island), snorkeling and lagoon visits. Return in evening.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Top Experiences</h2>
+          <ul style="color:var(--muted);padding-left:18px">
+            <li>Street food tour — try pad thai, mango sticky rice, tom yum</li>
+            <li>Night markets — Chiang Mai, Phuket weekend markets, Bangkok night markets</li>
+            <li>Snorkeling/diving in Phi Phi & Similan Islands</li>
+            <li>Visit Wat Arun & Wat Pho, see the reclining Buddha</li>
+            <li>Thai massage & spa day</li>
+          </ul>
+        </article>
+
+      </section>
+
+      <!-- right -->
+      <aside>
+        <div class="card">
+          <h3>Top Hotels & Resorts</h3>
+
+          <div class="hotel">
+            <img src="https://images.unsplash.com/photo-1542317854-9c3e3f7b9e37?auto=format&fit=crop&w=400&q=60" alt="hotel1">
+            <div class="hinfo"><h4>Luxury Beach Resort</h4><p>Private villas & water sports.</p></div>
+          </div>
+
+          <div class="hotel" style="margin-top:12px">
+            <img src="https://images.unsplash.com/photo-1501117716987-c8e36f0f1f3e?auto=format&fit=crop&w=400&q=60" alt="hotel2">
+            <div class="hinfo"><h4>Riverside Boutique Hotel</h4><p>Great Bangkok location near temples.</p></div>
+          </div>
+
+          <h3 style="margin-top:14px">Map</h3>
+          <div class="map card">
+            <iframe title="Thailand map" width="100%" height="100%" style="border:0" loading="lazy"
+              src="https://www.google.com/maps?q=Thailand&output=embed"></iframe>
+          </div>
+
+        </div>
+
+        <div class="card">
+          <h3>Packing & Safety Tips</h3>
+          <ul style="color:var(--muted);padding-left:18px">
+            <li>Light breathable clothes; bring a light rain jacket in monsoon months.</li>
+            <li>Respect temples: cover shoulders & knees; remove shoes inside.</li>
+            <li>Drink bottled water; be cautious with street food if you have a sensitive stomach.</li>
+            <li>Use licensed taxis or Grab app in cities; keep valuables secure on beaches.</li>
+          </ul>
+        </div>
+
+      </aside>
+    </main>
+
+    <footer class="sitefoot">
+      © 2025 AdventureHub — Created by Kaunain Fathima • Follow @kaunainfathima19
+    </footer>
+  </div>
+
+  <!-- lightbox -->
+  <div class="lightbox" id="lb" role="dialog" aria-hidden="true">
+    <div class="close-x" id="lbclose" title="Close">✕</div>
+    <img id="lbimg" src="">
+  </div>
+
+  <script>
+    // gallery lightbox
+    const imgs = document.querySelectorAll('.gallery img');
+    const lb = document.getElementById('lb');
+    const lbimg = document.getElementById('lbimg');
+    const lbclose = document.getElementById('lbclose');
+
+    imgs.forEach(img=>{
+      img.addEventListener('click',()=>{
+        const large = img.dataset.large || img.src;
+        lbimg.src = large;
+        lb.style.display = 'flex';
+        lb.setAttribute('aria-hidden','false');
+      });
+    });
+
+    lbclose.addEventListener('click',()=>{
+      lb.style.display='none';
+      lb.setAttribute('aria-hidden','true');
+      lbimg.src='';
+    });
+
+    lb.addEventListener('click',(e)=>{
+      if(e.target===lb){
+        lb.style.display='none';
+        lbimg.src='';
+        lb.setAttribute('aria-hidden','true');
+      }
+    });
+  </script>
+</body>
+</html>
