@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>New Zealand — Queenstown & Milford Sound | AdventureHub</title>
+  <meta name="description" content="New Zealand travel guide: Queenstown, Milford Sound, lakes, mountains, adventure sports, helicopter rides and 3-day premium itinerary." />
+
+  <style>
+    :root{
+      --bg:#07131f;
+      --card:#0e1e2d;
+      --accent:#4effc3;
+      --muted:#9fb0c0;
+      --radius:14px;
+      --shadow:0 10px 35px rgba(0,0,0,0.45);
+      --text:#e9f6ff;
+      --maxw:1100px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,Arial,sans-serif;
+      background:linear-gradient(180deg,#05101a,#0d1c2b);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    .wrap{
+      max-width:var(--maxw);
+      margin:28px auto;
+      padding:18px;
+    }
+
+    nav.top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:20px;
+    }
+    .brand{
+      color:var(--accent);
+      font-weight:800;
+      font-size:20px;
+      text-decoration:none;
+    }
+    .links a{
+      margin-left:12px;
+      color:var(--muted);
+      text-decoration:none;
+    }
+
+    header.hero{
+      border-radius:var(--radius);
+      overflow:hidden;
+      min-height:55vh;
+      display:flex;
+      align-items:flex-end;
+      background:
+        linear-gradient(180deg,rgba(0,0,0,0.6),rgba(0,0,0,0.2)),
+        url("https://images.unsplash.com/photo-1502786129293-79981df4e689?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+      box-shadow:var(--shadow);
+    }
+    .overlay{
+      padding:34px;
+    }
+
+    .tag{
+      background:rgba(255,255,255,0.1);
+      padding:6px 12px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .meta{
+      margin-top:12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .pill{
+      background:rgba(255,255,255,0.1);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:13px;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:14px;
+      background:var(--accent);
+      color:#001311;
+      padding:10px 16px;
+      border-radius:10px;
+      font-weight:700;
+      text-decoration:none;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 350px;
+      gap:22px;
+      margin-top:24px;
+    }
+    @media(max-width:900px){
+      .grid{grid-template-columns:1fr;}
+    }
+
+    .card{
+      background:var(--card);
+      padding:18px;
+      border-radius:var(--radius);
+      margin-bottom:18px;
+      box-shadow:var(--shadow);
+    }
+
+    h2{margin:6px 0 12px;}
+
+    .small{color:var(--muted);font-size:14px}
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+    }
+    @media(max-width:700px){
+      .gallery{grid-template-columns:repeat(2,1fr);}
+    }
+    .gallery img{
+      width:100%;
+      height:150px;
+      object-fit:cover;
+      border-radius:10px;
+      cursor:pointer;
+      box-shadow:0 6px 20px rgba(0,0,0,0.5);
+    }
+
+    .itinerary{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .it-day{
+      background:linear-gradient(180deg,#14303f,#0e1e2d);
+      border-left:6px solid var(--accent);
+      padding:12px;
+      border-radius:10px;
+    }
+    .it-day h4{
+      margin:0 0 6px;
+      color:var(--accent);
+    }
+
+    .hotel{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      margin-top:12px;
+    }
+    .hotel img{
+      width:110px;
+      height:70px;
+      border-radius:8px;
+      object-fit:cover;
+    }
+
+    .map{
+      margin-top:12px;
+      height:220px;
+      border-radius:10px;
+      overflow:hidden;
+    }
+
+    footer{
+      text-align:center;
+      margin-top:24px;
+      padding:16px 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.85);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      z-index:9999;
+    }
+    .lightbox img{
+      max-width:92%;
+      max-height:85%;
+      border-radius:10px;
+    }
+    .close-x{
+      position:absolute;
+      top:20px;
+      right:20px;
+      color:white;
+      font-size:28px;
+      cursor:pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <nav class="top">
+    <a class="brand" href="index.html">AdventureHub</a>
+    <div class="links">
+      <a href="newzealand.html" style="color:var(--accent);font-weight:700">New Zealand</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="overlay">
+      <span class="tag">International Adventure Premium</span>
+      <h1 style="font-size:clamp(28px,4vw,44px)">New Zealand — Queenstown & Milford Sound</h1>
+      <p class="small">Adventure capital, glacier lakes, fjords, helicopter rides & snowy mountains.</p>
+
+      <div class="meta">
+        <span class="pill">Queenstown</span>
+        <span class="pill">Milford Sound</span>
+        <span class="pill">Wanaka</span>
+        <span class="pill">Adventure Sports</span>
+      </div>
+
+      <a class="btn" href="#itinerary">3-Day Itinerary</a>
+    </div>
+  </header>
+
+  <main class="grid">
+    <section>
+
+      <article class="card">
+        <h2>Why New Zealand?</h2>
+        <p class="small">
+          New Zealand is pure cinematic beauty — mountains, blue lakes, fjords, glaciers, alpines,
+          and the best adventure activities in the world. Queenstown is known as the “Adventure Capital”.
+        </p>
+
+        <h3>Top Highlights</h3>
+        <ul style="padding-left:18px;color:var(--muted)">
+          <li>Milford Sound Fjords — most beautiful place in NZ</li>
+          <li>Queenstown — adventure capital</li>
+          <li>Wanaka Lake views</li>
+          <li>Helicopter glacier flights</li>
+          <li>Jet boating & bungee jumping</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Photo Gallery</h2>
+
+        <div class="gallery">
+
+          <img src="https://images.unsplash.com/photo-1502786129293-79981df4e689?auto=format&fit=crop&w=800&q=60"
+            data-large="https://images.unsplash.com/photo-1502786129293-79981df4e689?auto=format&fit=crop&w=1600&q=80">
+
+          <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=60"
+            data-large="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1600&q=80">
+
+          <img src="https://images.unsplash.com/photo-1486911278847-333ac5afe89f?auto=format&fit=crop&w=800&q=60"
+            data-large="https://images.unsplash.com/photo-1486911278847-333ac5afe89f?auto=format&fit=crop&w=1600&q=80">
+
+        </div>
+      </article>
+
+      <article id="itinerary" class="card">
+        <h2>3-Day Best Itinerary</h2>
+
+        <div class="itinerary">
+          <div class="it-day">
+            <h4>Day 1 — Queenstown Adventure</h4>
+            <p>Enjoy jet boating, gondola rides, bungee jumping and lakeside views.</p>
+          </div>
+
+          <div class="it-day">
+            <h4>Day 2 — Milford Sound</h4>
+            <p>Take a scenic fjord cruise, waterfalls, wildlife & mountains everywhere.</p>
+          </div>
+
+          <div class="it-day">
+            <h4>Day 3 — Wanaka & Blue Lake Views</h4>
+            <p>Visit Lake Wanaka, Roy’s Peak view, helicopter glacier tours optional.</p>
+          </div>
+        </div>
+
+      </article>
+
+    </section>
+
+    <aside>
+
+      <div class="card">
+        <h3>Top Stays</h3>
+
+        <div class="hotel">
+          <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=400&q=60">
+          <div>
+            <h4>St Moritz Queenstown</h4>
+            <p class="small">Luxury resort with lake views.</p>
+          </div>
+        </div>
+
+        <div class="hotel">
+          <img src="https://images.unsplash.com/photo-1486911278847-333ac5afe89f?auto=format&fit=crop&w=400&q=60">
+          <div>
+            <h4>Heritage Queenstown</h4>
+            <p class="small">Beautiful alpine-style property.</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top:18px">How to Reach</h3>
+        <ul style="padding-left:18px;color:var(--muted)">
+          <li>Fly to Queenstown Airport</li>
+          <li>Milford Sound via scenic road / flight</li>
+        </ul>
+
+        <div class="map">
+          <iframe src="https://www.google.com/maps?q=Queenstown%20New%20Zealand&output=embed"
+            width="100%" height="100%" style="border:0"></iframe>
+        </div>
+      </div>
+
+    </aside>
+
+  </main>
+
+  <footer>
+    © 2025 AdventureHub — New Zealand Guide • Created by Kaunain Fathima
+  </footer>
+
+</div>
+
+<div class="lightbox" id="lb">
+  <div class="close-x" id="lbclose">✕</div>
+  <img id="lbimg">
+</div>
+
+<script>
+  const imgs=document.querySelectorAll('.gallery img');
+  const lb=document.getElementById('lb');
+  const lbimg=document.getElementById('lbimg');
+  const lbclose=document.getElementById('lbclose');
+
+  imgs.forEach(img=>{
+    img.addEventListener('click',()=>{
+      lbimg.src=img.getAttribute('data-large')||img.src;
+      lb.style.display='flex';
+    });
+  });
+
+  lbclose.addEventListener('click',()=>lb.style.display='none');
+  lb.addEventListener('click',e=>{if(e.target===lb)lb.style.display='none'});
+</script>
+
+</body>
+</html>
