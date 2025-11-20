@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Finland — Aurora Forest Adventure | AdventureHub</title>
+  <meta name="description" content="Finland travel guide: Northern Lights, glass igloos, Lapland, husky safaris, snow forests, Arctic Circle, best itinerary and photo gallery." />
+
+  <style>
+    :root{
+      --bg:#0a1220;
+      --card:#101a2d;
+      --accent:#3fb9ff;
+      --muted:#94a1b8;
+      --radius:14px;
+      --shadow:0 10px 35px rgba(0,0,0,0.45);
+      --text:#e8f0ff;
+      --maxw:1100px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,Arial,sans-serif;
+      background:linear-gradient(180deg,#06101d,#0d1527);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    .wrap{
+      max-width:var(--maxw);
+      margin:28px auto;
+      padding:18px;
+    }
+
+    nav.top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:20px;
+    }
+    .brand{
+      color:var(--accent);
+      font-weight:800;
+      font-size:20px;
+      text-decoration:none;
+    }
+    .links a{
+      margin-left:12px;
+      color:var(--muted);
+      text-decoration:none;
+    }
+
+    header.hero{
+      border-radius:var(--radius);
+      overflow:hidden;
+      min-height:55vh;
+      display:flex;
+      align-items:flex-end;
+      background:
+        linear-gradient(180deg,rgba(0,0,0,0.6),rgba(0,0,0,0.2)),
+        url("https://images.unsplash.com/photo-1546443046-ed1ce6ffd1df?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+      box-shadow:var(--shadow);
+    }
+    .overlay{
+      padding:34px;
+    }
+
+    .tag{
+      background:rgba(255,255,255,0.1);
+      padding:6px 12px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .meta{
+      margin-top:12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .pill{
+      background:rgba(255,255,255,0.1);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:13px;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:14px;
+      background:var(--accent);
+      color:#00121d;
+      padding:10px 16px;
+      border-radius:10px;
+      font-weight:700;
+      text-decoration:none;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 350px;
+      gap:22px;
+      margin-top:24px;
+    }
+    @media(max-width:900px){
+      .grid{grid-template-columns:1fr;}
+    }
+
+    .card{
+      background:var(--card);
+      padding:18px;
+      border-radius:var(--radius);
+      margin-bottom:18px;
+      box-shadow:var(--shadow);
+    }
+
+    h2{margin:6px 0 12px;}
+
+    .small{color:var(--muted);font-size:14px}
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+    }
+    @media(max-width:700px){
+      .gallery{grid-template-columns:repeat(2,1fr);}
+    }
+    .gallery img{
+      width:100%;
+      height:150px;
+      object-fit:cover;
+      border-radius:10px;
+      cursor:pointer;
+      box-shadow:0 6px 20px rgba(0,0,0,0.5);
+    }
+
+    .itinerary{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .it-day{
+      background:linear-gradient(180deg,#16243a,#101a2d);
+      border-left:6px solid var(--accent);
+      padding:12px;
+      border-radius:10px;
+    }
+    .it-day h4{
+      margin:0 0 6px;
+      color:var(--accent);
+    }
+
+    .hotel{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      margin-top:12px;
+    }
+    .hotel img{
+      width:110px;
+      height:70px;
+      border-radius:8px;
+      object-fit:cover;
+    }
+
+    .map{
+      margin-top:12px;
+      height:220px;
+      border-radius:10px;
+      overflow:hidden;
+    }
+
+    footer{
+      text-align:center;
+      margin-top:24px;
+      padding:16px 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.85);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      z-index:9999;
+    }
+    .lightbox img{
+      max-width:92%;
+      max-height:85%;
+      border-radius:10px;
+    }
+    .close-x{
+      position:absolute;
+      top:20px;
+      right:20px;
+      color:white;
+      font-size:28px;
+      cursor:pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <nav class="top">
+    <a class="brand" href="index.html">AdventureHub</a>
+    <div class="links">
+      <a href="finland.html" style="color:var(--accent);font-weight:700">Finland</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="overlay">
+      <span class="tag">International Adventure Premium</span>
+      <h1 style="font-size:clamp(28px,4vw,44px)">Finland — Aurora Forest Adventure</h1>
+      <p class="small">Northern Lights, snow forests, glass igloos, husky rides & Arctic magic.</p>
+
+      <div class="meta">
+        <span class="pill">Northern Lights</span>
+        <span class="pill">Glass Igloos</span>
+        <span class="pill">Snow Forests</span>
+        <span class="pill">Husky Safari</span>
+      </div>
+
+      <a class="btn" href="#itinerary">3-Day Itinerary</a>
+    </div>
+  </header>
+
+  <main class="grid">
+    <section>
+
+      <article class="card">
+        <h2>Why Finland?</h2>
+        <p class="small">
+          Finland, especially Lapland, is the world’s most magical winter land — Northern Lights,
+          glass igloo resorts, frozen forests, ice hotels, reindeer rides and the Arctic Circle.
+        </p>
+
+        <h3>Top Highlights</h3>
+        <ul style="padding-left:18px;color:var(--muted)">
+          <li>See Northern Lights from a glass igloo</li>
+          <li>Husky & reindeer safaris</li>
+          <li>Explore the Arctic Circle in Rovaniemi</li>
+          <li>Frozen lakes & snow hiking</li>
+          <li>Visit Santa Claus Village</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Photo Gallery</h2>
+
+        <div class="gallery">
+
+          <img src="https://images.unsplash.com/photo-1546443046-ed1ce6ffd1df?auto=format&fit=crop&w=800&q=60"
+            data-large="https://images.unsplash.com/photo-1546443046-ed1ce6ffd1df?auto=format&fit=crop&w=1600&q=80">
+
+          <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=800&q=60"
+            data-large="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1600&q=80">
+
+          <img src="https://images.unsplash.com/photo-1516542076529-1ea3854896f8?auto=format&fit=crop&w=800&q=60"
+            data-large="https://images.unsplash.com/photo-1516542076529-1ea3854896f8?auto=format&fit=crop&w=1600&q=80">
+
+        </div>
+      </article>
+
+      <article id="itinerary" class="card">
+        <h2>3-Day Best Itinerary</h2>
+
+        <div class="itinerary">
+          <div class="it-day">
+            <h4>Day 1 — Arrival & Glass Igloo Stay</h4>
+            <p>Arrive in Rovaniemi, stay in a glass igloo resort, watch the night sky for Auroras.</p>
+          </div>
+
+          <div class="it-day">
+            <h4>Day 2 — Husky Safari & Arctic Circle</h4>
+            <p>Experience husky sledding, reindeer farm visits and cross the Arctic Circle.</p>
+          </div>
+
+          <div class="it-day">
+            <h4>Day 3 — Snow Forests & Ice Activities</h4>
+            <p>Visit Santa Village, snow hiking, frozen lake walks, ice sauna experiences.</p>
+          </div>
+        </div>
+
+      </article>
+
+    </section>
+
+    <aside>
+
+      <div class="card">
+        <h3>Top Stays</h3>
+
+        <div class="hotel">
+          <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=400&q=60">
+          <div>
+            <h4>Kakslauttanen Arctic Resort</h4>
+            <p class="small">Famous glass igloos with Aurora views.</p>
+          </div>
+        </div>
+
+        <div class="hotel">
+          <img src="https://images.unsplash.com/photo-1516542076529-1ea3854896f8?auto=format&fit=crop&w=400&q=60">
+          <div>
+            <h4>Arctic TreeHouse Hotel</h4>
+            <p class="small">Luxury cube cabins in the forest.</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top:18px">How to Reach</h3>
+        <ul style="padding-left:18px;color:var(--muted)">
+          <li>Fly to Helsinki</li>
+          <li>Take a domestic flight to Rovaniemi</li>
+          <li>Snowmobile & tours available everywhere</li>
+        </ul>
+
+        <div class="map">
+          <iframe src="https://www.google.com/maps?q=Rovaniemi%20Finland&output=embed"
+            width="100%" height="100%" style="border:0"></iframe>
+        </div>
+      </div>
+
+    </aside>
+
+  </main>
+
+  <footer>
+    © 2025 AdventureHub — Finland Guide • Created by Kaunain Fathima
+  </footer>
+
+</div>
+
+<div class="lightbox" id="lb">
+  <div class="close-x" id="lbclose">✕</div>
+  <img id="lbimg">
+</div>
+
+<script>
+  const imgs=document.querySelectorAll('.gallery img');
+  const lb=document.getElementById('lb');
+  const lbimg=document.getElementById('lbimg');
+  const lbclose=document.getElementById('lbclose');
+
+  imgs.forEach(img=>{
+    img.addEventListener('click',()=>{
+      lbimg.src=img.getAttribute('data-large')||img.src;
+      lb.style.display='flex';
+    });
+  });
+
+  lbclose.addEventListener('click',()=>lb.style.display='none');
+  lb.addEventListener('click',e=>{if(e.target===lb)lb.style.display='none'});
+</script>
+
+</body>
+</html>
