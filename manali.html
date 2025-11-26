@@ -1,249 +1,526 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Manali – Ultimate Travel Guide | AdventureHub</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>Manali – Ultimate Travel Guide | AdventureHub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-main: #050509;
+      --bg-card: #111119;
+      --bg-card-soft: #181821;
+      --accent: #d4a651;
+      --accent-soft: #f5e2b4;
+      --text-main: #f5f5f5;
+      --text-muted: #bbbbc6;
+      --border-soft: #262637;
+    }
 
-<style>
-  body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #f6f3ff;
-    color: #333;
-  }
+    * {
+      box-sizing: border-box;
+    }
 
-  header {
-    position: sticky;
-    top: 0;
-    background: white;
-    padding: 16px 22px;
-    display: flex;
-    justify-content: space-between;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-    z-index: 10;
-  }
+    body {
+      margin: 0;
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1b1825 0, #050509 45%);
+      color: var(--text-main);
+    }
 
-  .logo {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #6d00ff;
-  }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-  nav a {
-    margin-left: 18px;
-    text-decoration: none;
-    color: #6d00ff;
-    font-weight: 600;
-  }
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      background: rgba(5, 5, 9, 0.94);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
 
-  /* HERO */
-  .hero {
-    width: 100%;
-    height: 68vh;
-    overflow: hidden;
-    border-radius: 0 0 28px 28px;
-    position: relative;
-  }
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      font-size: 1.1rem;
+      color: var(--accent);
+    }
 
-  .hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(70%);
-  }
+    nav a {
+      margin-left: 14px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
 
-  .hero-title {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    color: white;
-    font-size: 2.6rem;
-    font-weight: 700;
-    text-shadow: 0 0 18px rgba(0,0,0,0.9);
-  }
+    nav a.active {
+      color: var(--accent-soft);
+      font-weight: 600;
+    }
 
-  /* Sections */
-  .section {
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 26px;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 3px 16px rgba(0,0,0,0.08);
-  }
+    /* PAGE WRAPPER */
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 18px 14px 32px;
+    }
 
-  .section h2 {
-    margin-top: 0;
-    font-size: 1.9rem;
-    color: #6d00ff;
-  }
+    /* HERO */
+    .hero {
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 26px 60px rgba(0, 0, 0, 0.75);
+      margin-bottom: 20px;
+    }
 
-  .section img {
-    width: 100%;
-    border-radius: 14px;
-    margin-top: 16px;
-  }
+    .hero img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      filter: brightness(70%);
+    }
 
-  /* Gallery */
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-    gap: 16px;
-    margin-top: 16px;
-  }
+    @media (min-width: 720px) {
+      .hero img {
+        height: 320px;
+      }
+    }
 
-  .gallery img {
-    height: 180px;
-    object-fit: cover;
-  }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0.65) 60%,
+        rgba(5, 5, 9, 0.95) 100%
+      );
+    }
 
-  /* Hotels */
-  .hotel-card {
-    background: #f8f1ff;
-    padding: 18px;
-    border-radius: 16px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  }
+    .hero-content {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+    }
 
-  .hotel-card img {
-    height: 180px;
-    border-radius: 12px;
-    object-fit: cover;
-    width: 100%;
-  }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 0.75rem;
+      color: var(--accent-soft);
+      margin-bottom: 6px;
+    }
 
-  .tag {
-    display: inline-block;
-    background: #e4d4ff;
-    padding: 6px 12px;
-    border-radius: 999px;
-    margin: 3px;
-    font-size: 0.8rem;
-    color: #6d00ff;
-  }
+    .hero-title {
+      font-size: 1.9rem;
+      font-weight: 600;
+      margin: 2px 0 4px;
+    }
 
-  footer {
-    text-align: center;
-    padding: 28px;
-    font-size: 0.95rem;
-    color: #555;
-  }
-</style>
+    .hero-sub {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 520px;
+    }
+
+    .hero-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+      font-size: 0.78rem;
+    }
+
+    .hero-chip {
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--accent-soft);
+    }
+
+    /* CARDS / SECTIONS */
+    .section {
+      background: var(--bg-card);
+      border-radius: 18px;
+      padding: 18px 16px 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
+      border: 1px solid var(--border-soft);
+    }
+
+    .section h2 {
+      margin: 0 0 10px;
+      font-size: 1.25rem;
+    }
+
+    .section p {
+      margin: 0 0 8px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .twocol {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
+    }
+
+    @media (min-width: 720px) {
+      .twocol {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    ul {
+      padding-left: 18px;
+      margin: 4px 0 0;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    li {
+      margin: 3px 0;
+    }
+
+    /* GALLERY */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    @media (min-width: 720px) {
+      .gallery-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 14px;
+      background: #000;
+    }
+
+    /* ITINERARY CARDS */
+    .itinerary-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 12px;
+    }
+
+    @media (min-width: 720px) {
+      .itinerary-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .day-card {
+      background: var(--bg-card-soft);
+      border-radius: 14px;
+      padding: 10px 10px 12px;
+      border: 1px solid var(--border-soft);
+    }
+
+    .day-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent-soft);
+      margin-bottom: 4px;
+    }
+
+    .day-card p {
+      font-size: 0.85rem;
+      margin: 0;
+    }
+
+    /* HOTELS */
+    .hotel-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      background: var(--bg-card-soft);
+      padding: 10px;
+      border-radius: 14px;
+      margin-bottom: 10px;
+      border: 1px solid var(--border-soft);
+    }
+
+    .hotel-row img {
+      width: 80px;
+      height: 80px;
+      border-radius: 12px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .hotel-info h3 {
+      margin: 0 0 4px;
+      font-size: 0.95rem;
+    }
+
+    .hotel-info p {
+      margin: 0;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .hotel-tags {
+      margin-top: 4px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      font-size: 0.7rem;
+    }
+
+    .tag {
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(212, 166, 81, 0.1);
+      color: var(--accent-soft);
+      border: 1px solid rgba(212, 166, 81, 0.4);
+    }
+
+    /* MAP */
+    .map-frame {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border-soft);
+      margin-top: 10px;
+    }
+
+    iframe {
+      border: 0;
+      width: 100%;
+      height: 220px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      padding: 16px 0 8px;
+    }
+  </style>
 </head>
-
 <body>
+  <header>
+    <div class="logo">AdventureHub</div>
+    <nav>
+      <a href="manali-ultimate-travel-guide.html" class="active">Manali</a>
+      <a href="kashmir-paradise-on-earth.html">Kashmir</a>
+      <a href="shimla-snow-paradise.html">Shimla</a>
+      <a href="Adventures.html">All Adventures</a>
+    </nav>
+  </header>
 
-<header>
-  <div class="logo">AdventureHub</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="Adventures.html">Adventures</a>
-  </nav>
-</header>
+  <main class="page">
+    <!-- HERO -->
+    <section class="hero">
+      <img
+        src="https://images.unsplash.com/photo-1545126178-862cdb469409?auto=format&fit=crop&w=1200&q=60"
+        alt="Snowy mountains and valley near Manali"
+      />
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="pill">Premium Destination Guide</div>
+        <h1 class="hero-title">Manali — Ultimate Travel Guide</h1>
+        <p class="hero-sub">
+          Himalayan snow peaks, pine forests, riverside cafés, adventure sports and cosy homestays — plan the
+          perfect Manali holiday with this complete premium guide.
+        </p>
+        <div class="hero-meta-row">
+          <span class="hero-chip">Best time: Oct–Feb (snow) · Mar–Jun</span>
+          <span class="hero-chip">Ideal trip: 4–6 days</span>
+          <span class="hero-chip">Altitude: ~2,050 m</span>
+        </div>
+      </div>
+    </section>
 
-<!-- HERO -->
-<div class="hero">
-  <img src="https://images.unsplash.com/photo-1545126178-862cdb469409?auto=format&fit=crop&w=1200&q=60" alt="">
-  <div class="hero-title">Manali – Ultimate Travel Guide</div>
-</div>
+    <!-- QUICK OVERVIEW -->
+    <section class="section">
+      <h2>Quick Overview</h2>
+      <p>
+        Manali, in Himachal Pradesh, sits on the banks of the Beas River and is surrounded by cedar forests
+        and snow-capped peaks. It’s a favourite for honeymoons, family trips, backpackers and first-time
+        Himalayan travellers.
+      </p>
 
-<!-- OVERVIEW -->
-<div class="section">
-  <h2>Overview</h2>
-  <p>Manali is one of India’s most beautiful mountain destinations — filled with snow-peaks, pine forests, riverside cafés, and adventure activities. It's ideal for couples, families, trekkers, and nature lovers.</p>
-  <img src="https://images.unsplash.com/photo-1596814733190-e6cfb43f5206?auto=format&fit=crop&w=1200&q=60">
-</div>
+      <div class="twocol" style="margin-top: 10px;">
+        <div>
+          <h3 style="font-size:0.95rem;margin:0 0 4px;">Top Attractions</h3>
+          <ul>
+            <li>Old Manali &amp; riverside cafés</li>
+            <li>Solang Valley (snow &amp; adventure)</li>
+            <li>Atal Tunnel &amp; Sissu landscapes</li>
+            <li>Hadimba Temple &amp; cedar forest</li>
+            <li>Naggar Castle &amp; Jana waterfall</li>
+            <li>Vashisht village &amp; hot springs</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="font-size:0.95rem;margin:0 0 4px;">Travel Tips</h3>
+          <ul>
+            <li>Carry layers — evenings are cold even in April–May.</li>
+            <li>Keep 1 buffer day in winter in case of heavy snowfall.</li>
+            <li>Use licensed operators for paragliding and activities.</li>
+            <li>Avoid standing too close to the river during high flow.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<!-- GALLERY -->
-<div class="section">
-  <h2>Photo Gallery</h2>
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1583422409516-2895a90705f2?auto=format&fit=crop&w=800&q=60">
-    <img src="https://images.unsplash.com/photo-1571597432253-228427fbd269?auto=format&fit=crop&w=800&q=60">
-    <img src="https://images.unsplash.com/photo-1590332051042-0ac7f3de3e69?auto=format&fit=crop&w=800&q=60">
-    <img src="https://images.unsplash.com/photo-1612109623162-f88a24478fdd?auto=format&fit=crop&w=800&q=60">
-  </div>
-</div>
+    <!-- GALLERY -->
+    <section class="section">
+      <h2>Photo Gallery</h2>
+      <div class="gallery-grid">
+        <img
+          src="https://images.unsplash.com/photo-1596814733190-e6cfb43f5206?auto=format&fit=crop&w=800&q=60"
+          alt="Beas river flowing through valley"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1583422409516-2895a90705f2?auto=format&fit=crop&w=800&q=60"
+          alt="Snow in Solang Valley"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1612109623162-f88a24478fdd?auto=format&fit=crop&w=800&q=60"
+          alt="Mountain road near Manali"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1612109623273-ff8e46482f17?auto=format&fit=crop&w=800&q=60"
+          alt="Pine forest and mountains"
+        />
+      </div>
+    </section>
 
-<!-- BEST TIME TO VISIT -->
-<div class="section">
-  <h2>Best Time to Visit</h2>
-  <ul>
-    <li><strong>March – June:</strong> Pleasant weather, adventure sports.</li>
-    <li><strong>Sept – Nov:</strong> Golden forests, clear skies.</li>
-    <li><strong>Dec – Feb:</strong> SNOWFALL season — the best time for snow lovers.</li>
-  </ul>
-</div>
+    <!-- ITINERARY -->
+    <section class="section">
+      <h2>3-Day Manali Itinerary</h2>
+      <div class="itinerary-grid">
+        <div class="day-card">
+          <div class="day-title">Day 1 — Arrival &amp; Old Manali</div>
+          <p>
+            Check in, relax by the Beas River, explore Old Manali cafés, live music spots and sunset from the
+            bridge.
+          </p>
+        </div>
+        <div class="day-card">
+          <div class="day-title">Day 2 — Solang Valley &amp; Adventure</div>
+          <p>
+            Head to Solang Valley for snow play (winter), cable car, zorbing or paragliding (seasonal). Evening at
+            Mall Road.
+          </p>
+        </div>
+        <div class="day-card">
+          <div class="day-title">Day 3 — Naggar &amp; Departure</div>
+          <p>
+            Visit Naggar Castle, Jana waterfall and surrounding villages. Return to Manali and depart in the evening
+            / night bus.
+          </p>
+        </div>
+      </div>
 
-<!-- TOP PLACES -->
-<div class="section">
-  <h2>Top Places to Visit</h2>
-  <ul>
-    <li><strong>Solang Valley</strong> – snow & adventure capital</li>
-    <li><strong>Old Manali</strong> – riverside cafés, nightlife, boho vibe</li>
-    <li><strong>Naggar Castle</strong> – scenic heritage fort</li>
-    <li><strong>Hadimba Temple</strong> – iconic forest temple</li>
-    <li><strong>Atal Tunnel & Sissu</strong> – stunning winter landscapes</li>
-    <li><strong>Vashisht</strong> – hot springs & viewpoints</li>
-  </ul>
-  <img src="https://images.unsplash.com/photo-1583422409516-2895a90705f2?auto=format&fit=crop&w=1200&q=60">
-</div>
+      <p style="margin-top:10px;font-size:0.8rem;color:var(--text-muted);">
+        <strong>Bonus:</strong> For a 5-day trip, add a full day for Atal Tunnel &amp; Sissu plus one slow café day in
+        Old Manali.
+      </p>
+    </section>
 
-<!-- HOTELS -->
-<div class="section">
-  <h2>Best Hotels to Stay</h2>
+    <!-- HOTELS -->
+    <section class="section">
+      <h2>Top Hotels</h2>
 
-  <div class="hotel-card">
-    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=60">
-    <h3>✔ The Himalayan Resort</h3>
-    <p>Castle-style luxury stay with beautiful mountain views, pool & royal vibes.</p>
-    <span class="tag">Luxury</span> <span class="tag">Couples</span> <span class="tag">Mountain View</span>
-  </div>
+      <div class="hotel-row">
+        <img
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=60"
+          alt="Luxury hotel in mountains"
+        />
+        <div class="hotel-info">
+          <h3>The Himalayan (Luxury)</h3>
+          <p>Castle-style boutique hotel with incredible valley views and premium facilities.</p>
+          <div class="hotel-tags">
+            <span class="tag">Luxury</span>
+            <span class="tag">Couples</span>
+            <span class="tag">Mountain View</span>
+          </div>
+        </div>
+      </div>
 
-  <div class="hotel-card">
-    <img src="https://images.unsplash.com/photo-1520256862855-398228c41684?auto=format&fit=crop&w=1200&q=60">
-    <h3>✔ Snow Valley Resorts</h3>
-    <p>Affordable yet scenic rooms with peaceful surroundings.</p>
-    <span class="tag">Budget</span> <span class="tag">Family</span>
-  </div>
+      <div class="hotel-row">
+        <img
+          src="https://images.unsplash.com/photo-1520256862855-398228c41684?auto=format&fit=crop&w=800&q=60"
+          alt="Resort with mountain view"
+        />
+        <div class="hotel-info">
+          <h3>Snow Valley Resorts</h3>
+          <p>Comfortable rooms, good food and beautiful views — great for families.</p>
+          <div class="hotel-tags">
+            <span class="tag">Family</span>
+            <span class="tag">Mid-range</span>
+            <span class="tag">View Rooms</span>
+          </div>
+        </div>
+      </div>
 
-  <div class="hotel-card">
-    <img src="https://images.unsplash.com/photo-1628702083311-9ce20f40894a?auto=format&fit=crop&w=1200&q=60">
-    <h3>✔ Apple Country Resort</h3>
-    <p>Elegant rooms, spa, apple orchard surroundings, romantic stays.</p>
-    <span class="tag">Romantic</span> <span class="tag">Nature</span>
-  </div>
-</div>
+      <div class="hotel-row">
+        <img
+          src="https://images.unsplash.com/photo-1512914890250-353c97c9e7e2?auto=format&fit=crop&w=800&q=60"
+          alt="Cozy wooden homestay"
+        />
+        <div class="hotel-info">
+          <h3>Old Manali Homestays</h3>
+          <p>Riverside &amp; village homestays with a cosy vibe, ideal for long stays &amp; budget trips.</p>
+          <div class="hotel-tags">
+            <span class="tag">Budget</span>
+            <span class="tag">Backpacker</span>
+            <span class="tag">Riverside</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- ITINERARY -->
-<div class="section">
-  <h2>5-Day Itinerary</h2>
-  <ol>
-    <li><strong>Day 1:</strong> Old Manali + riverside cafés</li>
-    <li><strong>Day 2:</strong> Solang Valley (snow activities)</li>
-    <li><strong>Day 3:</strong> Atal Tunnel + Sissu waterfalls</li>
-    <li><strong>Day 4:</strong> Naggar Castle + Jana Waterfall</li>
-    <li><strong>Day 5:</strong> Vashisht + local shopping + cafés</li>
-  </ol>
-</div>
+    <!-- HOW TO REACH -->
+    <section class="section">
+      <h2>How to Reach Manali</h2>
+      <ul>
+        <li><strong>Nearest Airport:</strong> Bhuntar (Kullu) – about 50 km from Manali.</li>
+        <li><strong>By Road:</strong> Overnight Volvo from Delhi / Chandigarh is the most popular option.</li>
+        <li><strong>From Delhi:</strong> Approx. 12–14 hours by bus / car (via Chandigarh &amp; Mandi).</li>
+        <li><strong>From Chandigarh:</strong> Approx. 8–9 hours by road.</li>
+      </ul>
 
-<!-- TIPS -->
-<div class="section">
-  <h2>Travel Tips</h2>
-  <ul>
-    <li>Carry warm clothes always — nights are cold.</li>
-    <li>Snow season roads may delay — keep buffer time.</li>
-    <li>Book hotels early in December–January.</li>
-    <li>Avoid riverbank areas at night.</li>
-  </ul>
-</div>
+      <div class="map-frame">
+        <iframe
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Manali,Himachal+Pradesh&output=embed"
+          title="Map of Manali"
+        ></iframe>
+      </div>
+    </section>
 
-<footer>
-  © 2025 AdventureHub — Manali Premium Guide · Designed by Kaunain Fathima
-</footer>
-
+    <footer>
+      © 2025 AdventureHub — Created by Kaunain Fathima · Follow @kaunainfathima19
+    </footer>
+  </main>
 </body>
 </html>
