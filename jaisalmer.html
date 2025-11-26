@@ -1,228 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Jaisalmer – Golden Desert, Fort & Safari | AdventureHub</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jaisalmer – Golden City</title>
 <style>
-  :root {
-    --bg-main:#050509;
-    --bg-card:#111119;
-    --bg-soft:#181821;
-    --accent:#d4a651;
-    --accent-soft:#f5e2b4;
-    --text-main:#f5f5f5;
-    --text-muted:#bbbbc6;
-    --border-soft:#262637;
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;background:radial-gradient(circle at top,#201c29,#050509 45%);
-    font-family:Poppins,sans-serif;color:var(--text-main);
-  }
-
-  header{
-    position:sticky;top:0;padding:14px 20px;
-    background:rgba(5,5,9,.95);display:flex;
-    justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.05);
-    backdrop-filter:blur(12px);
-  }
-  .logo{color:var(--accent);font-weight:700;font-size:1.2rem;}
-
-  nav a{margin-left:14px;color:var(--text-muted);font-size:.9rem;}
-  nav a.active{color:var(--accent-soft);}
-
-  .page{max-width:960px;margin:auto;padding:24px 16px 60px;}
-
-  .hero{
-    height:360px;border-radius:22px;overflow:hidden;position:relative;
-    margin-bottom:20px;box-shadow:0 25px 60px rgba(0,0,0,.7);
-  }
-  .hero img{width:100%;height:100%;object-fit:cover;filter:brightness(60%);}
-  .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.9));}
-  .hero-content{position:absolute;bottom:26px;left:18px;}
-  .pill{
-    padding:4px 11px;border-radius:999px;background:rgba(0,0,0,.6);
-    color:var(--accent-soft);border:1px solid rgba(255,255,255,.15);
-    font-size:.75rem;
-  }
-  .hero-title{font-size:2rem;font-weight:700;margin:8px 0;}
-  .hero-sub{max-width:520px;color:var(--text-muted);}
-
-  .section{
-    background:var(--bg-card);padding:20px;border-radius:18px;
-    border:1px solid var(--border-soft);margin-bottom:22px;
-    box-shadow:0 18px 40px rgba(0,0,0,.6);
-  }
-  .section h2{color:var(--accent-soft);margin-bottom:10px;font-size:1.25rem;}
-  .section p,.section li{color:var(--text-muted);}
-
-  ul{padding-left:18px;}
-
-  .gallery-grid{
-    display:grid;gap:10px;grid-template-columns:repeat(2,1fr);
-  }
-  @media(min-width:720px){
-    .gallery-grid{grid-template-columns:repeat(4,1fr);}
-  }
-  .gallery-grid img{height:130px;object-fit:cover;width:100%;border-radius:14px;}
-
-  .itinerary-grid{display:grid;gap:12px;}
-  @media(min-width:720px){
-    .itinerary-grid{grid-template-columns:repeat(3,1fr);}
-  }
-
-  .day-card{
-    background:var(--bg-soft);padding:12px;border-radius:14px;
-    border:1px solid var(--border-soft);
-  }
-  .day-title{color:var(--accent-soft);margin-bottom:4px;font-weight:600;}
-
-  .hotel-row{
-    background:var(--bg-soft);padding:12px;border-radius:14px;
-    display:flex;gap:10px;border:1px solid var(--border-soft);
-    margin-bottom:12px;
-  }
-  .hotel-row img{width:80px;height:80px;border-radius:12px;object-fit:cover;}
-  .hotel-tags{margin-top:6px;display:flex;gap:6px;flex-wrap:wrap;}
-  .tag{
-    padding:2px 8px;border-radius:999px;background:rgba(212,166,81,.25);
-    border:1px solid rgba(212,166,81,.5);font-size:.75rem;
-    color:var(--accent-soft);
-  }
-
-  .map-frame{
-    height:240px;border-radius:16px;margin-top:12px;
-    overflow:hidden;border:1px solid var(--border-soft);
-  }
-  iframe{width:100%;height:100%;border:0;}
-
-  footer{text-align:center;color:var(--text-muted);margin-top:26px;font-size:.85rem;}
-
+ body { background:#141421; color:white; font-family:Arial; margin:0; }
+ .section { padding:20px; background:#1e1e2f; margin:20px; border-radius:18px; }
+ h1 { color:#ffd27f; }
 </style>
 </head>
-
 <body>
 
-<header>
-  <div class="logo">AdventureHub</div>
-  <nav>
-    <a class="active" href="jaisalmer-golden-desert-fort-safari.html">Jaisalmer</a>
-  </nav>
-</header>
+<nav style="display:flex; justify-content:space-between; align-items:center; padding:20px; font-size:18px;">
+ <a href="index.html" style="font-weight:bold; color:#f7d57e; font-size:22px; text-decoration:none;">AdventureHub</a>
+ <div style="display:flex; gap:20px;">
+   <a href="manali.html" style="color:white;">Manali</a>
+   <a href="shimla.html" style="color:white;">Shimla</a>
+   <a href="nainital.html" style="color:white;">Nainital</a>
+   <a href="kashmir.html" style="color:white;">Kashmir</a>
+   <a href="andaman.html" style="color:white;">Andaman</a>
+ </div>
+</nav>
 
-<main class="page">
+<div class="section">
+<h1>Jaisalmer — Golden Desert Kingdom</h1>
+<p>Thar desert, camel safari, Jaisalmer Fort, Sam dunes & golden sunsets.</p>
+</div>
 
-<section class="hero">
-  <img src="https://images.unsplash.com/photo-1585750807510-95cf85b8e5af?auto=format&fit=crop&w=1200&q=70">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="pill">Premium Destination Guide</div>
-    <h1 class="hero-title">Jaisalmer — Golden Desert, Fort & Safari</h1>
-    <p class="hero-sub">Golden city vibes, camel safari, desert camps, forts & stunning sunsets.</p>
-  </div>
-</section>
-
-<section class="section">
-  <h2>Quick Overview</h2>
-  <p>Jaisalmer is known for its golden sand dunes, camel safari, royal fortresses & Rajasthani culture.</p>
-</section>
-
-<section class="section">
-  <h2>Top Places to Visit</h2>
-  <ul>
-    <li>Jaisalmer Fort</li>
-    <li>Patwon Ki Haveli</li>
-    <li>Sam Sand Dunes</li>
-    <li>Desert Safari (camel/jeep)</li>
-    <li>Kuldhara Village</li>
-    <li>Gadisar Lake</li>
-  </ul>
-</section>
-
-<section class="section">
-  <h2>Gallery</h2>
-  <div class="gallery-grid">
-    <img src="https://images.unsplash.com/photo-1621263768892-eac191f85632?auto=format&w=800&q=60">
-    <img src="https://images.unsplash.com/photo-1576485301764-2a4e9c6dbd6e?auto=format&w=800&q=60">
-    <img src="https://images.unsplash.com/photo-1612712449822-d8da3bd6c7bd?auto=format&w=800&q=60">
-    <img src="https://images.unsplash.com/photo-1585751016316-1b9c8872c7ce?auto=format&w=800&q=60">
-  </div>
-</section>
-
-<section class="section">
-  <h2>3-Day Jaisalmer Itinerary</h2>
-  <div class="itinerary-grid">
-
-    <div class="day-card">
-      <div class="day-title">Day 1 — Fort & Havelis</div>
-      <p>Explore Jaisalmer Fort & Patwon Ki Haveli.</p>
-    </div>
-
-    <div class="day-card">
-      <div class="day-title">Day 2 — Desert Safari</div>
-      <p>Go to Sam Dunes, camel ride, jeep safari, camp night.</p>
-    </div>
-
-    <div class="day-card">
-      <div class="day-title">Day 3 — Kuldhara + Lake</div>
-      <p>Visit abandoned village & Gadisar Lake.</p>
-    </div>
-
-  </div>
-</section>
-
-<section class="section">
-  <h2>Best Hotels</h2>
-
-  <div class="hotel-row">
-    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format">
-    <div>
-      <h3>Suryagarh Palace</h3>
-      <p>Royal 5-star fortress hotel.</p>
-      <div class="hotel-tags">
-        <span class="tag">Luxury</span><span class="tag">Heritage</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="hotel-row">
-    <img src="https://images.unsplash.com/photo-1520256862855-398228c41684?auto=format">
-    <div>
-      <h3>Desert Camps</h3>
-      <p>Premium tents at Sam Dunes.</p>
-      <div class="hotel-tags">
-        <span class="tag">Mid-range</span><span class="tag">Camp</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="hotel-row">
-    <img src="https://images.unsplash.com/photo-1512914890250-353c97c9e7e2?auto=format">
-    <div>
-      <h3>Budget Stays</h3>
-      <p>Affordable options inside the fort.</p>
-      <div class="hotel-tags">
-        <span class="tag">Budget</span><span class="tag">Simple</span>
-      </div>
-    </div>
-  </div>
-
-</section>
-
-<section class="section">
-  <h2>Map</h2>
-  <div class="map-frame">
-    <iframe src="https://www.google.com/maps?q=Jaisalmer&output=embed"></iframe>
-  </div>
-</section>
-
-<footer>
-  © 2025 AdventureHub — Created by Kaunain Fathima · @kaunainfathima19
-</footer>
-
-</main>
 </body>
 </html>
