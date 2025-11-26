@@ -1,303 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Turkey Honeymoon — Cappadocia Balloons, Istanbul Romance | AdventureHub</title>
-  <meta name="description" content="Turkey honeymoon guide: Cappadocia hot air balloons, cave hotels, Istanbul Bosphorus cruise, Blue Mosque, markets, 3-day romantic itinerary and travel tips." />
-
-  <style>
-    :root{
-      --bg:#fdf7f1;
-      --card:#ffffff;
-      --sunset:#ffb074;
-      --turkish-blue:#0098d8;
-      --sand:#f3e5d0;
-      --muted:#6d6f75;
-      --text:#1b1b20;
-      --radius:14px;
-      --shadow:0 14px 40px rgba(8,22,48,0.08);
-      --maxw:1100px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:"Inter","Segoe UI",Roboto,Arial,sans-serif;
-      background:linear-gradient(180deg,#fffaf5,#f8f0e7);
-      color:var(--text);
-    }
-    .wrap{max-width:var(--maxw);margin:26px auto;padding:18px}
-
-    nav.top{
-      display:flex;justify-content:space-between;align-items:center;margin-bottom:14px
-    }
-    .brand{
-      font-weight:800;color:var(--turkish-blue);font-size:20px;text-decoration:none
-    }
-    .links a{
-      color:var(--muted);text-decoration:none;margin-left:12px;font-size:14px
-    }
-
-    header.hero{
-      border-radius:var(--radius);
-      overflow:hidden;
-      background:
-        linear-gradient(180deg,rgba(0,0,0,0.35),rgba(0,0,0,0.1)),
-        url('https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      min-height:52vh;
-      display:flex;align-items:flex-end;
-      box-shadow:var(--shadow);
-    }
-    .overlay{
-      padding:34px;color:#fff;text-shadow:0 6px 20px rgba(0,0,0,0.35)
-    }
-    .overlay h1{
-      margin:0;font-size:clamp(26px,4vw,40px);letter-spacing:0.4px
-    }
-    .overlay p{
-      margin:8px 0 0;color:rgba(255,255,255,0.92)
-    }
-
-    .meta{
-      display:flex;gap:10px;flex-wrap:wrap;margin-top:12px
-    }
-    .pill{
-      background:rgba(255,255,255,0.08);padding:8px 12px;border-radius:999px;color:#fff;font-size:13px
-    }
-
-    .grid{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:20px}
-    @media(max-width:920px){.grid{grid-template-columns:1fr}}
-
-    .card{
-      background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);margin-bottom:18px
-    }
-    h2{margin:6px 0 12px}
-
-    .cols{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-    @media(max-width:700px){.cols{grid-template-columns:1fr}}
-
-    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-    @media(max-width:700px){.gallery{grid-template-columns:repeat(2,1fr)}}
-    .gallery img{
-      width:100%;height:150px;object-fit:cover;border-radius:10px;
-      cursor:pointer;display:block;box-shadow:0 8px 22px rgba(8,22,48,0.06)
-    }
-
-    .itinerary{display:flex;flex-direction:column;gap:12px}
-    .it-day{
-      background:linear-gradient(180deg,#fff9f6,#fef0e9);
-      border-left:6px solid var(--turkish-blue);
-      padding:12px;border-radius:10px
-    }
-    .it-day h4{margin:0 0 6px;color:var(--turkish-blue)}
-    .it-day p{margin:0;color:var(--muted)}
-
-    .hotel{
-      display:flex;gap:12px;align-items:center;margin-top:10px
-    }
-    .hotel img{
-      width:110px;height:70px;object-fit:cover;border-radius:8px
-    }
-    .hinfo h4{margin:0}
-    .hinfo p{margin:4px 0 0;color:var(--muted);font-size:13px}
-
-    .map{border-radius:10px;overflow:hidden;height:220px;margin-top:10px}
-
-    .tag{
-      display:inline-block;padding:6px 12px;background:var(--sunset);
-      color:#fff;border-radius:999px;font-size:13px;font-weight:700
-    }
-
-    footer.sitefoot{
-      margin-top:24px;text-align:center;color:var(--muted);font-size:13px;padding:10px 0
-    }
-
-    /* lightbox */
-    .lightbox{
-      position:fixed;inset:0;background:rgba(0,0,0,0.84);
-      display:none;align-items:center;justify-content:center;
-      padding:20px;z-index:9999
-    }
-    .lightbox img{
-      max-width:94%;max-height:86%;
-      border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,0.85)
-    }
-    .close-x{
-      position:absolute;top:18px;right:18px;color:#fff;font-size:28px;cursor:pointer
-    }
-  </style>
+<meta charset="UTF-8" />
+<title>Turkey – Istanbul & Cappadocia</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+ body{margin:0;background:radial-gradient(circle,#15141e,#050509);font-family:Poppins;color:#fff;}
+ .page{max-width:960px;margin:auto;padding:20px;}
+ .hero{height:360px;border-radius:22px;overflow:hidden;}
+ .hero img{height:100%;width:100%;object-fit:cover;filter:brightness(62%);}
+ h2{color:#f5e2b4;}
+</style>
 </head>
 
 <body>
-  <div class="wrap">
-    <nav class="top">
-      <a class="brand" href="index.html">AdventureHub</a>
-      <div class="links">
-        <a href="santorini.html">Santorini</a>
-        <a href="turkey.html" style="color:var(--turkish-blue);font-weight:700">Turkey</a>
-      </div>
-    </nav>
 
-    <header class="hero">
-      <div class="overlay">
-        <span class="tag">Honeymoon Exclusive</span>
-        <h1>Turkey — Cappadocia Balloons & Istanbul Romance</h1>
-        <p>Hot air balloons, cave suites, mosques, bazaars & Bosphorus sunsets — Turkey is magical for honeymooners.</p>
+<section class="page">
 
-        <div class="meta">
-          <span class="pill">Istanbul • Cappadocia</span>
-          <span class="pill">Best Time: Apr–Jun • Sep–Nov</span>
-          <span class="pill">Sunsets • Culture • Luxury</span>
-        </div>
-      </div>
-    </header>
+<h1>Turkey — A Blend of Europe & Asia</h1>
 
-    <main class="grid">
-      <!-- LEFT -->
-      <section>
+<div class="hero">
+  <img src="https://images.unsplash.com/photo-1531219432768-9f540ce91ef3?auto=format">
+</div>
 
-        <article class="card">
-          <h2>Why Turkey for Honeymoon?</h2>
-          <p style="color:var(--muted)">
-            Turkey blends romance, adventure, history and luxury.  
-            From hot air balloons rising over Cappadocia to candlelit Bosphorus cruises in Istanbul,  
-            this destination is perfect for couples seeking magic.
-          </p>
+<h2>Best Places</h2>
+<ul>
+  <li>Hagia Sophia</li>
+  <li>Blue Mosque</li>
+  <li>Bosphorus River</li>
+  <li>Cappadocia Hot Air Balloons</li>
+</ul>
 
-          <div class="cols" style="margin-top:12px">
-            <div>
-              <h3>Romantic Experiences</h3>
-              <ul style="color:var(--muted);padding-left:18px">
-                <li>Hot air balloon ride at sunrise (Cappadocia)</li>
-                <li>Stay in a luxury cave suite</li>
-                <li>Bosphorus sunset cruise with dinner</li>
-                <li>Private photoshoot near Blue Mosque</li>
-                <li>Explore fairy chimneys & valleys</li>
-              </ul>
-            </div>
-            <div>
-              <h3>Where to Stay</h3>
-              <ul style="color:var(--muted);padding-left:18px">
-                <li>Cappadocia — cave hotels & mountain views</li>
-                <li>Sultanahmet — mosques & history</li>
-                <li>Bosphorus area — luxury waterfront stays</li>
-                <li>Galata — nightlife & cafes</li>
-              </ul>
-            </div>
-          </div>
-        </article>
+<h2>Map</h2>
+<iframe style="width:100%;height:240px;border-radius:14px" src="https://www.google.com/maps?q=Turkey&output=embed"></iframe>
 
-        <article class="card" id="gallery">
-          <h2>Photo Gallery</h2>
-          <div class="gallery">
-            <img src="https://images.unsplash.com/photo-1526481280695-3c720685208b?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1526481280695-3c720685208b?auto=format&fit=crop&w=1600&q=80" alt="Cappadocia balloons">
-            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1600&q=80" alt="Cave hotel">
-            <img src="https://images.unsplash.com/photo-1590075965968-e808399b0c7f?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1590075965968-e808399b0c7f?auto=format&fit=crop&w=1600&q=80" alt="Istanbul mosque">
-            <img src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&fit=crop&w=1600&q=80" alt="Bosphorus">
-            <img src="https://images.unsplash.com/photo-1584999003719-9f153ee29754?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1584999003719-9f153ee29754?auto=format&fit=crop&w=1600&q=80" alt="Grand Bazaar">
-            <img src="https://images.unsplash.com/photo-1562078014-7a5fb43e36c1?auto=format&fit=crop&w=900&q=60" data-large="https://images.unsplash.com/photo-1562078014-7a5fb43e36c1?auto=format&fit=crop&w=1600&q=80" alt="Istanbul architecture">
-          </div>
-          <p style="color:var(--muted);margin-top:10px">Tap images to enlarge. (Unsplash demo photos.)</p>
-        </article>
-
-        <article class="card" id="itinerary">
-          <h2>3-Day Romantic Turkey Itinerary</h2>
-          <div class="itinerary">
-
-            <div class="it-day">
-              <h4>Day 1 — Cappadocia Sunrise Balloons</h4>
-              <p>Start your honeymoon with a magical hot air balloon ride at sunrise. Explore Göreme Open Air Museum & stay in a cave suite.</p>
-            </div>
-
-            <div class="it-day">
-              <h4>Day 2 — Fairy Chimneys & Valley Walks</h4>
-              <p>Visit Love Valley, Pigeon Valley & Uchisar Castle. Evening: romantic dinner in a cliffside cave restaurant.</p>
-            </div>
-
-            <div class="it-day">
-              <h4>Day 3 — Istanbul Romance & Cruise</h4>
-              <p>Fly to Istanbul. Visit Hagia Sophia, Blue Mosque, walk around Sultanahmet. Evening Bosphorus sunset cruise with dinner.</p>
-            </div>
-
-          </div>
-        </article>
-
-      </section>
-
-      <!-- RIGHT -->
-      <aside>
-        <div class="card">
-          <h3>Top Hotels (Honeymoon)</h3>
-
-          <div class="hotel">
-            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=400&q=60" alt="cave hotel">
-            <div class="hinfo">
-              <h4>Cappadocia Luxury Cave Suite</h4>
-              <p>Private terrace with balloon views every morning.</p>
-            </div>
-          </div>
-
-          <div class="hotel">
-            <img src="https://images.unsplash.com/photo-1602526217537-9e3f4042afe7?auto=format&fit=crop&w=400&q=60" alt="istanbul hotel">
-            <div class="hinfo">
-              <h4>Bosphorus Romantic Hotel</h4>
-              <p>Waterfront rooms, spa & candlelit dining.</p>
-            </div>
-          </div>
-
-          <h3 style="margin-top:14px">How to Reach</h3>
-          <ul style="color:var(--muted);padding-left:18px">
-            <li>Fly to Istanbul (IST).</li>
-            <li>Fly or bus to Cappadocia (Kayseri/Navseh)</li>
-            <li>Domestic flights are fast & affordable.</li>
-          </ul>
-
-          <h3 style="margin-top:12px">Turkey Map</h3>
-          <div class="map">
-            <iframe width="100%" height="220" style="border:0" loading="lazy"
-              src="https://www.google.com/maps?q=Turkey&output=embed"></iframe>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Packing & Tips</h3>
-          <ul style="color:var(--muted);padding-left:18px">
-            <li>Warm clothes for Cappadocia mornings.</li>
-            <li>Comfortable shoes for mosques & valleys.</li>
-            <li>Respect mosque dress code when visiting.</li> 
-            <li>Book balloon rides 2 weeks in advance.</li>
-          </ul>
-        </div>
-      </aside>
-    </main>
-
-    <footer class="sitefoot">
-      © 2025 AdventureHub — Turkey Honeymoon Guide • Created by Kaunain Fathima • @kaunainfathima19
-    </footer>
-  </div>
-
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lb">
-    <div class="close-x" id="lbclose">✕</div>
-    <img id="lbimg" src="">
-  </div>
-
-  <script>
-    const imgs = document.querySelectorAll('.gallery img');
-    const lb = document.getElementById('lb');
-    const lbimg = document.getElementById('lbimg');
-    const lbclose = document.getElementById('lbclose');
-
-    imgs.forEach(img=>{
-      img.addEventListener('click',()=>{
-        lbimg.src = img.getAttribute('data-large') || img.src;
-        lb.style.display = 'flex';
-      });
-    });
-
-    lbclose.addEventListener('click',()=>{lb.style.display='none'});
-    lb.addEventListener('click',(e)=>{if(e.target===lb) lb.style.display='none'});
-  </script>
+</section>
 
 </body>
 </html>
