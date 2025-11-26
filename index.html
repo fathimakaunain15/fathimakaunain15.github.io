@@ -1,129 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Kashmir Destinations | AdventureHub</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<title>AdventureHub – Premium World Travel Guides</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
 <style>
   :root {
-    --bg-main: #050509;
-    --bg-card: #111119;
-    --bg-soft: #181821;
+    --bg: #050509;
+    --card: #111119;
+    --soft: #181821;
     --accent: #d4a651;
-    --accent-light: #f5e2b4;
-    --text-main: #f5f5f5;
-    --text-muted: #bbbbc6;
-    --border-soft: #262637;
+    --accent2: #f5e2b4;
+    --t1: #fff;
+    --t2: #bdbdc6;
+    --border: #262637;
   }
 
   * { box-sizing: border-box; }
 
   body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: radial-gradient(circle at top, #1b1825 0, #050509 45%);
-    color: var(--text-main);
+    background: radial-gradient(circle at top, #1b1924, var(--bg) 55%);
+    font-family: Poppins, sans-serif;
+    color: var(--t1);
   }
 
-  /* HEADER */
   header {
     position: sticky;
     top: 0;
-    padding: 16px 20px;
-    background: rgba(5,5,9,0.94);
+    padding: 16px 22px;
+    background: rgba(5,5,9,0.92);
     backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
   }
 
   .logo {
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--accent);
   }
 
-  nav a {
-    margin-left: 16px;
-    text-decoration: none;
-    color: var(--text-muted);
-    font-weight: 500;
+  /* HERO */
+  .hero {
+    height: 300px;
+    border-radius: 22px;
+    overflow: hidden;
+    position: relative;
+    margin: 18px;
   }
 
-  nav a:hover { color: var(--accent-light); }
-
-  /* PAGE WRAPPER */
-  .page {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 24px 18px;
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(55%);
   }
 
-  /* HEADING */
-  .title {
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.85));
+  }
+
+  .hero-content {
+    position: absolute;
+    bottom: 26px;
+    left: 20px;
+  }
+
+  .hero-title {
     font-size: 2rem;
-    font-weight: 600;
-    color: var(--accent-light);
-    margin-bottom: 10px;
-    text-align: center;
+    margin: 0;
+    color: var(--accent2);
+    font-weight: 700;
   }
 
   .subtitle {
-    text-align: center;
-    color: var(--text-muted);
-    margin-bottom: 28px;
-    font-size: 0.95rem;
+    margin-top: 6px;
+    color: var(--t2);
+    font-size: .95rem;
   }
 
-  /* DESTINATION GRID */
-  .card-grid {
+  /* SEARCH */
+  .search-box {
+    width: 90%;
+    max-width: 650px;
+    margin: 20px auto;
+    display: block;
+    padding: 12px 18px;
+    background: var(--soft);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    color: var(--t1);
+    font-size: 1rem;
+  }
+
+  /* SECTIONS */
+  .section-title {
+    margin: 30px 18px 10px;
+    font-size: 1.4rem;
+    color: var(--accent2);
+  }
+
+  .grid {
+    margin: 0 18px 28px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
+    gap: 16px;
   }
 
   .card {
-    background: var(--bg-card);
+    background: var(--card);
+    border: 1px solid var(--border);
     border-radius: 18px;
     overflow: hidden;
-    border: 1px solid var(--border-soft);
+    text-decoration: none;
+    color: var(--t1);
     transition: .3s;
-    box-shadow: 0 16px 36px rgba(0,0,0,0.5);
   }
 
-  .card:hover { transform: translateY(-6px); }
+  .card:hover {
+    transform: translateY(-6px);
+  }
 
   .card img {
     width: 100%;
-    height: 160px;
+    height: 130px;
     object-fit: cover;
     filter: brightness(75%);
   }
 
   .card h3 {
-    margin: 14px;
-    font-size: 1.2rem;
-    color: var(--accent-light);
+    font-size: 1.05rem;
+    margin: 12px;
+    color: var(--accent2);
   }
 
   .card p {
-    margin: 0 14px 16px;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    line-height: 1.4;
+    margin: 0 12px 14px;
+    font-size: .85rem;
+    color: var(--t2);
   }
 
-  /* FOOTER */
   footer {
-    margin-top: 34px;
-    padding: 24px 0;
     text-align: center;
-    color: var(--text-muted);
-    font-size: 0.85rem;
+    padding: 24px 0;
+    color: var(--t2);
+    font-size: .85rem;
   }
-
 </style>
 </head>
 
@@ -131,67 +159,220 @@
 
 <header>
   <div class="logo">AdventureHub</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="Adventures.html">All Adventures</a>
-  </nav>
 </header>
 
-<main class="page">
-
-  <h1 class="title">Kashmir Destinations</h1>
-  <p class="subtitle">Explore the beauty of Srinagar, Gulmarg, Pahalgam, Sonmarg & more.</p>
-
-  <div class="card-grid">
-
-    <!-- Srinagar -->
-    <a href="kashmir-paradise-on-earth.html" class="card">
-      <img src="https://images.unsplash.com/photo-1574581402427-793cb0f29166?auto=format&fit=crop&w=800&q=60">
-      <h3>Srinagar</h3>
-      <p>Dal Lake, Shikara rides, markets & Mughal gardens.</p>
-    </a>
-
-    <!-- Gulmarg -->
-    <a href="#" class="card">
-      <img src="https://images.unsplash.com/photo-1608152121831-1f6322f85736?auto=format&fit=crop&w=800&q=60">
-      <h3>Gulmarg</h3>
-      <p>Snow paradise, skiing & world-famous Gondola ride.</p>
-    </a>
-
-    <!-- Pahalgam -->
-    <a href="#" class="card">
-      <img src="https://images.unsplash.com/photo-1598432934671-fc1a93f64785?auto=format&fit=crop&w=800&q=60">
-      <h3>Pahalgam</h3>
-      <p>Pine forests, river valleys & Bollywood-famous meadows.</p>
-    </a>
-
-    <!-- Sonmarg -->
-    <a href="#" class="card">
-      <img src="https://images.unsplash.com/photo-1567274306342-3ec19bc13de1?auto=format&fit=crop&w=800&q=60">
-      <h3>Sonmarg</h3>
-      <p>Golden meadows, Zero Point & stunning glaciers.</p>
-    </a>
-
-    <!-- Aru Valley -->
-    <a href="#" class="card">
-      <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=60">
-      <h3>Aru Valley</h3>
-      <p>Horse rides, mountain views & tranquil nature spots.</p>
-    </a>
-
-    <!-- Betaab Valley -->
-    <a href="#" class="card">
-      <img src="https://images.unsplash.com/photo-1561484930-df55b165c2c3?auto=format&fit=crop&w=800&q=60">
-      <h3>Betaab Valley</h3>
-      <p>Green landscapes, streams & picture-perfect scenery.</p>
-    </a>
-
+<!-- HERO -->
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1200&q=70">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title">Explore 70+ Premium Destinations</h1>
+    <p class="subtitle">Handcrafted luxury travel guides by Kaunain Fathima</p>
   </div>
+</section>
 
-  <footer>
-    © 2025 AdventureHub — Created by Kaunain Fathima · @kaunainfathima19
-  </footer>
+<!-- SEARCH -->
+<input type="text" class="search-box" placeholder="Search destinations… (e.g., Bali, Switzerland, Kashmir)" />
 
-</main>
+<!-- INDIA -->
+<h2 class="section-title">India Destinations</h2>
+<div class="grid">
+  <a href="manali-himalayan-snow-adventure.html" class="card">
+    <img src="https://images.unsplash.com/photo-1548423940-b61e87e4a4bd?auto=format">
+    <h3>Manali</h3>
+    <p>Snow, mountains & adventure.</p>
+  </a>
+
+  <a href="shimla-queen-of-hills.html" class="card">
+    <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format">
+    <h3>Shimla</h3>
+    <p>British charm & hill beauty.</p>
+  </a>
+
+  <a href="ooty-green-hills-lakes.html" class="card">
+    <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9eb60?auto=format">
+    <h3>Ooty</h3>
+    <p>Lakes, gardens & hills.</p>
+  </a>
+
+  <a href="kodaikanal-misty-hills-lake.html" class="card">
+    <img src="https://images.unsplash.com/photo-1597005367599-5ef3fd9a93b5?auto=format">
+    <h3>Kodaikanal</h3>
+    <p>Mist, pine forests & lake.</p>
+  </a>
+
+  <a href="andaman-islands-turquoise-paradise.html" class="card">
+    <img src="https://images.unsplash.com/photo-1505739775338-1f3c0e54f3f9?auto=format">
+    <h3>Andaman</h3>
+    <p>Beaches & blue waters.</p>
+  </a>
+
+  <a href="auli-ski-snow-mountains.html" class="card">
+    <img src="https://images.unsplash.com/photo-1508264165352-258a6be8f084?auto=format">
+    <h3>Auli</h3>
+    <p>India’s skiing capital.</p>
+  </a>
+
+  <a href="coorg-coffee-hills.html" class="card">
+    <img src="https://images.unsplash.com/photo-1494499031632-6235cba57f9a?auto=format">
+    <h3>Coorg</h3>
+    <p>Coffee hills & nature.</p>
+  </a>
+
+  <a href="gulmarg-snow-skiing-paradise.html" class="card">
+    <img src="https://images.unsplash.com/photo-1543352632-39e4c837a2e0?auto=format">
+    <h3>Gulmarg</h3>
+    <p>Snow, gondola & skiing.</p>
+  </a>
+
+  <a href="mussoorie-hillstation-queenofhills.html" class="card">
+    <img src="https://images.unsplash.com/photo-1584452964988-1f21d0ec098b?auto=format">
+    <h3>Mussoorie</h3>
+    <p>Queen of hills.</p>
+  </a>
+
+  <a href="sikkim-himalayan-peaks-lakes.html" class="card">
+    <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format">
+    <h3>Sikkim</h3>
+    <p>Peaks, lakes & views.</p>
+  </a>
+</div>
+
+<!-- INTERNATIONAL -->
+<h2 class="section-title">International Destinations</h2>
+<div class="grid">
+
+  <a href="bali-island-heaven.html" class="card">
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format">
+    <h3>Bali</h3>
+    <p>Temples, beaches & culture.</p>
+  </a>
+
+  <a href="canada-majestic-landscapes.html" class="card">
+    <img src="https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format">
+    <h3>Canada</h3>
+    <p>Lakes, forests & mountains.</p>
+  </a>
+
+  <a href="dubai-luxury-desert-city.html" class="card">
+    <img src="https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?auto=format">
+    <h3>Dubai</h3>
+    <p>Luxury, nightlife & desert.</p>
+  </a>
+
+  <a href="finland-northernlights-snow.html" class="card">
+    <img src="https://images.unsplash.com/photo-1519677100203-a0e668c92439?auto=format">
+    <h3>Finland</h3>
+    <p>Northern lights & snow.</p>
+  </a>
+
+  <a href="maldives-luxury-island-paradise.html" class="card">
+    <img src="https://images.unsplash.com/photo-1505739775338-1f3c0e54f3f9?auto=format">
+    <h3>Maldives</h3>
+    <p>Luxury overwater villas.</p>
+  </a>
+
+  <a href="mauritius-tropical-lagoon-heaven.html" class="card">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format">
+    <h3>Mauritius</h3>
+    <p>Blue lagoons & beaches.</p>
+  </a>
+
+  <a href="meghalaya-clouds-waterfalls-hills.html" class="card">
+    <img src="https://images.unsplash.com/photo-1589308078055-0c3e7ca3d42c?auto=format">
+    <h3>Meghalaya</h3>
+    <p>Clouds & waterfalls.</p>
+  </a>
+
+  <a href="munnar-tea-gardens-misty-hills.html" class="card">
+    <img src="https://images.unsplash.com/photo-1566576912328-3f6c64e5a2c1?auto=format">
+    <h3>Munnar</h3>
+    <p>Tea gardens & mist.</p>
+  </a>
+
+  <a href="newyork-skyscrapers-citylights.html" class="card">
+    <img src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format">
+    <h3>New York</h3>
+    <p>City lights & skylines.</p>
+  </a>
+
+  <a href="newzealand-adventure-nature-paradise.html" class="card">
+    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format">
+    <h3>New Zealand</h3>
+    <p>Lakes & adventure.</p>
+  </a>
+
+  <a href="nice-frenchriviera-seaside-elegance.html" class="card">
+    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format">
+    <h3>Nice</h3>
+    <p>French Riviera vibes.</p>
+  </a>
+
+  <a href="norway-fjords-northernlights-adventure.html" class="card">
+    <img src="https://images.unsplash.com/photo-1508264165352-258a6be8f084?auto=format">
+    <h3>Norway</h3>
+    <p>Fjords & auroras.</p>
+  </a>
+
+  <a href="paris-romance-landmarks-eiffel.html" class="card">
+    <img src="https://images.unsplash.com/photo-1522098543979-ffc7f79d5aff?auto=format">
+    <h3>Paris</h3>
+    <p>Romance & Eiffel Tower.</p>
+  </a>
+
+  <a href="rome-history-romance-colosseum.html" class="card">
+    <img src="https://images.unsplash.com/photo-1504973960431-7f75345a5fa3?auto=format">
+    <h3>Rome</h3>
+    <p>History & monuments.</p>
+  </a>
+
+  <a href="santorini-greece-whitebluesunset.html" class="card">
+    <img src="https://images.unsplash.com/photo-1506176671240-22980140a405?auto=format">
+    <h3>Santorini</h3>
+    <p>White & blue Greece.</p>
+  </a>
+
+  <a href="seychelles-tropical-island-luxury.html" class="card">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format">
+    <h3>Seychelles</h3>
+    <p>Tropical luxury.</p>
+  </a>
+
+  <a href="singapore-modern-city-futuristic.html" class="card">
+    <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format">
+    <h3>Singapore</h3>
+    <p>Futuristic city.</p>
+  </a>
+
+  <a href="thailand-beaches-temples-nightlife.html" class="card">
+    <img src="https://images.unsplash.com/photo-1508264165352-258a6be8f084?auto=format">
+    <h3>Thailand</h3>
+    <p>Beaches & nightlife.</p>
+  </a>
+
+  <a href="tokyo-japan-anime-skyscrapers.html" class="card">
+    <img src="https://images.unsplash.com/photo-1505068999540-7f2c76324f56?auto=format">
+    <h3>Tokyo</h3>
+    <p>Anime & neon lights.</p>
+  </a>
+
+  <a href="turkey-istanbul-cappadocia-history.html" class="card">
+    <img src="https://images.unsplash.com/photo-1531219432768-9f540ce91ef3?auto=format">
+    <h3>Turkey</h3>
+    <p>Balloons & history.</p>
+  </a>
+
+  <a href="zermatt-matterhorn-swissalps.html" class="card">
+    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format">
+    <h3>Zermatt</h3>
+    <p>Matterhorn mountains.</p>
+  </a>
+
+</div>
+
+<footer>
+  © 2025 AdventureHub · Designed by <b>Kaunain Fathima</b> · @kaunainfathima19  
+</footer>
+
 </body>
 </html>
