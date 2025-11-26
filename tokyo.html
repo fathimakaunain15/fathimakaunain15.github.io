@@ -1,273 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
+<meta charset="UTF-8" />
+<title>Tokyo – Anime & Skyscrapers</title>
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Tokyo — Neon Nights & Timeless Culture | AdventureHub</title>
-<meta name="description" content="Tokyo travel guide: Shibuya Crossing, Shinjuku nightlife, Senso-ji, Akihabara, Skytree, cherry blossoms, bullet trains, itineraries and hotels." />
 <style>
-  :root{
-    --bg:#060612;
-    --card:#0f1220;
-    --neon-pink:#ff4fd8;
-    --neon-blue:#00c3ff;
-    --muted:#9aa3b2;
-    --text:#e9f6ff;
-    --radius:12px;
-    --shadow:0 10px 30px rgba(0,0,0,0.6);
-    --maxw:1100px;
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0;
-    font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
-    background: linear-gradient(180deg,#02020a 0%, #071022 60%);
-    color:var(--text);
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:var(--maxw);margin:26px auto;padding:18px}
-
-  nav.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-  .brand{font-weight:800;color:var(--neon-pink);font-size:20px;text-decoration:none}
-  .links a{color:var(--muted);text-decoration:none;margin-left:12px;font-size:14px}
-
-  header.hero{
-    border-radius:var(--radius);
-    overflow:hidden;
-    background:
-      linear-gradient(180deg, rgba(2,6,23,0.6), rgba(2,6,23,0.15)),
-      url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-    min-height:52vh;
-    display:flex;align-items:end;
-    box-shadow:var(--shadow);
-  }
-  .overlay{padding:32px}
-  .overlay h1{margin:0;font-size:clamp(28px,4vw,44px);letter-spacing:0.4px}
-  .overlay p{margin:8px 0 0;color:var(--muted)}
-
-  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-  .pill{background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:999px;color:var(--muted);font-size:13px}
-
-  .grid{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:20px}
-  @media(max-width:920px){.grid{grid-template-columns:1fr}}
-
-  .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;box-shadow:var(--shadow);margin-bottom:18px}
-  h2{margin:6px 0 12px}
-
-  .cols{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-  @media(max-width:700px){.cols{grid-template-columns:1fr}}
-
-  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-  @media(max-width:700px){.gallery{grid-template-columns:repeat(2,1fr)}}
-  .gallery img{width:100%;height:140px;object-fit:cover;border-radius:10px;cursor:pointer;display:block;box-shadow:0 8px 20px rgba(2,6,23,0.6)}
-
-  .itinerary{display:flex;flex-direction:column;gap:12px}
-  .it-day{background:linear-gradient(180deg,#07121e,#06101a);padding:12px;border-radius:10px;border-left:6px solid var(--neon-blue)}
-  .it-day h4{margin:0 0 6px;color:var(--neon-blue)}
-  .it-day p{margin:0;color:var(--muted)}
-
-  .hotel{display:flex;gap:12px;align-items:center}
-  .hotel img{width:110px;height:70px;object-fit:cover;border-radius:8px}
-  .hotel .hinfo h4{margin:0}
-  .hotel .hinfo p{margin:4px 0 0;color:var(--muted);font-size:13px}
-
-  .map{border-radius:10px;overflow:hidden;height:220px}
-
-  .cta{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
-  .btn{background:var(--neon-pink);color:#0b0710;padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none}
-  .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
-
-  footer.sitefoot{margin-top:24px;text-align:center;color:var(--muted);font-size:13px;padding:10px 0}
-
-  /* lightbox */
-  .lightbox{position:fixed;inset:0;background:rgba(1,1,6,0.85);display:none;align-items:center;justify-content:center;padding:20px;z-index:9999}
-  .lightbox img{max-width:92%;max-height:86%;border-radius:10px;box-shadow:0 22px 60px rgba(0,0,0,0.8)}
-  .close-x{position:absolute;top:18px;right:18px;color:#fff;font-size:28px;cursor:pointer}
-
-  /* small neon accent */
-  .neon { color: var(--neon-pink); font-weight:700; }
+ body{margin:0;background:radial-gradient(circle,#17141e,#050509);font-family:Poppins;color:#fff;}
+ .page{max-width:960px;padding:20px;margin:auto;}
+ .hero{height:360px;border-radius:20px;overflow:hidden;}
+ .hero img{width:100%;height:100%;object-fit:cover;filter:brightness(60%);}
+ h2{color:#f5e2b4;}
 </style>
 </head>
+
 <body>
-  <div class="wrap">
-    <nav class="top">
-      <a class="brand" href="index.html">AdventureHub</a>
-      <div class="links">
-        <a href="tokyo.html" class="neon">Tokyo</a>
-        <a href="singapore.html">Singapore</a>
-        <a href="thailand.html">Thailand</a>
-      </div>
-    </nav>
 
-    <header class="hero card" role="banner">
-      <div class="overlay">
-        <h1>Tokyo — Neon Nights & Timeless Culture</h1>
-        <p>Shibuya crossing, ancient temples, anime streets of Akihabara, cherry blossoms and the Shinkansen.</p>
+<section class="page">
 
-        <div class="meta">
-          <span class="pill">Japan</span>
-          <span class="pill">Best Time: Mar–May (Sakura) • Sep–Nov</span>
-          <span class="pill">City • Culture • Tech</span>
-        </div>
+<h1>Tokyo — Anime, Neon Lights & Modern Japan</h1>
 
-        <div class="cta">
-          <a class="btn" href="#itinerary">3-Day Itinerary</a>
-          <a class="btn ghost" href="#gallery">Gallery</a>
-        </div>
-      </div>
-    </header>
+<div class="hero">
+  <img src="https://images.unsplash.com/photo-1505068999540-7f2c76324f56?auto=format">
+</div>
 
-    <main class="grid" role="main">
-      <!-- left -->
-      <section>
+<h2>Top Places</h2>
+<ul>
+  <li>Shibuya Crossing</li>
+  <li>Tokyo Tower</li>
+  <li>Akihabara</li>
+  <li>Asakusa Temple</li>
+  <li>TeamLab Borderless</li>
+</ul>
 
-        <article class="card">
-          <h2>Quick Overview</h2>
-          <p style="color:var(--muted)">Tokyo uniquely blends ultra-modern (skyscrapers, neon nightlife, electronics districts) with traditional culture (shrines, tea houses, seasonal festivals). It's efficient, endlessly discoverable and perfect for photographers, food-lovers and culture seekers.</p>
+<h2>Map</h2>
+<iframe style="width:100%;height:240px;border-radius:14px" src="https://www.google.com/maps?q=Tokyo&output=embed"></iframe>
 
-          <div class="cols" style="margin-top:12px">
-            <div>
-              <h3>Must-Visits</h3>
-              <ul style="color:var(--muted);padding-left:18px">
-                <li>Shibuya Crossing & Hachiko</li>
-                <li>Shinjuku Nightlife & Omoide Yokocho</li>
-                <li>Senso-ji Temple (Asakusa)</li>
-                <li>Akihabara — anime & electronics</li>
-                <li>Tokyo Skytree & Tokyo Tower</li>
-              </ul>
-            </div>
-            <div>
-              <h3>Quick Tips</h3>
-              <ul style="color:var(--muted);padding-left:18px">
-                <li>Get a Suica/Pasmo card for trains.</li>
-                <li>Use Google Maps + Hyperdia for JR timings.</li>
-                <li>Carry cash for small shops, but most accept cards.</li>
-                <li>Respect queueing and quiet carriage rules on trains.</li>
-              </ul>
-            </div>
-          </div>
-        </article>
+</section>
 
-        <article id="gallery" class="card">
-          <h2>Photo Gallery</h2>
-          <div class="gallery">
-            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=60" alt="Shibuya crossing" data-large="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1600&q=80">
-            <img src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c?auto=format&fit=crop&w=900&q=60" alt="Akihabara lights" data-large="https://images.unsplash.com/photo-1549692520-acc6669e2f0c?auto=format&fit=crop&w=1600&q=80">
-            <img src="https://images.unsplash.com/photo-1501212570720-8b4a2d0f3a4b?auto=format&fit=crop&w=900&q=60" alt="Senso-ji temple" data-large="https://images.unsplash.com/photo-1501212570720-8b4a2d0f3a4b?auto=format&fit=crop&w=1600&q=80">
-            <img src="https://images.unsplash.com/photo-1526481280691-9217d0159da9?auto=format&fit=crop&w=900&q=60" alt="Skytree at night" data-large="https://images.unsplash.com/photo-1526481280691-9217d0159da9?auto=format&fit=crop&w=1600&q=80">
-            <img src="https://images.unsplash.com/photo-1526483360410-1b4b5ec2a4d6?auto=format&fit=crop&w=900&q=60" alt="Shinjuku neon" data-large="https://images.unsplash.com/photo-1526483360410-1b4b5ec2a4d6?auto=format&fit=crop&w=1600&q=80">
-            <img src="https://images.unsplash.com/photo-1526483360427-5f0f4b4a4c2e?auto=format&fit=crop&w=900&q=60" alt="Sakura path" data-large="https://images.unsplash.com/photo-1526483360427-5f0f4b4a4c2e?auto=format&fit=crop&w=1600&q=80">
-          </div>
-          <p style="color:var(--muted);margin-top:12px">Tap images to enlarge. Unsplash photos used for demo.</p>
-        </article>
-
-        <article id="itinerary" class="card">
-          <h2>3-Day Best Itinerary</h2>
-          <div class="itinerary">
-            <div class="it-day">
-              <h4>Day 1 — Shibuya, Harajuku & Meiji Shrine</h4>
-              <p>Cross the famous Shibuya scramble, stroll Takeshita Street (Harajuku), then find serenity at Meiji Jingu shrine. Evening: explore Omotesando cafes.</p>
-            </div>
-            <div class="it-day">
-              <h4>Day 2 — Asakusa, Ueno & Skytree</h4>
-              <p>Visit Senso-ji temple in Asakusa, walk Ameya-Yokochō market (Ueno), then head to Tokyo Skytree for skyline views. Night: explore Akihabara.</p>
-            </div>
-            <div class="it-day">
-              <h4>Day 3 — Shinjuku & Nightlife</h4>
-              <p>Morning in Shinjuku Gyoen (sakura season), afternoon in department stores, evening enjoy memory lanes (Omoide Yokocho) and neon bars in Kabukicho.</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <h2>Food & Culture</h2>
-          <ul style="color:var(--muted);padding-left:18px">
-            <li>Try sushi at a conveyor belt (kaiten) or a standing sushi bar.</li>
-            <li>Ramen alley experiences in Shinjuku and Ikebukuro.</li>
-            <li>Visit a traditional tea house or watch a kabuki show (book ahead).</li>
-          </ul>
-        </article>
-
-      </section>
-
-      <!-- right -->
-      <aside>
-        <div class="card">
-          <h3>Quick Facts</h3>
-          <p class="pill" style="display:inline-block;margin-bottom:8px">Population</p>
-          <p style="margin:6px 0 12px;color:var(--muted)">≈ 14 million (city)</p>
-
-          <h3 style="margin-top:6px">Top Hotels</h3>
-          <div class="hotel" style="margin-top:10px">
-            <img src="https://images.unsplash.com/photo-1542317854-9c3e3f7b9e37?auto=format&fit=crop&w=400&q=60" alt="hotel">
-            <div class="hinfo"><h4>Park Hyatt Tokyo</h4><p>Iconic skyline views, Shinjuku area.</p></div>
-          </div>
-
-          <div class="hotel" style="margin-top:10px">
-            <img src="https://images.unsplash.com/photo-1501117716987-c8e36f0f1f3e?auto=format&fit=crop&w=400&q=60" alt="hotel2">
-            <div class="hinfo"><h4>The Peninsula Tokyo</h4><p>Luxury near Tokyo Station.</p></div>
-          </div>
-
-          <h3 style="margin-top:12px">How to Get Around</h3>
-          <ul style="color:var(--muted);padding-left:18px">
-            <li>JR Yamanote line connects major hubs (Shibuya, Shinjuku, Ueno)</li>
-            <li>Purchase a Suica/Pasmo card for smooth travel</li>
-            <li>Use taxis for late-night returns (more expensive)</li>
-          </ul>
-
-          <h3 style="margin-top:12px">Map</h3>
-          <div class="map card">
-            <iframe title="Tokyo map" width="100%" height="100%" style="border:0" loading="lazy"
-              src="https://www.google.com/maps?q=Tokyo&output=embed"></iframe>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Packing & Safety</h3>
-          <ul style="color:var(--muted);padding-left:18px">
-            <li>Comfortable shoes for walking and trains.</li>
-            <li>Carry an umbrella — weather can change quickly.</li>
-            <li>Japan is very safe, but keep belongings secure in busy stations.</li>
-            <li>Learn basic Japanese greetings — locals appreciate effort.</li>
-          </ul>
-        </div>
-      </aside>
-    </main>
-
-    <footer class="sitefoot card">
-      © 2025 AdventureHub — Created by Kaunain Fathima • Follow @kaunainfathima19
-    </footer>
-  </div>
-
-  <!-- lightbox -->
-  <div class="lightbox" id="lb" role="dialog" aria-hidden="true">
-    <div class="close-x" id="lbclose" title="Close">✕</div>
-    <img id="lbimg" src="" alt="expanded image">
-  </div>
-
-  <script>
-    // gallery lightbox
-    const imgs = document.querySelectorAll('.gallery img');
-    const lb = document.getElementById('lb');
-    const lbimg = document.getElementById('lbimg');
-    const lbclose = document.getElementById('lbclose');
-
-    imgs.forEach(img=>{
-      img.addEventListener('click',()=>{
-        const large = img.getAttribute('data-large')||img.src;
-        lbimg.src = large;
-        lb.style.display = 'flex';
-        lb.setAttribute('aria-hidden','false');
-      });
-    });
-    lbclose.addEventListener('click',()=>{
-      lb.style.display='none';
-      lb.setAttribute('aria-hidden','true');
-      lbimg.src='';
-    });
-    lb.addEventListener('click',(e)=>{
-      if(e.target===lb) { lb.style.display='none'; lbimg.src=''; lb.setAttribute('aria-hidden','true'); }
-    });
-  </script>
 </body>
 </html>
