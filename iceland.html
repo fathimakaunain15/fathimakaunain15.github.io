@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Iceland – Glaciers, Waterfalls & Northern Lights | AdventureHub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg-main:#050509;
+    --bg-card:#111119;
+    --bg-soft:#181821;
+    --accent:#d4a651;
+    --accent-soft:#f5e2b4;
+    --text-main:#f5f5f5;
+    --text-muted:#bbbbc6;
+    --border-soft:#262637;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;background:radial-gradient(circle at top,#120f1c 0%,#050509 45%);
+    font-family:Poppins,sans-serif;color:var(--text-main);
+  }
+
+  header{
+    position:sticky;top:0;padding:14px 20px;
+    display:flex;justify-content:space-between;
+    background:rgba(5,5,9,.95);backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,.05);
+  }
+
+  .logo{color:var(--accent);font-size:1.2rem;font-weight:700;}
+
+  nav a{
+    margin-left:14px;font-size:.9rem;color:var(--text-muted);
+  }
+
+  nav a.active{color:var(--accent-soft);}
+
+  .page{max-width:960px;margin:auto;padding:24px 16px 60px;}
+
+  .hero{
+    height:360px;border-radius:22px;overflow:hidden;
+    position:relative;margin-bottom:20px;
+    box-shadow:0 25px 55px rgba(0,0,0,.7);
+  }
+
+  .hero img{
+    width:100%;height:100%;object-fit:cover;
+    filter:brightness(63%);
+  }
+
+  .hero-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(to bottom,rgba(0,0,0,.15),rgba(0,0,0,.9));
+  }
+
+  .hero-content{position:absolute;bottom:26px;left:18px;}
+
+  .pill{
+    padding:4px 12px;background:rgba(0,0,0,.55);
+    border-radius:999px;border:1px solid rgba(255,255,255,.15);
+    color:var(--accent-soft);font-size:.75rem;
+  }
+
+  .hero-title{font-size:2rem;margin:8px 0;font-weight:700;}
+  .hero-sub{max-width:520px;color:var(--text-muted);font-size:.9rem;}
+
+  .section{
+    background:var(--bg-card);padding:20px;border-radius:18px;
+    border:1px solid var(--border-soft);margin-bottom:22px;
+    box-shadow:0 18px 40px rgba(0,0,0,.6);
+  }
+
+  .section h2{
+    color:var(--accent-soft);margin-bottom:10px;font-size:1.25rem;
+  }
+
+  .section p,.section li{color:var(--text-muted);}
+
+  ul{padding-left:18px;}
+
+  .gallery-grid{
+    display:grid;gap:10px;
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  @media(min-width:720px){
+    .gallery-grid{grid-template-columns:repeat(4,1fr);}
+  }
+
+  .gallery-grid img{
+    width:100%;height:130px;object-fit:cover;border-radius:14px;
+  }
+
+  .itinerary-grid{display:grid;gap:12px;}
+  @media(min-width:720px){
+    .itinerary-grid{grid-template-columns:repeat(3,1fr);}
+  }
+
+  .day-card{
+    background:var(--bg-soft);padding:12px;
+    border-radius:14px;border:1px solid var(--border-soft);
+  }
+
+  .day-title{
+    color:var(--accent-soft);
+    margin-bottom:4px;font-weight:600;
+  }
+
+  .hotel-row{
+    display:flex;gap:10px;background:var(--bg-soft);
+    border:1px solid var(--border-soft);padding:12px;
+    border-radius:14px;margin-bottom:12px;
+  }
+
+  .hotel-row img{
+    width:80px;height:80px;object-fit:cover;border-radius:12px;
+  }
+
+  .hotel-tags{
+    margin-top:4px;display:flex;gap:6px;flex-wrap:wrap;
+  }
+
+  .tag{
+    padding:2px 8px;border-radius:999px;
+    background:rgba(212,166,81,.25);
+    border:1px solid rgba(212,166,81,.5);
+    color:var(--accent-soft);font-size:.75rem;
+  }
+
+  .map-frame{
+    height:240px;margin-top:12px;
+    border-radius:16px;border:1px solid var(--border-soft);
+    overflow:hidden;
+  }
+
+  footer{
+    margin-top:25px;text-align:center;
+    color:var(--text-muted);font-size:.85rem;
+  }
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">AdventureHub</div>
+  <nav>
+    <a href="finland-northern-lights-lapland.html">Finland</a>
+    <a class="active" href="iceland-glaciers-waterfalls-northernlights.html">Iceland</a>
+  </nav>
+</header>
+
+<main class="page">
+
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1508264165352-258a6be8f084?auto=format&fit=crop&w=1200&q=70">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="pill">Premium Destination Guide</div>
+    <h1 class="hero-title">Iceland — Glaciers, Waterfalls & Northern Lights</h1>
+    <p class="hero-sub">Black beaches, volcanoes, ice caves, waterfalls, hot springs & magical auroras.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Quick Overview</h2>
+  <p>
+    Iceland is one of the most unique destinations on Earth —
+    with dramatic landscapes, roaring waterfalls, ice caves, volcanoes,
+    geothermal pools & stunning Northern Lights.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Top Attractions</h2>
+  <ul>
+    <li>Blue Lagoon — geothermal spa</li>
+    <li>Reynisfjara Black Sand Beach</li>
+    <li>Gullfoss & Skogafoss waterfalls</li>
+    <li>Diamond Beach (ice blocks on shore)</li>
+    <li>Vatnajökull Ice Caves</li>
+    <li>Northern Lights (Sept–March)</li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>Gallery</h2>
+  <div class="gallery-grid">
+    <img src="https://images.unsplash.com/photo-1519817650390-64a93db511aa?auto=format&w=800&q=60">
+    <img src="https://images.unsplash.com/photo-1508261303786-5c8f0dbf5b7e?auto=format&w=800&q=60">
+    <img src="https://images.unsplash.com/photo-1505739775338-1f3c0e54f3f9?auto=format&w=800&q=60">
+    <img src="https://images.unsplash.com/photo-1527549993586-dff825b37782?auto=format&w=800&q=60">
+  </div>
+</section>
+
+<section class="section">
+  <h2>5-Day Iceland Itinerary</h2>
+  <div class="itinerary-grid">
+
+    <div class="day-card">
+      <div class="day-title">Day 1 — Reykjavik</div>
+      <p>City walk, Blue Lagoon, harbor views.</p>
+    </div>
+
+    <div class="day-card">
+      <div class="day-title">Day 2 — Golden Circle</div>
+      <p>Geysir, Thingvellir, Gullfoss.</p>
+    </div>
+
+    <div class="day-card">
+      <div class="day-title">Day 3 — Waterfalls & Black Beach</div>
+      <p>Skogafoss, Seljalandsfoss, Reynisfjara.</p>
+    </div>
+
+    <div class="day-card">
+      <div class="day-title">Day 4 — Ice Cave Tour</div>
+      <p>Vatnajökull glacier & Diamond Beach.</p>
+    </div>
+
+    <div class="day-card">
+      <div class="day-title">Day 5 — Northern Lights</div>
+      <p>Aurora viewing tour (seasonal).</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <h2>Top Hotels</h2>
+
+  <div class="hotel-row">
+    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format">
+    <div>
+      <h3>ION Adventure Hotel</h3>
+      <p>Luxury stay near volcanic landscapes.</p>
+      <div class="hotel-tags">
+        <span class="tag">Luxury</span><span class="tag">Aurora</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hotel-row">
+    <img src="https://images.unsplash.com/photo-1520256862855-398228c41684?auto=format">
+    <div>
+      <h3>Reykjavik Downtown Hotels</h3>
+      <p>Modern & stylish mid-range hotels.</p>
+      <div class="hotel-tags">
+        <span class="tag">Mid-range</span><span class="tag">City</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hotel-row">
+    <img src="https://images.unsplash.com/photo-1512914890250-353c97c9e7e2?auto=format">
+    <div>
+      <h3>Budget Guesthouses</h3>
+      <p>Warm & cozy stays at good prices.</p>
+      <div class="hotel-tags">
+        <span class="tag">Budget</span><span class="tag">Guesthouse</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="section">
+  <h2>Map</h2>
+  <div class="map-frame">
+    <iframe src="https://www.google.com/maps?q=Iceland&output=embed"></iframe>
+  </div>
+</section>
+
+<footer>
+  © 2025 AdventureHub — Created by Kaunain Fathima · @kaunainfathima19
+</footer>
+
+</main>
+</body>
+</html>
