@@ -1,376 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="UTF-8" />
+<title>Nice – French Riviera Elegance | AdventureHub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-  <title>Nice, French Riviera — Beaches, Views, Monaco & Travel Guide | AdventureHub</title>
-  <meta name="description" content="Nice French Riviera Guide — beaches, Promenade des Anglais, Monaco, Cannes, hilltop villages, luxury hotels and 3-day itinerary." />
-
-  <style>
-    :root{
-      --blue:#4da6ff;
-      --coral:#ff9b85;
-      --peach:#ffe5d4;
-      --sand:#f5d08c;
-      --text:#1a1a1a;
-      --muted:#6d6d6d;
-      --card:#ffffff;
-      --radius:14px;
-      --shadow:0 10px 35px rgba(0,0,0,0.08);
-      --maxw:1100px;
-    }
-
-    *{box-sizing:border-box}
-
-    body{
-      margin:0;
-      font-family:"Inter","Segoe UI",Roboto,Arial,sans-serif;
-      background:linear-gradient(180deg,#ffffff,#f7f9ff);
-      color:var(--text);
-    }
-
-    .wrap{
-      max-width:var(--maxw);
-      margin:25px auto;
-      padding:18px;
-    }
-
-    nav.top{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-bottom:18px;
-    }
-
-    .brand{
-      font-size:20px;
-      font-weight:800;
-      color:var(--blue);
-      text-decoration:none;
-    }
-
-    .links a{
-      margin-left:12px;
-      color:var(--muted);
-      text-decoration:none;
-      font-size:14px;
-    }
-
-    header.hero{
-      border-radius:var(--radius);
-      overflow:hidden;
-      min-height:55vh;
-      display:flex;
-      align-items:flex-end;
-      background:
-        linear-gradient(180deg,rgba(0,0,0,0.45),rgba(0,0,0,0.15)),
-        url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=80')
-        center/cover;
-      box-shadow:var(--shadow);
-    }
-
-    .overlay{
-      padding:34px;
-      color:white;
-    }
-
-    .tag{
-      background:var(--coral);
-      padding:6px 12px;
-      border-radius:999px;
-      font-size:13px;
-      font-weight:700;
-      color:#662e23;
-    }
-
-    .meta{
-      display:flex;
-      gap:10px;
-      margin-top:10px;
-      flex-wrap:wrap;
-    }
-
-    .pill{
-      background:rgba(255,255,255,0.2);
-      padding:8px 12px;
-      border-radius:999px;
-      font-size:13px;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:1fr 350px;
-      gap:22px;
-      margin-top:20px;
-    }
-
-    @media(max-width:900px){
-      .grid{grid-template-columns:1fr;}
-    }
-
-    .card{
-      background:var(--card);
-      padding:18px;
-      border-radius:12px;
-      box-shadow:var(--shadow);
-      margin-bottom:18px;
-    }
-
-    h2{margin:6px 0 12px;}
-
-    .gallery{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:10px;
-    }
-
-    @media(max-width:700px){
-      .gallery{grid-template-columns:repeat(2,1fr);}
-    }
-
-    .gallery img{
-      width:100%;
-      height:150px;
-      border-radius:10px;
-      object-fit:cover;
-      cursor:pointer;
-    }
-
-    .itinerary{display:flex;flex-direction:column;gap:12px;}
-
-    .it-day{
-      background:var(--peach);
-      border-left:6px solid var(--blue);
-      padding:12px;
-      border-radius:10px;
-    }
-
-    .it-day h4{
-      margin:0 0 4px;
-      color:var(--blue);
-    }
-
-    .hotel{
-      display:flex;
-      gap:12px;
-      margin-top:12px;
-      align-items:center;
-    }
-
-    .hotel img{
-      width:110px;
-      height:70px;
-      border-radius:10px;
-      object-fit:cover;
-    }
-
-    .map{
-      height:220px;
-      border-radius:10px;
-      overflow:hidden;
-      margin-top:12px;
-    }
-
-    footer{
-      margin-top:30px;
-      padding:20px 6px;
-      color:var(--muted);
-      text-align:center;
-    }
-
-    .lightbox{
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,0.85);
-      display:none;
-      justify-content:center;
-      align-items:center;
-      z-index:9999;
-      padding:20px;
-    }
-
-    .lightbox img{
-      max-width:90%;
-      max-height:85%;
-      border-radius:10px;
-    }
-
-    .close-x{
-      position:absolute;
-      top:22px;
-      right:22px;
-      font-size:30px;
-      color:white;
-      cursor:pointer;
-    }
-  </style>
-
+<style>
+  :root {--bg-main:#050509;--bg-card:#111119;--bg-soft:#181821;--accent:#d4a651;--accent-soft:#f5e2b4;--text-main:#fff;--text-muted:#bfbfca;--border-soft:#262637;}
+  body{margin:0;background:radial-gradient(circle,#14121d,#050509);font-family:Poppins;color:var(--text-main);}
+  header{position:sticky;top:0;padding:14px 20px;background:rgba(5,5,9,.92);display:flex;justify-content:space-between;backdrop-filter:blur(12px);}
+  .logo{color:var(--accent);font-weight:700;}
+  nav a{margin-left:14px;color:var(--text-muted);}
+  nav a.active{color:var(--accent-soft);}
+  .page{max-width:960px;margin:auto;padding:20px;}
+  .hero{height:360px;border-radius:22px;overflow:hidden;position:relative;}
+  .hero img{width:100%;height:100%;object-fit:cover;filter:brightness(62%);}
+  .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.88));}
+  .hero-content{position:absolute;left:20px;bottom:26px;}
+  .pill{background:rgba(0,0,0,.55);padding:4px 12px;border-radius:999px;color:var(--accent-soft);}
+  .section{background:var(--bg-card);margin-top:20px;padding:20px;border-radius:18px;border:1px solid var(--border-soft);}
+  h2{color:var(--accent-soft);}
+  ul{color:var(--text-muted);padding-left:20px;}
+  .gallery-grid{display:grid;gap:10px;grid-template-columns:repeat(2,1fr);}
+  @media(min-width:720px){.gallery-grid{grid-template-columns:repeat(4,1fr);} }
+  .gallery-grid img{height:130px;width:100%;object-fit:cover;border-radius:14px;}
+  .map-frame{height:240px;border-radius:16px;margin-top:12px;overflow:hidden;border:1px solid var(--border-soft);}
+</style>
 </head>
 
 <body>
 
-<div class="wrap">
+<header>
+  <div class="logo">AdventureHub</div>
+  <nav><a class="active">Nice</a></nav>
+</header>
 
-  <nav class="top">
-    <a href="index.html" class="brand">AdventureHub</a>
-    <div class="links">
-      <a href="nice.html" style="color:var(--blue);font-weight:700">Nice</a>
-    </div>
-  </nav>
+<main class="page">
 
-  <header class="hero">
-    <div class="overlay">
-      <span class="tag">International Adventure Premium</span>
-      <h1>Nice — French Riviera’s Beaches, Views & Luxury Coastline</h1>
-      <p>Sun-kissed beaches, turquoise waters, hilltop towns and the iconic Promenade des Anglais.</p>
-
-      <div class="meta">
-        <span class="pill">Promenade des Anglais</span>
-        <span class="pill">Éze Village</span>
-        <span class="pill">Monaco</span>
-        <span class="pill">Cannes</span>
-      </div>
-    </div>
-  </header>
-
-  <main class="grid">
-
-    <!-- LEFT -->
-    <section>
-
-      <article class="card">
-        <h2>Why Visit Nice?</h2>
-        <p style="color:var(--muted)">
-          Nice is the heart of the French Riviera — filled with pastel streets, blue sea views,
-          French cafés, cliffside villages and luxurious Mediterranean vibes.
-        </p>
-
-        <h3>Top Attractions</h3>
-        <ul style="padding-left:18px;color:var(--muted)">
-          <li>Promenade des Anglais</li>
-          <li>Old Town (Vieux Nice)</li>
-          <li>Castle Hill Viewpoint</li>
-          <li>Blue Beach & Villefranche Bay</li>
-          <li>Éze Village (15 min drive)</li>
-        </ul>
-
-        <h3>Nearby Riviera Icons</h3>
-        <ul style="padding-left:18px;color:var(--muted)">
-          <li>Monaco — Casinos & Formula 1</li>
-          <li>Cannes — Film Festival city</li>
-          <li>Saint-Tropez — Luxury port</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h2>Photo Gallery</h2>
-
-        <div class="gallery">
-          <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=60"
-               data-large="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=80">
-
-          <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=800&q=60"
-               data-large="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=1600&q=80">
-
-          <img src="https://images.unsplash.com/photo-1500048993953-d23a436266cf?auto=format&fit=crop&w=800&q=60"
-               data-large="https://images.unsplash.com/photo-1500048993953-d23a436266cf?auto=format&fit=crop&w=1600&q=80">
-        </div>
-      </article>
-
-      <article class="card">
-        <h2>3-Day French Riviera Adventure</h2>
-
-        <div class="itinerary">
-
-          <div class="it-day">
-            <h4>Day 1 — Nice City + Castle Hill</h4>
-            <p>Stroll Promenade des Anglais, explore Old Town and finish with sunset at Castle Hill.</p>
-          </div>
-
-          <div class="it-day">
-            <h4>Day 2 — Monaco & Èze</h4>
-            <p>Visit hilltop Èze Village, then explore Monaco’s casinos, marina & royal palace.</p>
-          </div>
-
-          <div class="it-day">
-            <h4>Day 3 — Cannes & Beaches</h4>
-            <p>Relax at French Riviera beaches and visit Cannes’ luxurious film festival boulevard.</p>
-          </div>
-
-        </div>
-      </article>
-
-    </section>
-
-    <!-- RIGHT -->
-    <aside>
-
-      <div class="card">
-        <h3>Top Hotels</h3>
-
-        <div class="hotel">
-          <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=400&q=60">
-          <div>
-            <h4>Hotel Negresco</h4>
-            <p style="color:var(--muted)">Luxury iconic Riviera hotel</p>
-          </div>
-        </div>
-
-        <div class="hotel">
-          <img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=400&q=60">
-          <div>
-            <h4>Hyatt Regency Nice</h4>
-            <p style="color:var(--muted)">Beachfront • Premium</p>
-          </div>
-        </div>
-
-        <h3 style="margin-top:12px">How to Reach</h3>
-        <ul style="padding-left:18px;color:var(--muted)">
-          <li>Nice Côte d’Azur Airport</li>
-          <li>Trams & buses available</li>
-          <li>Train to Monaco / Cannes</li>
-        </ul>
-
-        <div class="map">
-          <iframe src="https://www.google.com/maps?q=Nice&output=embed"
-                  width="100%" height="100%" style="border:0"></iframe>
-        </div>
-
-      </div>
-
-    </aside>
-
-  </main>
-
-  <footer>
-    © 2025 AdventureHub — Nice Guide • Created by Kaunain Fathima
-  </footer>
-
+<div class="hero">
+  <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="pill">Premium Destination</div>
+    <h1>Nice — French Riviera Seaside Elegance</h1>
+  </div>
 </div>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lb">
-  <div class="close-x" id="lbclose">✕</div>
-  <img id="lbimg" src="">
-</div>
+<section class="section">
+  <h2>Top Attractions</h2>
+  <ul>
+    <li>Promenade des Anglais</li>
+    <li>Castle Hill Viewpoint</li>
+    <li>Old Town (Vieux Nice)</li>
+    <li>Nice Port</li>
+    <li>Blue beaches</li>
+  </ul>
+</section>
 
-<script>
-  const imgs=document.querySelectorAll('.gallery img');
-  const lb=document.getElementById('lb');
-  const lbimg=document.getElementById('lbimg');
-  const close=document.getElementById('lbclose');
+<section class="section">
+  <h2>Gallery</h2>
+  <div class="gallery-grid">
+    <img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format">
+    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format">
+    <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format">
+    <img src="https://images.unsplash.com/photo-1527549993586-dff825b37782?auto=format">
+  </div>
+</section>
 
-  imgs.forEach(img=>{
-    img.addEventListener('click',()=>{
-      lbimg.src=img.getAttribute('data-large')||img.src;
-      lb.style.display='flex';
-    });
-  });
+<section class="section">
+  <h2>Map</h2>
+  <div class="map-frame"><iframe src="https://www.google.com/maps?q=Nice,France&output=embed"></iframe></div>
+</section>
 
-  close.addEventListener('click',()=>lb.style.display='none');
-  lb.addEventListener('click',e=>{ if(e.target===lb) lb.style.display='none'; });
-</script>
-
+</main>
 </body>
 </html>
