@@ -1,287 +1,423 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kashmir — Ultimate Travel Guide | AdventureHub</title>
-  <meta name="description" content="Kashmir travel guide: Gulmarg, Srinagar, Pahalgam, Sonmarg — best time, 4-day itinerary, hotels, activities, gallery, tips and map." />
-  <style>
-    :root{
-      --bg:#071427;
-      --card:#071827;
-      --muted:#98a0a8;
-      --accent:#8be9ff;
-      --glass: rgba(255,255,255,0.03);
-      --maxw:1100px;
-      --radius:14px;
-      --gap:18px;
-      --text:#e8f4fb;
+<meta charset="UTF-8" />
+<title>Kashmir – Paradise on Earth | AdventureHub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg-main: #050509;
+    --bg-card: #111119;
+    --bg-soft: #181821;
+    --accent: #d4a651;
+    --accent-light: #f5e2b4;
+    --text-main: #f5f5f5;
+    --text-muted: #bbbbc6;
+    --border-soft: #262637;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: radial-gradient(circle at top, #1b1825 0%, #050509 45%);
+    color: var(--text-main);
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* HEADER */
+  header {
+    position: sticky;
+    top: 0;
+    padding: 14px 20px;
+    background: rgba(5,5,9,0.94);
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    z-index: 20;
+  }
+
+  .logo {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 1.2rem;
+    letter-spacing: .05em;
+  }
+
+  nav a {
+    margin-left: 14px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  nav a.active { color: var(--accent-light); }
+
+  /* PAGE */
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px 14px 40px;
+  }
+
+  /* HERO */
+  .hero {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 26px 60px rgba(0,0,0,0.65);
+    margin-bottom: 20px;
+  }
+
+  .hero img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    filter: brightness(65%);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.85));
+  }
+
+  .hero-content {
+    position: absolute;
+    left: 18px;
+    bottom: 20px;
+  }
+
+  .pill {
+    background: rgba(0,0,0,0.65);
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    color: var(--accent-light);
+    border: 1px solid rgba(255,255,255,0.14);
+  }
+
+  .hero-title {
+    font-size: 1.9rem;
+    font-weight: 600;
+    margin: 6px 0;
+    color: white;
+  }
+
+  .hero-sub {
+    font-size: 0.9rem;
+    max-width: 480px;
+    color: var(--text-muted);
+  }
+
+  .hero-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+    font-size: 0.78rem;
+  }
+
+  .hero-chip {
+    padding: 4px 9px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.12);
+    color: var(--accent-light);
+  }
+
+  /* SECTION */
+  .section {
+    background: var(--bg-card);
+    padding: 18px 17px 20px;
+    border-radius: 18px;
+    border: 1px solid var(--border-soft);
+    margin-bottom: 20px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+  }
+
+  .section h2 {
+    margin: 0 0 10px;
+    font-size: 1.25rem;
+    color: var(--accent-light);
+  }
+
+  .section p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  /* LIST */
+  ul {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    padding-left: 16px;
+  }
+
+  li { margin-bottom: 4px; }
+
+  /* GALLERY */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+  }
+
+  @media(min-width:720px){
+    .gallery-grid {
+      grid-template-columns: repeat(4,1fr);
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;
-      background: linear-gradient(180deg,#031021 0%, #041428 60%);
-      color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.6;
-    }
-    .wrap{max-width:var(--maxw);margin:28px auto;padding:18px;}
-    nav.top{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-bottom:18px}
-    .brand{font-weight:700;color:var(--accent);font-size:18px;text-decoration:none}
-    .links a{color:var(--muted);text-decoration:none;margin-left:12px}
-    header.hero{border-radius:var(--radius);overflow:hidden;background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;min-height:52vh;display:grid;align-items:end;box-shadow:0 10px 30px rgba(0,0,0,0.6)}
-    .hero .overlay{padding:34px;background: linear-gradient(0deg, rgba(2,6,10,0.85), rgba(2,6,10,0.25) 60%)}
-    .hero h1{margin:0;font-size:clamp(28px,4vw,44px)}
-    .hero p{margin:8px 0 0;color:var(--muted);font-size:15px}
-    .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    .meta .pill{background:var(--glass);padding:10px 12px;border-radius:999px;color:var(--muted);font-size:13px}
-    .grid{display:grid;grid-template-columns:1fr 360px;gap:24px;margin-top:18px}
-    @media (max-width:920px){.grid{grid-template-columns:1fr}}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:18px;margin-bottom:var(--gap);box-shadow:0 6px 20px rgba(2,6,23,0.6)}
-    h2{margin:6px 0 12px}
-    .cols{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-    @media(max-width:700px){.cols{grid-template-columns:1fr}}
-    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-    @media(max-width:700px){.gallery{grid-template-columns:repeat(2,1fr)}}
-    .gallery img{width:100%;height:140px;object-fit:cover;border-radius:10px;cursor:pointer;display:block;box-shadow:0 6px 18px rgba(0,0,0,0.5)}
-    ul.info{padding-left:18px;margin:0}
-    ul.info li{margin:10px 0;color:var(--muted)}
-    .itinerary{display:flex;flex-direction:column;gap:12px}
-    .it-day{background:linear-gradient(180deg,#06101a,#041018);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
-    .it-day h4{margin:0 0 6px;color:var(--accent)}
-    .hotel{display:flex;gap:12px;align-items:center}
-    .hotel img{width:110px;height:70px;object-fit:cover;border-radius:8px}
-    .hotel .hinfo{flex:1}
-    .hotel .hinfo h4{margin:0 0 4px}
-    .hotel .hinfo p{margin:0;color:var(--muted);font-size:13px}
-    .map{border-radius:10px;overflow:hidden;height:220px}
-    .cta{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
-    .btn{background:var(--accent);color:#002428;padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none}
-    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
-    .label{display:inline-block;padding:6px 10px;background:rgba(255,255,255,0.03);border-radius:8px;color:var(--muted);font-size:13px}
-    footer.sitefoot{margin-top:28px;text-align:center;color:var(--muted);font-size:14px;padding:10px 0}
-    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.85);display:none;align-items:center;justify-content:center;padding:20px;z-index:9999}
-    .lightbox img{max-width:92%;max-height:85%;border-radius:8px;box-shadow:0 20px 50px rgba(0,0,0,0.7)}
-    .close-x{position:absolute;top:24px;right:24px;color:#fff;font-size:28px;cursor:pointer}
-  </style>
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+
+  /* ITINERARY */
+  .itinerary-grid {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 10px;
+  }
+
+  @media(min-width:720px){
+    .itinerary-grid { grid-template-columns: repeat(3,1fr); }
+  }
+
+  .day-card {
+    background: var(--bg-soft);
+    padding: 12px;
+    border-radius: 14px;
+    border: 1px solid var(--border-soft);
+  }
+
+  .day-title {
+    font-size: 0.9rem;
+    color: var(--accent-soft);
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+
+  /* HOTELS */
+  .hotel-row {
+    display: flex;
+    gap: 10px;
+    background: var(--bg-soft);
+    border-radius: 14px;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-soft);
+  }
+
+  .hotel-row img {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: rgba(212,166,81,0.2);
+    border: 1px solid rgba(212,166,81,0.45);
+    color: var(--accent-light);
+  }
+
+  .hotel-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+
+  /* MAP */
+  .map-frame {
+    margin-top: 12px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border-soft);
+  }
+
+  iframe {
+    width: 100%;
+    height: 230px;
+    border: 0;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 18px 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+</style>
 </head>
+
 <body>
-  <div class="wrap">
-    <nav class="top">
-      <a class="brand" href="index.html">AdventureHub</a>
-      <div class="links">
-        <a href="index.html">Home</a>
-        <a href="manali.html">Manali</a>
-        <a href="kashmir.html" style="color:var(--text)">Kashmir</a>
-        <a href="gulmarg.html">Gulmarg</a>
+
+<header>
+  <div class="logo">AdventureHub</div>
+  <nav>
+    <a href="manali-ultimate-travel-guide.html">Manali</a>
+    <a href="nainital-lakes-snow-views.html">Nainital</a>
+    <a href="shimla-snow-paradise.html">Shimla</a>
+    <a class="active" href="kashmir-paradise-on-earth.html">Kashmir</a>
+    <a href="Adventures.html">All Adventures</a>
+  </nav>
+</header>
+
+<main class="page">
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="https://images.unsplash.com/photo-1574581402427-793cb0f29166?auto=format&fit=crop&w=1200&q=60">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="pill">Premium Destination Guide</div>
+      <h1 class="hero-title">Kashmir — Paradise on Earth</h1>
+      <p class="hero-sub">
+        Snow peaks, shikara rides, Mughal gardens, pine forests, meadows & winter magic — Kashmir is India's most beautiful travel destination.
+      </p>
+      <div class="hero-meta-row">
+        <span class="hero-chip">Best time: Oct–Feb (Snow) · Apr–Jun</span>
+        <span class="hero-chip">Ideal trip: 5–7 days</span>
+        <span class="hero-chip">Altitude: 1,585 m to 2,700 m</span>
       </div>
-    </nav>
+    </div>
+  </section>
 
-    <header class="hero card" role="banner">
-      <div class="overlay">
-        <h1>Kashmir — The Valley of Heaven</h1>
-        <p>Gulmarg, Srinagar, Pahalgam, Sonmarg — snow, lakes, shikara rides, gondola, and valley vistas. Complete premium guide with itinerary, hotels & gallery.</p>
+  <!-- OVERVIEW -->
+  <section class="section">
+    <h2>Quick Overview</h2>
+    <p>
+      Kashmir offers breathtaking valleys, floating markets, snowy regions, scenic meadows and iconic houseboats.
+      It is perfect for honeymoons, family vacations and photography lovers.
+    </p>
+  </section>
 
-        <div class="meta">
-          <span class="pill">Jammu & Kashmir</span>
-          <span class="pill">Best time: Apr–Oct (summer) / Dec–Feb (snow in high areas)</span>
-          <span class="pill">Top activities: Shikara • Skiing • Gondola • Trekking</span>
-        </div>
+  <!-- TOP PLACES -->
+  <section class="section">
+    <h2>Top Places to Visit</h2>
+    <ul>
+      <li><strong>Gulmarg</strong> — Skiing, snow & gondola ride</li>
+      <li><strong>Sonmarg</strong> — Meadows & glaciers</li>
+      <li><strong>Pahalgam</strong> — River valleys & pine forests</li>
+      <li><strong>Srinagar</strong> — Dal Lake, gardens, houseboats</li>
+      <li><strong>Betaab Valley</strong> — Famous Bollywood valley</li>
+      <li><strong>Aru Valley</strong> — Horse rides & hills</li>
+    </ul>
+  </section>
 
-        <div class="cta">
-          <a class="btn" href="#itinerary">4-Day Itinerary</a>
-          <a class="btn ghost" href="#gallery">View Gallery</a>
+  <!-- GALLERY -->
+  <section class="section">
+    <h2>Photo Gallery</h2>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1574592169408-9165dcd2f5ad?auto=format&fit=crop&w=800&q=60">
+      <img src="https://images.unsplash.com/photo-1608152121831-1f6322f85736?auto=format&fit=crop&w=800&q=60">
+      <img src="https://images.unsplash.com/photo-1598432934671-fc1a93f64785?auto=format&fit=crop&w=800&q=60">
+      <img src="https://images.unsplash.com/photo-1567274306342-3ec19bc13de1?auto=format&fit=crop&w=800&q=60">
+    </div>
+  </section>
+
+  <!-- ITINERARY -->
+  <section class="section">
+    <h2>5-Day Kashmir Itinerary</h2>
+    <div class="itinerary-grid">
+      <div class="day-card">
+        <div class="day-title">Day 1 — Srinagar & Dal Lake</div>
+        <p>Shikara ride, floating market & Mughal gardens.</p>
+      </div>
+
+      <div class="day-card">
+        <div class="day-title">Day 2 — Gulmarg</div>
+        <p>Gondola Phase 1 & 2, skiing, snow activities.</p>
+      </div>
+
+      <div class="day-card">
+        <div class="day-title">Day 3 — Sonmarg</div>
+        <p>Zero Point & Thajiwas Glacier (horse rides).</p>
+      </div>
+
+      <div class="day-card">
+        <div class="day-title">Day 4 — Pahalgam</div>
+        <p>Aru Valley, Betaab Valley, Chandanwari.</p>
+      </div>
+
+      <div class="day-card">
+        <div class="day-title">Day 5 — Srinagar Local</div>
+        <p>Hazratbal, markets, café hopping, shopping.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOTELS -->
+  <section class="section">
+    <h2>Top Hotels</h2>
+
+    <div class="hotel-row">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=60">
+      <div>
+        <h3>The Khyber (Gulmarg)</h3>
+        <p>Luxury resort with stunning snow views.</p>
+        <div class="hotel-tags">
+          <span class="tag">Luxury</span>
+          <span class="tag">Snow</span>
+          <span class="tag">Couples</span>
         </div>
       </div>
-    </header>
+    </div>
 
-    <main class="grid" role="main">
-
-      <!-- left column -->
-      <section>
-        <article class="card">
-          <h2>Quick Overview</h2>
-          <p style="color:var(--muted)">Kashmir is famed for its serene lakes, snow-capped peaks and Mughal gardens. Srinagar (Dal Lake) is the heart; Gulmarg is the skiing hub; Pahalgam & Sonmarg are scenic valleys for nature lovers.</p>
-
-          <div style="margin-top:14px" class="cols">
-            <div>
-              <h3>Top Attractions</h3>
-              <ul class="info">
-                <li>Dal Lake & Shikara rides (Srinagar)</li>
-                <li>Gulmarg Gondola – cable car to Apharwat</li>
-                <li>Pahalgam & Betaab Valley – river valleys & treks</li>
-                <li>Sonmarg – gateway to glaciers</li>
-                <li>Mughal Gardens – Nishat & Shalimar Bagh</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3>Quick Tips</h3>
-              <ul class="info">
-                <li>Carry layered warm clothes in winter and light jackets in summer.</li>
-                <li>Book houseboats early in peak season.</li>
-                <li>Permits may be required for certain high passes (check local rules).</li>
-                <li>Respect local customs, avoid restricted areas, and follow security advice.</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <article id="gallery" class="card">
-          <h2>Photo Gallery</h2>
-          <div class="gallery">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=60" alt="Dal Lake Srinagar" data-large="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80">
-            <img src="https://images.unsplash.com/photo-1518173946687-a4c889c07c31?auto=format&fit=crop&w=900&q=60" alt="Gulmarg snow" data-large="https://images.unsplash.com/photo-1518173946687-a4c889c07c31?auto=format&fit=crop&w=1600&q=80">
-            <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=900&q=60" alt="Pahalgam valley" data-large="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=1600&q=80">
-            <img src="https://images.unsplash.com/photo-1583454110559-21f0b9f6b6b2?auto=format&fit=crop&w=900&q=60" alt="Shikara on Dal Lake" data-large="https://images.unsplash.com/photo-1583454110559-21f0b9f6b6b2?auto=format&fit=crop&w=1600&q=80">
-            <img src="https://images.unsplash.com/photo-1447635242410-5a2b6f40fab6?auto=format&fit=crop&w=900&q=60" alt="Gondola ride Gulmarg" data-large="https://images.unsplash.com/photo-1447635242410-5a2b6f40fab6?auto=format&fit=crop&w=1600&q=80">
-            <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=900&q=60" alt="Snowy valley" data-large="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=1600&q=80">
-          </div>
-          <p style="color:var(--muted);margin-top:12px">Click any image to enlarge. Images are linked from Unsplash (free to use).</p>
-        </article>
-
-        <article id="itinerary" class="card">
-          <h2>4-Day Best Itinerary</h2>
-          <div class="itinerary">
-            <div class="it-day">
-              <h4>Day 1 — Srinagar: Arrival & Houseboat</h4>
-              <p>Arrive in Srinagar, check into a houseboat near Dal Lake. Evening shikara ride and sunset views. Walk the Mughal Gardens if time permits.</p>
-            </div>
-            <div class="it-day">
-              <h4>Day 2 — Gulmarg: Gondola & Snow</h4>
-              <p>Drive to Gulmarg (1.5–2 hrs). Take the Gulmarg Gondola up to Apharwat for snow sports or panoramic views. Return to Srinagar or stay in Gulmarg.</p>
-            </div>
-            <div class="it-day">
-              <h4>Day 3 — Pahalgam: Valleys & Short Treks</h4>
-              <p>Drive to Pahalgam (approx 2–3 hrs). Explore Betaab Valley, Aru Valley; short scenic walks and riverside cafes.</p>
-            </div>
-            <div class="it-day">
-              <h4>Day 4 — Sonmarg or Local Markets</h4>
-              <p>Option A: Day trip to Sonmarg for glacier views. Option B: Shop local Kashmiri handicrafts & saffron products in Srinagar and prepare to depart.</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <h2>Activities & Experiences</h2>
-          <div class="cols">
-            <div>
-              <h3>Adventure</h3>
-              <ul class="info">
-                <li>Skiing & snowboarding (Gulmarg, season-based)</li>
-                <li>Gondola rides with stunning mountain views</li>
-                <li>Trekking around Pahalgam & Sonmarg</li>
-                <li>River rafting (seasonal nearby)</li>
-              </ul>
-            </div>
-            <div>
-              <h3>Cultural & Relax</h3>
-              <ul class="info">
-                <li>Shikara rides and photography on Dal Lake</li>
-                <li>Visit Mughal Gardens & local markets</li>
-                <li>Try Kashmiri Wazwan and Kahwa tea</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-      </section>
-
-      <!-- right column -->
-      <aside>
-        <div class="card">
-          <h3>Quick Facts</h3>
-          <p class="label">Region</p>
-          <p style="margin:6px 0 12px">Jammu & Kashmir</p>
-          <p class="label">Major entry</p>
-          <p style="margin:6px 0 12px">Srinagar (SXR)</p>
-
-          <h3 style="margin-top:12px">Top Hotels & Stays</h3>
-          <div class="hotel" style="margin-top:10px">
-            <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&w=400&q=60" alt="hotel">
-            <div class="hinfo"><h4>The Khyber (Gulmarg)</h4><p>Luxury stay near slopes with excellent views and service.</p></div>
-          </div>
-
-          <div class="hotel" style="margin-top:10px">
-            <img src="https://images.unsplash.com/photo-1501117716987-c8e36f0f1f3e?auto=format&fit=crop&w=400&q=60" alt="hotel2">
-            <div class="hinfo"><h4>Houseboat stays (Srinagar)</h4><p>Unique experience on Dal Lake — book early for peak season.</p></div>
-          </div>
-
-          <h3 style="margin-top:12px">How to Reach</h3>
-          <ul class="info">
-            <li><b>By Air:</b> Srinagar International Airport (SXR)</li>
-            <li><b>By Road:</b> Well-connected roads from Srinagar to Gulmarg, Pahalgam & Sonmarg</li>
-            <li><b>By Train:</b> Jammu Tawi then road to Srinagar (train routes limited)</li>
-          </ul>
-
-          <div style="margin-top:12px" class="map card">
-            <iframe title="Srinagar map" width="100%" height="100%" style="border:0" loading="lazy"
-              src="https://www.google.com/maps?q=Srinagar%20Dal%20Lake&output=embed"></iframe>
-          </div>
-
-          <div style="margin-top:12px">
-            <a class="btn" href="kashmir.html">Open Classic Kashmir Page</a>
-            <a class="btn ghost" href="https://www.jktourism.org" target="_blank">J&K Tourism</a>
-          </div>
+    <div class="hotel-row">
+      <img src="https://images.unsplash.com/photo-1520256862855-398228c41684?auto=format&fit=crop&w=800&q=60">
+      <div>
+        <h3>Hotel Pine Spring</h3>
+        <p>Comfortable stay in Gulmarg/Pahalgam/Sonmarg.</p>
+        <div class="hotel-tags">
+          <span class="tag">Mid-range</span>
+          <span class="tag">Family</span>
         </div>
+      </div>
+    </div>
 
-        <div class="card">
-          <h3>Packing & Safety</h3>
-          <ul class="info">
-            <li>Winter: heavy woollens, thermals, hand warmers; Summer: jackets for nights.</li>
-            <li>Carry necessary medicines; check weather before heading to high passes.</li>
-            <li>Follow local advice; avoid restricted areas and always travel with reliable transport.</li>
-          </ul>
+    <div class="hotel-row">
+      <img src="https://images.unsplash.com/photo-1512914890250-353c97c9e7e2?auto=format&fit=crop&w=800&q=60">
+      <div>
+        <h3>Houseboats (Dal Lake)</h3>
+        <p>Stay in traditional Kashmiri houseboats.</p>
+        <div class="hotel-tags">
+          <span class="tag">Unique Stay</span>
+          <span class="tag">Romantic</span>
         </div>
+      </div>
+    </div>
 
-        <div class="card">
-          <h3>Local Tips</h3>
-          <ul class="info">
-            <li>Try authentic Kashmiri saffron and dry fruits (buy from reputable shops).</li>
-            <li>Respect local culture and photography rules near military areas.</li>
-            <li>Always keep scanned copies of your ID and travel permits.</li>
-          </ul>
-        </div>
+  </section>
 
-      </aside>
-    </main>
+  <!-- MAP -->
+  <section class="section">
+    <h2>How to Reach Kashmir</h2>
+    <ul>
+      <li><strong>Airport:</strong> Srinagar International Airport.</li>
+      <li><strong>By Road:</strong> Jammu → Srinagar highway route.</li>
+      <li><strong>By Train:</strong> Nearest major station: Jammu Tawi.</li>
+    </ul>
 
-    <footer class="card sitefoot">
-      © 2025 AdventureHub — Created by Kaunain Fathima • Follow @kaunainfathima19
-    </footer>
-  </div>
+    <div class="map-frame">
+      <iframe src="https://www.google.com/maps?q=Srinagar,Kashmir&output=embed"></iframe>
+    </div>
+  </section>
 
-  <!-- lightbox -->
-  <div class="lightbox" id="lb" role="dialog" aria-hidden="true">
-    <div class="close-x" id="lbclose" title="Close">✕</div>
-    <img id="lbimg" src="">
-  </div>
+  <footer>
+    © 2025 AdventureHub — Created by Kaunain Fathima · Follow @kaunainfathima19
+  </footer>
 
-  <script>
-    // gallery lightbox
-    const imgs = document.querySelectorAll('.gallery img');
-    const lb = document.getElementById('lb');
-    const lbimg = document.getElementById('lbimg');
-    const lbclose = document.getElementById('lbclose');
-
-    imgs.forEach(img=>{
-      img.addEventListener('click',()=>{
-        const large = img.getAttribute('data-large')||img.src;
-        lbimg.src = large;
-        lb.style.display = 'flex';
-        lb.setAttribute('aria-hidden','false');
-      });
-    });
-    lbclose.addEventListener('click',()=>{
-      lb.style.display='none';
-      lb.setAttribute('aria-hidden','true');
-      lbimg.src='';
-    });
-    lb.addEventListener('click',(e)=>{
-      if(e.target===lb) { lb.style.display='none'; lbimg.src=''; lb.setAttribute('aria-hidden','true'); }
-    });
-  </script>
+</main>
 </body>
 </html>
