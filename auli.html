@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Auli – Snow & Skiing Heaven | AdventureHub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg-main: #050509;
+    --bg-card: #111119;
+    --bg-soft: #181821;
+    --accent: #d4a651;
+    --accent-soft: #f5e2b4;
+    --text-main: #f5f5f5;
+    --text-muted: #bbbbc6;
+    --border-soft: #262637;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: radial-gradient(circle at top, #1b1825 0%, #050509 45%);
+    color: var(--text-main);
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* HEADER */
+  header {
+    position: sticky;
+    top: 0;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    background: rgba(5,5,9,0.94);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    backdrop-filter: blur(14px);
+    z-index: 20;
+  }
+
+  .logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+
+  nav a {
+    margin-left: 14px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  nav a.active { color: var(--accent-soft); }
+
+  /* PAGE WRAPPER */
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px 16px 48px;
+  }
+
+  /* HERO */
+  .hero {
+    height: 340px;
+    border-radius: 22px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+    box-shadow: 0 26px 60px rgba(0,0,0,0.7);
+  }
+
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(65%);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.9));
+  }
+
+  .hero-content {
+    position: absolute;
+    bottom: 22px;
+    left: 18px;
+    right: 18px;
+  }
+
+  .pill {
+    display: inline-flex;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.15);
+    font-size: 0.75rem;
+    color: var(--accent-soft);
+  }
+
+  .hero-title {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin: 6px 0;
+    color: #fff;
+  }
+
+  .hero-sub {
+    max-width: 520px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .hero-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .hero-chip {
+    padding: 4px 9px;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.7);
+    border: 1px solid rgba(255,255,255,0.12);
+    font-size: 0.78rem;
+    color: var(--accent-soft);
+  }
+
+  /* SECTION */
+  .section {
+    background: var(--bg-card);
+    padding: 18px 18px 22px;
+    border-radius: 18px;
+    border: 1px solid var(--border-soft);
+    margin-bottom: 20px;
+    box-shadow: 0 16px 38px rgba(0,0,0,0.6);
+  }
+
+  .section h2 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: var(--accent-soft);
+  }
+
+  .section p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+
+  ul {
+    padding-left: 18px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  li { margin-bottom: 4px; }
+
+  /* GALLERY */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+  }
+
+  @media(min-width:720px){
+    .gallery-grid { grid-template-columns: repeat(4,1fr); }
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    height: 130px;
+    border-radius: 14px;
+    object-fit: cover;
+  }
+
+  /* ITINERARY */
+  .itinerary-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  @media(min-width:720px){
+    .itinerary-grid { grid-template-columns: repeat(3,1fr); }
+  }
+
+  .day-card {
+    background: var(--bg-soft);
+    padding: 12px;
+    border-radius: 14px;
+    border: 1px solid var(--border-soft);
+  }
+
+  .day-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-soft);
+    margin-bottom: 4px;
+  }
+
+  .day-card p {
+    font-size: 0.85rem;
+    margin: 0;
+    color: var(--text-muted);
+  }
+
+  /* HOTELS */
+  .hotel-row {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 14px;
+    background: var(--bg-soft);
+    border: 1px solid var(--border-soft);
+    margin-bottom: 10px;
+  }
+
+  .hotel-row img {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  .hotel-info h3 {
+    margin: 0 0 4px;
+    font-size: 0.95rem;
+  }
+
+  .hotel-info p {
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  .hotel-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+  }
+
+  .tag {
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    background: rgba(212,166,81,0.22);
+    border: 1px solid rgba(212,166,81,0.5);
+    color: var(--accent-soft);
+  }
+
+  /* MAP */
+  .map-frame {
+    margin-top: 10px;
+    border-radius: 16px;
+    border: 1px solid var(--border-soft);
+    overflow: hidden;
+  }
+
+  iframe {
+    width: 100%;
+    height: 230px;
+    border: 0;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 18px 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">AdventureHub</div>
+  <nav>
+    <a href="manali-ultimate-travel-guide.html">Manali</a>
+    <a href="shimla-snow-paradise.html">Shimla</a>
+    <a href="nainital-lakes-snow-views.html">Nainital</a>
+    <a href="kashmir-paradise-on-earth.html">Kashmir</a>
+    <a class="active" href="auli-snow-skiing-heaven.html">Auli</a>
+  </nav>
+</header>
+
+<main class="page">
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="https://images.unsplash.com/photo-1519677100203-a0e668c92439?auto=format&fit=crop&w=1200&q=80" alt="Snow slopes of Auli">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="pill">Premium Destination Guide</div>
+      <h1 class="hero-title">Auli — Snow & Skiing Heaven</h1>
+      <p class="hero-sub">
+        Powder snow, panoramic Himalayan peaks, ski slopes and one of India’s best winter destinations for snow lovers.
+      </p>
+      <div class="hero-meta-row">
+        <span class="hero-chip">Best time: Dec–Feb (Snow)</span>
+        <span class="hero-chip">Ideal trip: 3–5 days</span>
+        <span class="hero-chip">Altitude: ~2,800 m</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section">
+    <h2>Quick Overview</h2>
+    <p>
+      Auli is a stunning hill station and ski destination in Uttarakhand, known for its snow-clad slopes,
+      oak forests and breathtaking views of Nanda Devi and other Himalayan peaks. It’s perfect for couples,
+      families and adventure travellers looking for real snow.
+    </p>
+  </section>
+
+  <!-- TOP PLACES -->
+  <section class="section">
+    <h2>Top Places & Experiences</h2>
+    <ul>
+      <li><strong>Auli Ski Slopes</strong> – skiing, snowboarding & snow play</li>
+      <li><strong>Auli Ropeway</strong> – one of Asia’s longest cable cars with insane views</li>
+      <li><strong>Gorson Bugyal</strong> – meadow trek with snow in winter</li>
+      <li><strong>Joshimath</strong> – base town with temples & markets</li>
+      <li><strong>Artificial Lake</strong> – snow-making reservoir & viewpoint</li>
+      <li><strong>Sunrise & Sunset Points</strong> – Himalayan golden hour views</li>
+    </ul>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section">
+    <h2>Photo Gallery</h2>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=800&q=60" alt="">
+      <img src="https://images.unsplash.com/photo-1519681399212-816e1f0a2c0e?auto=format&fit=crop&w=800&q=60" alt="">
+      <img src="https://images.unsplash.com/photo-1519817650390-64a93db511aa?auto=format&fit=crop&w=800&q=60" alt="">
+      <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=60" alt="">
+    </div>
+  </section>
+
+  <!-- ITINERARY -->
+  <section class="section">
+    <h2>3–4 Day Auli Itinerary</h2>
+    <div class="itinerary-grid">
+      <div class="day-card">
+        <div class="day-title">Day 1 — Joshimath Arrival</div>
+        <p>Reach Joshimath, check into hotel, local market walk, early rest.</p>
+      </div>
+      <div class="day-card">
+        <div class="day-title">Day 2 — Ropeway & Ski Slopes</div>
+        <p>Take the ropeway to Auli, enjoy snow play & beginner skiing lessons.</p>
+      </div>
+      <div class="day-card">
+        <div class="day-title">Day 3 — Gorson Bugyal Trek</div>
+        <p>Short trek / hike towards Gorson Bugyal (seasonal), views of Nanda Devi.</p>
+      </div>
+      <div class="day-card">
+        <div class="day-title">Day 4 — Extra Snow Day / Departure</div>
+        <p>Keep as buffer day for more snow fun or travel back from Joshimath.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOTELS -->
+  <section class="section">
+    <h2>Top Stays in Auli & Joshimath</h2>
+
+    <div class="hotel-row">
+      <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=60" alt="">
+      <div class="hotel-info">
+        <h3>Cliff-Top Style Resorts (Auli)</h3>
+        <p>Premium stays right near the slopes with stunning snow views.</p>
+        <div class="hotel-tags">
+          <span class="tag">Luxury</span>
+          <span class="tag">Ski-in/Ski-out</span>
+          <span class="tag">Couples</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hotel-row">
+      <img src="https://images.unsplash.com/photo-1520256862855-398228c41684?auto=format&fit=crop&w=800&q=60" alt="">
+      <div class="hotel-info">
+        <h3>Joshimath Hotels & Resorts</h3>
+        <p>Comfortable mid-range hotels with easier road access.</p>
+        <div class="hotel-tags">
+          <span class="tag">Mid-range</span>
+          <span class="tag">Family</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hotel-row">
+      <img src="https://images.unsplash.com/photo-1512914890250-353c97c9e7e2?auto=format&fit=crop&w=800&q=60" alt="">
+      <div class="hotel-info">
+        <h3>Budget Guesthouses</h3>
+        <p>Simple rooms & homestays in Joshimath for budget trips.</p>
+        <div class="hotel-tags">
+          <span class="tag">Budget</span>
+          <span class="tag">Homestay</span>
+          <span class="tag">Backpacker</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO REACH -->
+  <section class="section">
+    <h2>How to Reach Auli</h2>
+    <ul>
+      <li><strong>Nearest Airport:</strong> Dehradun (Jolly Grant) – then drive ~9–10 hours to Joshimath.</li>
+      <li><strong>By Train:</strong> Nearest major station – Rishikesh / Haridwar, then drive.</li>
+      <li><strong>By Road:</strong> Rishikesh → Srinagar → Rudraprayag → Karnaprayag → Joshimath → Auli.</li>
+      <li><strong>Last Stretch:</strong> Ropeway or road from Joshimath to Auli (depending on season).</li>
+    </ul>
+
+    <div class="map-frame">
+      <iframe
+        src="https://www.google.com/maps?q=Auli,Uttarakhand&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 AdventureHub — Created by Kaunain Fathima · @kaunainfathima19
+  </footer>
+
+</main>
+
+</body>
+</html>
