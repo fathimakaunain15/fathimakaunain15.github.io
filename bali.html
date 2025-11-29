@@ -3,20 +3,157 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bali – Island Heaven</title>
+<title>Bali – Temples, Waterfalls & Beaches | Premium Guide</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-    body { background:#10101e; color:white; font-family:Arial; margin:0; }
-    .section { padding:20px; background:#1b1b2c; margin:20px; border-radius:18px; }
-    h1 { color:#ffdf9a; }
+:root{
+  --bg:#04130d;
+  --card:#0d2617;
+  --card-soft:#123323;
+  --accent:#7bd88f;
+  --accent-soft:rgba(123,216,143,0.18);
+  --text-main:#f7fff9;
+  --text-soft:#cce7d5;
+  --border-soft:rgba(255,255,255,0.06);
+}
+body{
+  margin:0;font-family:"Poppins",sans-serif;
+  background:radial-gradient(circle at top left,#0b2a19,#020807);
+  color:var(--text-main);
+}
+.page{max-width:1100px;margin:auto;padding:18px 16px 40px;}
+.section{background:var(--card);border-radius:20px;border:1px solid var(--border-soft);padding:18px;margin-bottom:18px;}
+a{text-decoration:none;color:inherit;}
+nav{display:flex;justify-content:space-between;margin-bottom:18px;}
+.brand{font-weight:700;font-size:22px;color:var(--accent);}
+.nav-links{display:flex;gap:18px;}
+.hero{position:relative;padding:20px;}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at top,rgba(123,216,143,.25),transparent 60%);opacity:.95;}
+.hero-inner{position:relative;z-index:1;}
+h1{margin:0 0 6px;font-size:26px;}
+.pill{padding:6px 10px;border-radius:999px;font-size:11px;background:var(--accent-soft);color:var(--accent);display:inline-block;margin-right:6px;}
+.split{display:grid;grid-template-columns:1.5fr 1fr;gap:14px;}
+@media(max-width:720px){.split{grid-template-columns:1fr;}h1{font-size:22px;}}
+ul{padding-left:18px;}
+li{color:var(--text-soft);font-size:14px;margin-bottom:4px;}
+.hotel{background:var(--card-soft);padding:10px;border-radius:14px;margin-bottom:8px;border:1px solid rgba(255,255,255,0.05);}
+footer{text-align:center;margin-top:20px;font-size:11px;color:var(--text-soft);opacity:0.7;}
 </style>
 </head>
-<body>
 
-<nav style="display:flex; justify-content:space-between; align-items:center; padding:20px; font-size:18px;">
-    <a href="index.html" style="font-weight:bold; color:#f7d57e; font-size:22px; text-decoration:none;">AdventureHub</a>
-    <div style="display:flex; gap:20px;">
-        <a href="manali.html" style="color:white;">Manali</a>
-        <a href="shimla.html" style="color:white;">Shimla</a>
-        <a href="nainital.html" style="color:white;">Nainital</a>
-        <a href="kashmir.html" style="color:white;">Kashmir</a>
-        <a href="andaman.html" style="
+<body>
+<div class="page">
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="brand">AdventureHub</a>
+  <div class="nav-links">
+    <a href="manali.html">Manali</a>
+    <a href="shimla.html">Shimla</a>
+    <a href="nainital.html">Nainital</a>
+    <a href="kashmir.html">Kashmir</a>
+    <a href="andaman.html">Andaman</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="section hero">
+  <div class="hero-inner">
+    <span class="pill">Premium Guide</span>
+    <h1>Bali — Temples, Beaches & Waterfalls</h1>
+    <p style="color:var(--text-soft);font-size:14px;">
+      Bali is a tropical paradise known for scenic temples, rice terraces,
+      waterfalls, cafes, beaches and island nightlife.
+    </p>
+
+    <span class="pill">Best Time: Apr–Oct</span>
+    <span class="pill">Perfect For: Couples • Friends • Solo</span>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="section split">
+  <div>
+    <h2>Overview</h2>
+    <p>Bali, Indonesia’s most loved island, offers culture, nature, beaches and adventure in one trip.</p>
+    <ul>
+      <li>Famous for: Temples, cafes, beaches</li>
+      <li>Vibe: Peace + Nightlife + Nature</li>
+      <li>Best Areas: Ubud, Kuta, Seminyak, Nusa Penida</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Trip Budget</h2>
+    <ul>
+      <li>Budget: ₹20k–30k</li>
+      <li>Comfort: ₹35k–55k</li>
+      <li>Luxury: ₹70k+</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PLACES -->
+<section class="section split">
+  <div>
+    <h2>Top Places</h2>
+    <ul>
+      <li>Ubud Monkey Forest</li>
+      <li>Tegalalang Rice Terrace</li>
+      <li>Uluwatu Temple</li>
+      <li>Nusa Penida Island</li>
+      <li>Kuta & Seminyak Beaches</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Activities</h2>
+    <ul>
+      <li>🤿 Snorkeling</li>
+      <li>🌊 Surfing</li>
+      <li>🛵 Scooty rides</li>
+      <li>📸 Waterfall trekking</li>
+      <li>☕ Café hopping</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section class="section">
+  <h2>4–5 Day Itinerary</h2>
+  <ul>
+    <li><b>Day 1:</b> Ubud – Rice Terrace + Monkey Forest</li>
+    <li><b>Day 2:</b> Waterfalls Tour</li>
+    <li><b>Day 3:</b> Nusa Penida</li>
+    <li><b>Day 4:</b> Uluwatu Temple + Beaches</li>
+    <li><b>Day 5:</b> Shopping + café hopping</li>
+  </ul>
+</section>
+
+<!-- HOTELS -->
+<section class="section split">
+  <div>
+    <h2>Hotels</h2>
+    <div class="hotel"><b>The Kayon Resort</b> — Ubud jungle stay</div>
+    <div class="hotel"><b>W Bali Seminyak</b> — Luxury beach hotel</div>
+    <div class="hotel"><b>Alaya Resort</b> — Romantic stays</div>
+    <div class="hotel"><b>Hostels</b> — Budget options</div>
+  </div>
+
+  <div>
+    <h2>How to Reach</h2>
+    <ul>
+      <li>Airport: Denpasar</li>
+      <li>Visa on arrival</li>
+      <li>Scooter or taxi for local travel</li>
+    </ul>
+  </div>
+</section>
+
+<footer>© 2025 AdventureHub — Bali Guide • By Kaunain Fathima</footer>
+
+</div>
+</body>
+</html>
