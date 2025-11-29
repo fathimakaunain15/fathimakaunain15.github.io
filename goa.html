@@ -2,31 +2,203 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Goa – Beaches & Nightlife</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Goa – Beaches, Nightlife & Cafes | Premium Guide</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
- body { background:#12121f; color:white; font-family:Arial; margin:0; }
- .section { padding:20px; background:#1c1c2b; margin:20px; border-radius:18px; }
- h1 { color:#ffdd9d; }
+:root{
+  --bg:#04130d;
+  --card:#0d2617;
+  --card-soft:#123323;
+  --accent:#7bd88f;
+  --accent-soft:rgba(123,216,143,0.18);
+  --text-main:#f7fff9;
+  --text-soft:#cce7d5;
+  --border-soft:rgba(255,255,255,0.06);
+}
+
+body{
+  margin:0;font-family:"Poppins",sans-serif;
+  background:radial-gradient(circle at top left,#0b2a19,#020807);
+  color:var(--text-main);
+}
+
+.page{max-width:1100px;margin:auto;padding:18px;}
+
+.section{
+  background:var(--card);
+  border-radius:20px;
+  border:1px solid var(--border-soft);
+  padding:18px;
+  margin-bottom:18px;
+}
+
+nav{display:flex;justify-content:space-between;margin-bottom:18px;}
+a{text-decoration:none;color:inherit;}
+.brand{font-size:22px;font-weight:700;color:var(--accent);}
+.nav-links{display:flex;gap:18px;}
+
+.hero{position:relative;padding:20px;}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at top,rgba(123,216,143,.28),transparent 55%);
+  opacity:.95;
+}
+.hero-inner{position:relative;z-index:1;}
+
+h1{font-size:26px;margin:0 0 6px;}
+p{font-size:14px;color:var(--text-soft);}
+
+.pill{
+  padding:6px 10px;
+  background:var(--accent-soft);
+  border-radius:999px;
+  color:var(--accent);
+  font-size:11px;
+  margin-right:6px;
+}
+
+.split{
+  display:grid;
+  grid-template-columns:1.5fr 1fr;
+  gap:14px;
+}
+@media(max-width:720px){
+  .split{grid-template-columns:1fr;}
+  h1{font-size:22px;}
+}
+
+ul{padding-left:18px;}
+li{font-size:14px;color:var(--text-soft);margin-bottom:4px;}
+
+.hotel{
+  background:var(--card-soft);
+  padding:10px;
+  border-radius:14px;
+  margin-bottom:8px;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+footer{text-align:center;margin-top:22px;color:var(--text-soft);font-size:11px;opacity:.7;}
 </style>
 </head>
-<body>
 
-<nav style="display:flex; justify-content:space-between; align-items:center; padding:20px; font-size:18px;">
- <a href="index.html" style="font-weight:bold; color:#f7d57e; font-size:22px; text-decoration:none;">AdventureHub</a>
- <div style="display:flex; gap:20px;">
-   <a href="manali.html" style="color:white;">Manali</a>
-   <a href="shimla.html" style="color:white;">Shimla</a>
-   <a href="nainital.html" style="color:white;">Nainital</a>
-   <a href="kashmir.html" style="color:white;">Kashmir</a>
-   <a href="andaman.html" style="color:white;">Andaman</a>
- </div>
+<body>
+<div class="page">
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="brand">AdventureHub</a>
+  <div class="nav-links">
+    <a href="manali.html">Manali</a>
+    <a href="shimla.html">Shimla</a>
+    <a href="nainital.html">Nainital</a>
+    <a href="kashmir.html">Kashmir</a>
+    <a href="andaman.html">Andaman</a>
+  </div>
 </nav>
 
-<div class="section">
-<h1>Goa — Beaches, Shacks & Parties</h1>
-<p>Baga beach, Calangute, Anjuna, nightlife, seafood & sunsets.</p>
-</div>
+<!-- HERO -->
+<section class="section hero">
+  <div class="hero-inner">
+    <span class="pill">Premium Guide</span>
+    <h1>Goa — Beaches, Nightlife & Chill Vibes</h1>
+    <p>
+      Goa is the perfect mix of beaches, nightlife, cafés, water sports and tropical relaxation.
+      Best for friends, couples & solo trips.
+    </p>
 
+    <span class="pill">Best Time: Nov–March</span>
+    <span class="pill">Perfect For: Friends • Couples</span>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="section split">
+  <div>
+    <h2>Overview</h2>
+    <p>
+      Goa, India’s most-loved tourist destination, offers stunning beaches, seafood cafés,
+      adventure activities and vibrant nightlife.
+    </p>
+    <ul>
+      <li>North Goa – Parties & nightlife</li>
+      <li>South Goa – Peaceful luxury beaches</li>
+      <li>Central Goa – Best cafés & shopping</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Budget</h2>
+    <ul>
+      <li>Budget: ₹5k–10k</li>
+      <li>Comfort: ₹12k–18k</li>
+      <li>Luxury: ₹25k+</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PLACES -->
+<section class="section split">
+  <div>
+    <h2>Top Beaches</h2>
+    <ul>
+      <li>Baga Beach</li>
+      <li>Calangute Beach</li>
+      <li>Anjuna Beach</li>
+      <li>Palolem Beach</li>
+      <li>Varca Beach</li>
+      <li>Colva Beach</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Activities</h2>
+    <ul>
+      <li>🚤 Water Sports</li>
+      <li>🎉 Beach Clubs</li>
+      <li>🍤 Seafood cafés</li>
+      <li>📸 Photoshoot</li>
+      <li>🛵 Scooty riding</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section class="section">
+  <h2>3–4 Day Itinerary</h2>
+  <ul>
+    <li><b>Day 1:</b> Baga • Tito’s Lane • Nightlife</li>
+    <li><b>Day 2:</b> Water sports • Calangute • Anjuna</li>
+    <li><b>Day 3:</b> South Goa • Palolem</li>
+    <li><b>Day 4:</b> Aguada Fort • Shopping</li>
+  </ul>
+</section>
+
+<!-- HOTELS -->
+<section class="section split">
+  <div>
+    <h2>Best Hotels</h2>
+    <div class="hotel"><b>Taj Exotica</b> — South Goa luxury</div>
+    <div class="hotel"><b>Grand Hyatt</b> — Beachside</div>
+    <div class="hotel"><b>W Goa</b> — Party luxury</div>
+    <div class="hotel"><b>Hostels</b> — Budget</div>
+  </div>
+
+  <div>
+    <h2>How to Reach</h2>
+    <ul>
+      <li>Airport: Dabolim / Mopa</li>
+      <li>Local: Scooters, cabs, buses</li>
+      <li>Best for: Group & couple trips</li>
+    </ul>
+  </div>
+</section>
+
+<footer>© 2025 AdventureHub — Goa Guide • By Kaunain Fathima</footer>
+
+</div>
 </body>
 </html>
