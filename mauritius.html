@@ -2,31 +2,223 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mauritius – Blue Lagoon Paradise</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mauritius – Beaches & Honeymoon Paradise | Premium Guide</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
- body { background:#111122; color:white; font-family:Arial; margin:0; }
- .section { padding:20px; background:#1b1b2c; margin:20px; border-radius:18px; }
- h1 { color:#ffd8a8; }
+:root{
+  --bg:#04130d;
+  --card:#0d2617;
+  --card-soft:#123323;
+  --accent:#7bd88f;
+  --accent-soft:rgba(123,216,143,.18);
+  --text-main:#f7fff9;
+  --text-soft:#cce7d5;
+  --border-soft:rgba(255,255,255,.06);
+}
+
+body{
+  margin:0;
+  background:radial-gradient(circle at top left,#0b2a19,#020807);
+  font-family:"Poppins",sans-serif;
+  color:var(--text-main);
+}
+
+.page{max-width:1100px;margin:auto;padding:18px 16px;}
+
+.section{
+  background:var(--card);
+  padding:18px;
+  border-radius:20px;
+  border:1px solid var(--border-soft);
+  margin-bottom:18px;
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:18px;
+}
+a{text-decoration:none;color:inherit;}
+
+.brand{
+  font-size:22px;
+  font-weight:700;
+  color:var(--accent);
+}
+
+.nav-links{display:flex;gap:18px;font-size:14px;}
+
+.hero{position:relative;padding:20px;}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at top,rgba(123,216,143,.26),transparent 55%);
+  opacity:.95;
+}
+.hero-inner{position:relative;z-index:1;}
+
+h1{font-size:26px;margin:0 0 6px;}
+p{font-size:14px;color:var(--text-soft);}
+
+.pill{
+  padding:6px 10px;
+  background:var(--accent-soft);
+  border-radius:999px;
+  font-size:11px;
+  color:var(--accent);
+  margin-right:6px;
+}
+
+.split{
+  display:grid;
+  grid-template-columns:1.5fr 1fr;
+  gap:14px;
+}
+@media(max-width:720px){
+  .split{grid-template-columns:1fr;}
+  h1{font-size:22px;}
+}
+
+ul{padding-left:18px;}
+li{font-size:14px;margin-bottom:4px;color:var(--text-soft);}
+
+.hotel{
+  background:var(--card-soft);
+  padding:10px;
+  border-radius:14px;
+  margin-bottom:8px;
+  border:1px solid rgba(255,255,255,.05);
+}
+
+footer{
+  text-align:center;
+  margin-top:22px;
+  font-size:11px;
+  color:var(--text-soft);
+  opacity:.7;
+}
 </style>
+
 </head>
 <body>
+<div class="page">
 
-<nav style="display:flex; justify-content:space-between; align-items:center; padding:20px; font-size:18px;">
- <a href="index.html" style="font-weight:bold; color:#f7d57e; font-size:22px; text-decoration:none;">AdventureHub</a>
- <div style="display:flex; gap:20px;">
-   <a href="manali.html" style="color:white;">Manali</a>
-   <a href="shimla.html" style="color:white;">Shimla</a>
-   <a href="nainital.html" style="color:white;">Nainital</a>
-   <a href="kashmir.html" style="color:white;">Kashmir</a>
-   <a href="andaman.html" style="color:white;">Andaman</a>
- </div>
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="brand">AdventureHub</a>
+  <div class="nav-links">
+     <a href="manali.html">Manali</a>
+     <a href="shimla.html">Shimla</a>
+     <a href="nainital.html">Nainital</a>
+     <a href="kashmir.html">Kashmir</a>
+     <a href="andaman.html">Andaman</a>
+  </div>
 </nav>
 
-<div class="section">
-<h1>Mauritius — Beaches, Waterfalls & Coral Reefs</h1>
-<p>Underwater waterfall illusion, beaches, lagoons & island adventures.</p>
-</div>
+<!-- HERO -->
+<section class="section hero">
+ <div class="hero-inner">
+    <span class="pill">Premium Guide</span>
+    <h1>Mauritius — Tropical Luxury & Blue Lagoons</h1>
+    <p>
+      One of the world's most beautiful islands — turquoise waters,
+      beaches, waterfalls, coral reefs, luxury resorts & perfect honeymoon vibes.
+    </p>
 
+    <span class="pill">Best Time: April–November</span>
+    <span class="pill">Perfect For: Honeymoon • Luxury • Beaches</span>
+ </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="section split">
+ <div>
+    <h2>Overview</h2>
+    <p>
+      Mauritius is a dream island — lagoons, white sands, waterfalls, 
+      volcanic mountains & world-class resorts.
+    </p>
+    <ul>
+      <li>Capital: Port Louis</li>
+      <li>Currency: Mauritian Rupee (MUR)</li>
+      <li>Vibe: Luxury + Tropical + Romantic</li>
+    </ul>
+ </div>
+
+ <div>
+    <h2>Budget</h2>
+    <ul>
+      <li>Budget: ₹30k–45k</li>
+      <li>Comfort: ₹55k–75k</li>
+      <li>Luxury: ₹1L+</li>
+    </ul>
+ </div>
+</section>
+
+<!-- PLACES -->
+<section class="section split">
+ <div>
+    <h2>Top Places to Visit</h2>
+    <ul>
+      <li>Île aux Cerfs Island</li>
+      <li>Chamarel Seven-Coloured Earth</li>
+      <li>Tamarind Falls</li>
+      <li>Black River Gorges National Park</li>
+      <li>Grand Baie Beach</li>
+      <li>La Vallée Des Couleurs Park</li>
+    </ul>
+ </div>
+
+ <div>
+    <h2>Activities</h2>
+    <ul>
+      <li>🤿 Snorkeling & Diving</li>
+      <li>🚤 Lagoon Cruise</li>
+      <li>🌅 Sunset Catamaran Ride</li>
+      <li>🌴 Beach Relaxation</li>
+      <li>📸 Island Photography</li>
+    </ul>
+ </div>
+</section>
+
+<!-- ITINERARY -->
+<section class="section">
+ <h2>4–5 Day Itinerary</h2>
+ <ul>
+   <li><b>Day 1:</b> Arrival → Beach time → Resort dinner</li>
+   <li><b>Day 2:</b> Île aux Cerfs → Water sports</li>
+   <li><b>Day 3:</b> Chamarel → Seven coloured earth → Waterfalls</li>
+   <li><b>Day 4:</b> North Island tour → Grand Baie Beach</li>
+   <li><b>Day 5:</b> Shopping → Return</li>
+ </ul>
+</section>
+
+<!-- HOTELS -->
+<section class="section split">
+ <div>
+    <h2>Best Hotels</h2>
+    <div class="hotel"><b>LUX Belle Mare</b> — Top luxury</div>
+    <div class="hotel"><b>Constance Prince Maurice</b> — Exclusive honeymoon hotel</div>
+    <div class="hotel"><b>Maritim Resort</b> — Beautiful beaches</div>
+    <div class="hotel"><b>Budget Stays</b> — Grand Baie</div>
+ </div>
+
+ <div>
+    <h2>How to Reach</h2>
+    <ul>
+      <li>Flight: India → Mauritius (MRU)</li>
+      <li>Drive around island by cab</li>
+      <li>Best for couples & families</li>
+    </ul>
+ </div>
+</section>
+
+<footer>
+ © 2025 AdventureHub — Mauritius Guide • By Kaunain Fathima
+</footer>
+
+</div>
 </body>
 </html>
