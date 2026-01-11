@@ -1,164 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact & Bookings | AdventureHub</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --bg:#020807;
-  --card:#0d2617;
-  --soft:#123323;
-  --accent:#7bd88f;
-  --accent-soft:rgba(123,216,143,.18);
-  --text:#f7fff9;
-  --text-soft:#cce7d5;
-  --border:rgba(255,255,255,.06);
-}
-
-body{
-  margin:0;
-  font-family:"Poppins",sans-serif;
-  background:radial-gradient(circle at top,#0b2a19,#020807);
-  color:var(--text);
-}
-
-a{text-decoration:none;color:inherit;}
-
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:20px;
-}
-
-nav{
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:25px;
-}
-
-.brand{
-  font-size:24px;
-  font-weight:700;
-  color:var(--accent);
-}
-
-.nav-links{
-  display:flex;
-  gap:20px;
-  font-size:14px;
-}
-
-.section{
-  background:var(--card);
-  border-radius:22px;
-  padding:30px;
-  border:1px solid var(--border);
-}
-
-h1{
-  margin-top:0;
-  font-size:32px;
-}
-
-p{
-  color:var(--text-soft);
-}
-
-form{
-  display:grid;
-  gap:14px;
-  max-width:450px;
-}
-
-input, textarea{
-  padding:12px;
-  border-radius:12px;
-  border:none;
-  outline:none;
-  font-family:"Poppins",sans-serif;
-}
-
-button{
-  padding:12px;
-  border-radius:14px;
-  border:none;
-  background:var(--accent);
-  font-weight:600;
-  cursor:pointer;
-  color:#022;
-}
-
-.contact-box{
-  margin-top:20px;
-  color:var(--text-soft);
-  font-size:14px;
-}
-
-.whatsapp{
-  display:inline-block;
-  margin-top:14px;
-  padding:12px 16px;
-  background:#25D366;
-  color:#022;
-  border-radius:14px;
-  font-weight:600;
-}
-
-footer{
-  text-align:center;
-  margin-top:40px;
-  font-size:12px;
-  color:var(--text-soft);
-  opacity:.7;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | AdventureHub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #0b2a19, #020807);
+      color: #f7fff9;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    p {
+      line-height: 1.7;
+      color: #cce7d5;
+      margin-bottom: 16px;
+    }
+    .email {
+      background: rgba(255,255,255,0.05);
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 16px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #9fbfaf;
+    }
+  </style>
 </head>
-
 <body>
-<div class="container">
 
-<nav>
-  <a class="brand" href="index.html">AdventureHub</a>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+  <div class="container">
+    <h1>Contact Us</h1>
+
+    <p>
+      If you have any questions, feedback, or suggestions regarding AdventureHub, feel free to contact us. We value our visitors and aim to respond as soon as possible.
+    </p>
+
+    <p>
+      You can reach us through the email address below for general inquiries, content-related questions, or collaboration opportunities.
+    </p>
+
+    <div class="email">
+      📧 Email: <strong>adventurehub.contact@gmail.com</strong>
+    </div>
+
+    <p>
+      Please note that we do not provide booking services. AdventureHub is an informational website created to help travelers with destination ideas and inspiration.
+    </p>
+
+    <footer>
+      © 2026 AdventureHub • Travel. Explore. Experience.
+    </footer>
   </div>
-</nav>
 
-<section class="section">
-  <h1>Contact & Bookings 📩</h1>
-  <p>
-    Have a question, travel plan, or honeymoon idea?  
-    Fill the form or reach out directly.
-  </p>
-
-  <form>
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <input type="text" placeholder="Destination Interested In">
-    <textarea rows="4" placeholder="Your Message"></textarea>
-    <button type="submit">Send Inquiry</button>
-  </form>
-
-  <div class="contact-box">
-    <p>📧 Email: <b>adventurehub.travel@gmail.com</b></p>
-    <p>📍 Serving Worldwide</p>
-
-    <a class="whatsapp" href="https://wa.me/919999999999" target="_blank">
-      WhatsApp Us
-    </a>
-  </div>
-</section>
-
-<footer>
-© 2025 AdventureHub • Travel with Confidence
-</footer>
-
-</div>
 </body>
 </html>
