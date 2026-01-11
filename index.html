@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AdventureHub | Premium Travel Experiences</title>
 
   <!-- ✅ Google AdSense (SITE VERIFICATION + ADS READY) -->
   <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8315889077023956"
-    crossorigin="anonymous">
-  </script>
+    crossorigin="anonymous"></script>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(to bottom, #0b2a19, #020807);
       color: #f7fff9;
+      line-height: 1.6;
     }
 
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 24px;
+      padding: 18px 24px;
     }
 
     header h1 {
-      margin: 0;
       font-size: 22px;
+      font-weight: 700;
     }
 
     nav a {
       margin-left: 16px;
       text-decoration: none;
       color: #cce7d5;
-      font-weight: 500;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #7bd88f;
     }
 
     .hero {
@@ -49,87 +57,91 @@
 
     .hero h2 {
       font-size: 36px;
+      font-weight: 700;
       margin-bottom: 12px;
     }
 
     .hero p {
-      max-width: 600px;
+      max-width: 720px;
       margin: auto;
       color: #cce7d5;
-      font-size: 15px;
+      font-size: 16px;
     }
 
     .container {
       max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px;
+      margin: auto;
+      padding: 30px 16px;
     }
 
     .card {
-      display: block;
-      padding: 18px;
-      background: rgba(255, 255, 255, 0.06);
-      border-radius: 14px;
-      text-decoration: none;
-      color: #f7fff9;
-      font-weight: 500;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      background: rgba(255, 255, 255, 0.12);
+      background: rgba(255,255,255,0.04);
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin-bottom: 14px;
+      font-size: 16px;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 30px 16px;
       font-size: 13px;
-      color: #9fbfb0;
+      color: #9fbfb1;
+    }
+
+    footer a {
+      color: #9fbfb1;
+      margin: 0 8px;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #7bd88f;
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>AdventureHub</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+<header>
+  <h1>AdventureHub</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+</header>
 
-  <section class="hero">
-    <h2>Premium Travel Experiences</h2>
-    <p>
-      Discover breathtaking destinations, curated travel guides,
-      and unforgettable adventures around the world.
-    </p>
-  </section>
+<section class="hero">
+  <h2>Premium Travel Experiences</h2>
+  <p>
+    Discover breathtaking destinations, curated travel guides, and unforgettable adventures around the world.
+  </p>
+</section>
 
-  <!-- ✅ ALL PAGES LISTED HERE -->
-  <div class="container">
-    <a href="andaman.html" class="card">Andaman Islands</a>
-    <a href="goa.html" class="card">Goa</a>
-    <a href="gulmarg.html" class="card">Gulmarg</a>
-    <a href="coorg.html" class="card">Coorg</a>
-    <a href="bali.html" class="card">Bali</a>
-    <a href="iceland.html" class="card">Iceland</a>
-    <a href="auli.html" class="card">Auli</a>
-    <a href="dubai.html" class="card">Dubai</a>
-    <a href="canada.html" class="card">Canada</a>
-    <a href="finland.html" class="card">Finland</a>
-    <a href="honeymoon.html" class="card">Honeymoon Packages</a>
-  </div>
+<section class="container">
 
-  <footer>
-    © 2026 AdventureHub • Travel. Explore. Experience.
-  </footer>
+  <div class="card">Andaman Islands</div>
+  <div class="card">Goa</div>
+  <div class="card">Gulmarg</div>
+  <div class="card">Coorg</div>
+  <div class="card">Bali</div>
+  <div class="card">Iceland</div>
+  <div class="card">Auli</div>
+  <div class="card">Dubai</div>
+  <div class="card">Canada</div>
+  <div class="card">Finland</div>
+  <div class="card">Honeymoon Packages</div>
+
+</section>
+
+<footer>
+  © 2026 AdventureHub • Travel. Explore. Experience. <br><br>
+  <a href="about.html">About</a> |
+  <a href="contact.html">Contact</a> |
+  <a href="privacy.html">Privacy Policy</a>
+</footer>
 
 </body>
 </html>
