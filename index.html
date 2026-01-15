@@ -2,101 +2,109 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AdventureHub | Premium Travel Experiences</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AdventureHub offers detailed travel guides, destinations, itineraries and experiences from around the world.">
 
-  <!-- ✅ Google AdSense (SITE VERIFICATION + ADS READY) -->
-  <script async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8315889077023956"
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8315889077023956"
     crossorigin="anonymous"></script>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    :root{
+      --bg:#020807;
+      --card:#0d2617;
+      --accent:#7bd88f;
+      --text:#f7fff9;
+      --soft:#cce7d5;
     }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom, #0b2a19, #020807);
-      color: #f7fff9;
-      line-height: 1.6;
+    *{box-sizing:border-box;}
+
+    body{
+      margin:0;
+      font-family:'Poppins', sans-serif;
+      background:linear-gradient(to bottom, #0b2a19, var(--bg));
+      color:var(--text);
     }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 24px;
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 26px;
     }
 
-    header h1 {
-      font-size: 22px;
-      font-weight: 700;
+    header h1{
+      margin:0;
+      font-size:22px;
+      color:var(--accent);
     }
 
-    nav a {
-      margin-left: 16px;
-      text-decoration: none;
-      color: #cce7d5;
-      font-size: 14px;
+    nav a{
+      margin-left:18px;
+      text-decoration:none;
+      color:var(--soft);
+      font-size:14px;
     }
 
-    nav a:hover {
-      color: #7bd88f;
+    nav a:hover{color:var(--accent);}
+
+    .hero{
+      text-align:center;
+      padding:70px 20px 40px;
     }
 
-    .hero {
-      text-align: center;
-      padding: 60px 20px 30px;
+    .hero h2{
+      font-size:36px;
+      margin-bottom:10px;
     }
 
-    .hero h2 {
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 12px;
+    .hero p{
+      max-width:700px;
+      margin:auto;
+      color:#d7efe1;
     }
 
-    .hero p {
-      max-width: 720px;
-      margin: auto;
-      color: #cce7d5;
-      font-size: 16px;
+    .container{
+      max-width:900px;
+      margin:auto;
+      padding:20px;
     }
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 30px 16px;
+    .card{
+      background:linear-gradient(145deg, #123323, #0a1e15);
+      border-radius:14px;
+      padding:18px 20px;
+      margin-bottom:14px;
+      transition:0.3s;
     }
 
-    .card {
-      background: rgba(255,255,255,0.04);
-      border-radius: 16px;
-      padding: 18px 20px;
-      margin-bottom: 14px;
-      font-size: 16px;
+    .card:hover{
+      transform:translateY(-2px);
+      background:linear-gradient(145deg, #15412b, #0f2d1e);
     }
 
-    footer {
-      text-align: center;
-      padding: 30px 16px;
-      font-size: 13px;
-      color: #9fbfb1;
+    .card a{
+      color:var(--text);
+      font-size:16px;
+      text-decoration:none;
+      display:block;
     }
 
-    footer a {
-      color: #9fbfb1;
-      margin: 0 8px;
-      text-decoration: none;
+    footer{
+      text-align:center;
+      padding:30px 10px;
+      font-size:14px;
+      opacity:0.7;
     }
 
-    footer a:hover {
-      color: #7bd88f;
+    footer a{
+      color:var(--accent);
+      text-decoration:none;
+      margin:0 8px;
     }
   </style>
 </head>
@@ -116,31 +124,48 @@
 <section class="hero">
   <h2>Premium Travel Experiences</h2>
   <p>
-    Discover breathtaking destinations, curated travel guides, and unforgettable adventures around the world.
+    Discover breathtaking destinations, detailed travel guides,
+    and unforgettable journeys across the world.
   </p>
 </section>
 
-<section class="container">
+<div class="container">
 
-  <div class="card">Andaman Islands</div>
-  <div class="card">Goa</div>
-  <div class="card">Gulmarg</div>
-  <div class="card">Coorg</div>
-  <div class="card">Bali</div>
-  <div class="card">Iceland</div>
-  <div class="card">Auli</div>
-  <div class="card">Dubai</div>
-  <div class="card">Canada</div>
-  <div class="card">Finland</div>
-  <div class="card">Honeymoon Packages</div>
+  <div class="card">
+    <a href="andaman.html">Andaman Islands – Complete Travel Guide</a>
+  </div>
 
-</section>
+  <div class="card">
+    <a href="goa.html">Goa – Beaches, Nightlife & Culture</a>
+  </div>
+
+  <div class="card">
+    <a href="gulmarg.html">Gulmarg – Paradise of Snow & Mountains</a>
+  </div>
+
+  <div class="card">
+    <a href="coorg.html">Coorg – The Scotland of India</a>
+  </div>
+
+  <div class="card">
+    <a href="bali.html">Bali – Tropical Escape & Culture</a>
+  </div>
+
+  <div class="card">
+    <a href="iceland.html">Iceland – Land of Fire & Ice</a>
+  </div>
+
+  <div class="card">
+    <a href="honeymoon.html">Honeymoon Packages – Romantic Getaways</a>
+  </div>
+
+</div>
 
 <footer>
   © 2026 AdventureHub • Travel. Explore. Experience. <br><br>
-  <a href="about.html">About</a> |
+  <a href="privacy.html">Privacy Policy</a> |
   <a href="contact.html">Contact</a> |
-  <a href="privacy.html">Privacy Policy</a>
+  <a href="about.html">About</a>
 </footer>
 
 </body>
