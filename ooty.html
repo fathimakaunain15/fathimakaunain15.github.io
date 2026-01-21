@@ -1,406 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Ooty – Queen of the Hills | AdventureHub</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Ooty Travel Guide | Queen of the Nilgiris – AdventureHub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Complete Ooty travel guide with best time to visit, places to see, activities, culture, tips and map.">
 
-<style>
-  :root {
-    --bg-main: #050509;
-    --bg-card: #111119;
-    --bg-soft: #181821;
-    --accent: #d4a651;
-    --accent-soft: #f5e2b4;
-    --text-main: #f5f5f5;
-    --text-muted: #bbbbc6;
-    --border-soft: #262637;
-  }
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8315889077023956"
+    crossorigin="anonymous"></script>
 
-  * { box-sizing: border-box; }
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  body {
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    background: radial-gradient(circle at top, #1b1825 0%, #050509 45%);
-    color: var(--text-main);
-  }
-
-  a { color: inherit; text-decoration: none; }
-
-  /* HEADER */
-  header {
-    position: sticky;
-    top: 0;
-    background: rgba(5,5,9,0.94);
-    backdrop-filter: blur(14px);
-    padding: 14px 20px;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    z-index: 20;
-  }
-
-  .logo { color: var(--accent); font-weight: 700; font-size: 1.2rem; }
-
-  nav a {
-    margin-left: 16px;
-    color: var(--text-muted);
-    font-weight: 500;
-  }
-  nav a.active { color: var(--accent-soft); }
-
-  /* PAGE WRAPPER */
-  .page {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px 16px 50px;
-  }
-
-  /* HERO */
-  .hero {
-    position: relative;
-    height: 340px;
-    border-radius: 22px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    box-shadow: 0 26px 60px rgba(0,0,0,0.65);
-  }
-
-  .hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(65%);
-  }
-
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.85));
-  }
-
-  .hero-content {
-    position: absolute;
-    bottom: 22px;
-    left: 18px;
-  }
-
-  .pill {
-    background: rgba(0,0,0,0.6);
-    border: 1px solid rgba(255,255,255,0.15);
-    color: var(--accent-soft);
-    font-size: 0.75rem;
-    padding: 4px 10px;
-    border-radius: 999px;
-  }
-
-  .hero-title {
-    margin: 6px 0;
-    font-size: 1.9rem;
-    font-weight: 700;
-  }
-
-  .hero-sub {
-    color: var(--text-muted);
-    max-width: 480px;
-    font-size: 0.9rem;
-  }
-
-  .hero-meta-row {
-    display: flex;
-    gap: 8px;
-    margin-top: 8px;
-    flex-wrap: wrap;
-  }
-
-  .hero-chip {
-    padding: 4px 8px;
-    border-radius: 999px;
-    border: 1px solid rgba(255,255,255,0.12);
-    background: rgba(0,0,0,0.6);
-    font-size: 0.78rem;
-    color: var(--accent-soft);
-  }
-
-  /* SECTION */
-  .section {
-    background: var(--bg-card);
-    padding: 18px 18px 22px;
-    border-radius: 18px;
-    border: 1px solid var(--border-soft);
-    box-shadow: 0 16px 36px rgba(0,0,0,0.55);
-    margin-bottom: 20px;
-  }
-
-  .section h2 {
-    color: var(--accent-soft);
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-  }
-
-  .section p { color: var(--text-muted); font-size: 0.9rem; }
-
-  ul {
-    padding-left: 18px;
-    color: var(--text-muted);
-    margin: 0;
-  }
-
-  li { margin-bottom: 4px; }
-
-  /* GALLERY */
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 10px;
-  }
-
-  @media(min-width:720px){
-    .gallery-grid { grid-template-columns: repeat(4,1fr); }
-  }
-
-  .gallery-grid img {
-    width: 100%;
-    height: 130px;
-    object-fit: cover;
-    border-radius: 14px;
-  }
-
-  /* ITINERARY */
-  .itinerary-grid {
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-    gap: 12px;
-  }
-
-  @media(min-width:720px){
-    .itinerary-grid { grid-template-columns: repeat(3,1fr); }
-  }
-
-  .day-card {
-    background: var(--bg-soft);
-    padding: 12px;
-    border-radius: 14px;
-    border: 1px solid var(--border-soft);
-  }
-
-  .day-title {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--accent-soft);
-    margin-bottom: 4px;
-  }
-
-  /* HOTELS */
-  .hotel-row {
-    display: flex;
-    gap: 10px;
-    background: var(--bg-soft);
-    border-radius: 14px;
-    border: 1px solid var(--border-soft);
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-
-  .hotel-row img {
-    width: 80px;
-    height: 80px;
-    border-radius: 12px;
-    object-fit: cover;
-  }
-
-  .hotel-tags {
-    display: flex;
-    gap: 6px;
-    margin-top: 4px;
-    flex-wrap: wrap;
-  }
-
-  .tag {
-    padding: 2px 8px;
-    border-radius: 999px;
-    background: rgba(212,166,81,0.2);
-    border: 1px solid rgba(212,166,81,0.5);
-    font-size: 0.7rem;
-    color: var(--accent-soft);
-  }
-
-  /* MAP */
-  .map-frame {
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid var(--border-soft);
-    margin-top: 10px;
-  }
-
-  iframe {
-    width: 100%;
-    height: 230px;
-    border: 0;
-  }
-
-  footer {
-    text-align: center;
-    margin-top: 20px;
-    color: var(--text-muted);
-    font-size: .85rem;
-    padding: 18px 0;
-  }
-</style>
+  <style>
+    body{
+      margin:0;
+      font-family:'Poppins', sans-serif;
+      background:linear-gradient(to bottom, #0b2a19, #020807);
+      color:#f7fff9;
+      line-height:1.8;
+    }
+    .container{
+      max-width:900px;
+      margin:auto;
+      padding:24px;
+    }
+    h1,h2,h3{
+      color:#7bd88f;
+    }
+    p{
+      color:#d7efe1;
+    }
+    ul{
+      margin-left:20px;
+    }
+    iframe{
+      width:100%;
+      height:350px;
+      border-radius:12px;
+      border:0;
+      margin-top:15px;
+    }
+    footer{
+      text-align:center;
+      margin-top:40px;
+      font-size:14px;
+      opacity:0.7;
+    }
+  </style>
 </head>
 
 <body>
+<div class="container">
 
-<header>
-  <div class="logo">AdventureHub</div>
-  <nav>
-    <a href="manali-ultimate-travel-guide.html">Manali</a>
-    <a href="nainital-lakes-snow-views.html">Nainital</a>
-    <a href="shimla-snow-paradise.html">Shimla</a>
-    <a href="kashmir-paradise-on-earth.html">Kashmir</a>
-    <a class="active" href="ooty-queen-of-hills.html">Ooty</a>
-  </nav>
-</header>
+<h1>Ooty – The Queen of the Nilgiris</h1>
 
-<main class="page">
+<p>
+Ooty, officially known as Udhagamandalam, is a beautiful hill station located in the
+Nilgiri Hills of Tamil Nadu. Known as the “Queen of the Nilgiris,” Ooty is famous for
+its cool climate, lush green landscapes, tea plantations, and peaceful environment.
+</p>
 
-  <!-- HERO -->
-  <section class="hero">
-    <img src="https://images.unsplash.com/photo-1545311584-f0ef2166241d?auto=format&fit=crop&w=1200&q=70">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="pill">Premium Destination Guide</div>
-      <h1 class="hero-title">Ooty — Queen of the Hills</h1>
-      <p class="hero-sub">Misty mountains, tea gardens, lakes, scenic viewpoints and one of India's most beautiful hill stations.</p>
-      <div class="hero-meta-row">
-        <span class="hero-chip">Best time: Oct–Jun</span>
-        <span class="hero-chip">Ideal trip: 2–4 days</span>
-        <span class="hero-chip">Altitude: 2,240 m</span>
-      </div>
-    </div>
-  </section>
+<h2>Why Visit Ooty?</h2>
+<p>
+Ooty is perfect for travelers who love nature, calm surroundings, and scenic views.
+It is an ideal destination for families, couples, and anyone looking to escape the
+heat and noise of city life.
+</p>
 
-  <!-- OVERVIEW -->
-  <section class="section">
-    <h2>Quick Overview</h2>
-    <p>
-      Ooty, also known as Udhagamandalam, is a charming hill station in Tamil Nadu famous for its green slopes, cool climate, colonial
-      architecture and heritage toy train. Perfect for families, couples, photographers and nature lovers.
-    </p>
-  </section>
+<h2>Best Time to Visit Ooty</h2>
+<p>
+The best time to visit Ooty is from <strong>October to June</strong>.
+The weather remains pleasant throughout the year, making it suitable for sightseeing
+and outdoor activities.
+</p>
 
-  <!-- TOP PLACES -->
-  <section class="section">
-    <h2>Top Places to Visit</h2>
-    <ul>
-      <li>Ooty Lake (Boating)</li>
-      <li>Doddabetta Peak (Highest point)</li>
-      <li>Botanical Garden</li>
-      <li>Pykara Lake & Waterfalls</li>
-      <li>Ooty Rose Garden</li>
-      <li>Tea Factory & Chocolate Factory</li>
-      <li>Nilgiri Toy Train Ride</li>
-    </ul>
-  </section>
+<h2>Top Places to Visit in Ooty</h2>
+<ul>
+  <li><strong>Ooty Lake:</strong> Boating and lakeside views</li>
+  <li><strong>Botanical Gardens:</strong> Exotic plants and flowers</li>
+  <li><strong>Doddabetta Peak:</strong> Highest point in the Nilgiris</li>
+  <li><strong>Tea Gardens:</strong> Scenic tea estates</li>
+  <li><strong>Rose Garden:</strong> One of the largest rose gardens in India</li>
+</ul>
 
-  <!-- GALLERY -->
-  <section class="section">
-    <h2>Photo Gallery</h2>
-    <div class="gallery-grid">
-      <img src="https://images.unsplash.com/photo-1583422409516-2895a90705f2?auto=format&fit=crop&w=800&q=60">
-      <img src="https://images.unsplash.com/photo-1602751581336-2c6b82d90f24?auto=format&fit=crop&w=800&q=60">
-      <img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=800&q=60">
-      <img src="https://images.unsplash.com/photo-1589701946643-08dfc3c8a3c6?auto=format&fit=crop&w=800&q=60">
-    </div>
-  </section>
+<h2>Things to Do in Ooty</h2>
+<ul>
+  <li>Boat ride at Ooty Lake</li>
+  <li>Visit tea factories</li>
+  <li>Ride the Nilgiri Mountain Railway</li>
+  <li>Photography and nature walks</li>
+  <li>Shopping for homemade chocolates</li>
+</ul>
 
-  <!-- ITINERARY -->
-  <section class="section">
-    <h2>3-Day Ooty Itinerary</h2>
-    <div class="itinerary-grid">
+<h2>Culture & Local Life</h2>
+<p>
+Ooty has a mix of cultures influenced by local tribal communities and colonial heritage.
+The lifestyle here is simple, peaceful, and closely connected to nature.
+</p>
 
-      <div class="day-card">
-        <div class="day-title">Day 1 — Tea Estates & Ooty Lake</div>
-        <p>Visit botanical garden, tea museum, chocolate factory & evening boating.</p>
-      </div>
+<h2>Food & Cuisine</h2>
+<p>
+Popular food options in Ooty include South Indian dishes, homemade chocolates,
+fresh bakery items, and local tea varieties.
+</p>
 
-      <div class="day-card">
-        <div class="day-title">Day 2 — Doddabetta & Coonoor</div>
-        <p>Explore Doddabetta Peak, then Coonoor (Lamb's Rock, Dolphin's Nose).</p>
-      </div>
+<h2>Travel Tips</h2>
+<ul>
+  <li>Carry light jackets as evenings can be cool</li>
+  <li>Avoid peak season crowds if possible</li>
+  <li>Book train tickets early</li>
+  <li>Respect nature and avoid littering</li>
+</ul>
 
-      <div class="day-card">
-        <div class="day-title">Day 3 — Pykara & Shooting Point</div>
-        <p>Enjoy Pykara lake, falls & scenic viewpoints before departure.</p>
-      </div>
+<h2>Ooty Location Map</h2>
+<iframe 
+  src="https://www.google.com/maps?q=Ooty%20Tamil%20Nadu&output=embed"
+  loading="lazy">
+</iframe>
 
-    </div>
-  </section>
+<h2>Is Ooty Worth Visiting?</h2>
+<p>
+Yes, Ooty is one of the most charming hill stations in South India.
+Its cool weather, beautiful landscapes, and relaxing atmosphere make it a perfect
+destination for a refreshing holiday.
+</p>
 
-  <!-- HOTELS -->
-  <section class="section">
-    <h2>Top Hotels</h2>
+<footer>
+© 2026 AdventureHub • Travel. Explore. Experience.
+</footer>
 
-    <div class="hotel-row">
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=60">
-      <div>
-        <h3>Savoy Ooty (Luxury)</h3>
-        <p>Premium colonial-style luxury hotel with top service.</p>
-        <div class="hotel-tags">
-          <span class="tag">Luxury</span>
-          <span class="tag">Couples</span>
-          <span class="tag">Colonial</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="hotel-row">
-      <img src="https://images.unsplash.com/photo-1520256862855-398228c41684?auto=format&fit=crop&w=800&q=60">
-      <div>
-        <h3>Sterling Ooty Elk Hill</h3>
-        <p>Mid-range family-friendly resort with valley views.</p>
-        <div class="hotel-tags">
-          <span class="tag">Mid-range</span>
-          <span class="tag">Family</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="hotel-row">
-      <img src="https://images.unsplash.com/photo-1512914890250-353c97c9e7e2?auto=format&fit=crop&w=800&q=60">
-      <div>
-        <h3>Local Homestays</h3>
-        <p>Budget-friendly wooden cottages & nature stays.</p>
-        <div class="hotel-tags">
-          <span class="tag">Budget</span>
-          <span class="tag">Homestay</span>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- MAP -->
-  <section class="section">
-    <h2>How to Reach Ooty</h2>
-    <ul>
-      <li><strong>Nearest Airport:</strong> Coimbatore (88 km)</li>
-      <li><strong>Nearest Railway:</strong> Mettupalayam + toy train</li>
-      <li><strong>By Road:</strong> Bangalore → Mysore → Ooty scenic route</li>
-    </ul>
-
-    <div class="map-frame">
-      <iframe src="https://www.google.com/maps?q=Ooty,Tamil+Nadu&output=embed"></iframe>
-    </div>
-  </section>
-
-  <footer>
-    © 2025 AdventureHub — Created by Kaunain Fathima · @kaunainfathima19
-  </footer>
-
-</main>
-
+</div>
 </body>
 </html>
